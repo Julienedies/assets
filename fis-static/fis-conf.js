@@ -79,7 +79,7 @@ fis.config.set('roadmap.path', [
         useHash: true
     },
     {
-        reg: '**.image',
+        reg: /.*\.(?:jpg|png|gif)$/i,
         release: '/assets/csf/img$&',
         url: '/csf/img$&',
         isCssLike: true,
