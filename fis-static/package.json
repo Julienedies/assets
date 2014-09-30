@@ -1,0 +1,10 @@
+{
+    "name": "csf",
+    "version": "0.1.0",
+    "description": "",
+    "devDependencies": {
+        "fis":"1.7.17",
+        "fis-postpackager-simple":"0.0.18"
+    },
+    "scripts": {}
+}

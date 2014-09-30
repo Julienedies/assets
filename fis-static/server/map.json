@@ -1,0 +1,25 @@
+{
+    "res": {
+        "css/common/base.css": {
+            "uri": "{#assets_url#}/csf/css/common/base.css",
+            "type": "css"
+        },
+        "css/common/layout.css": {
+            "uri": "{#assets_url#}/csf/css/common/layout.css",
+            "type": "css"
+        },
+        "js/index/ctrl.js": {
+            "uri": "{#assets_url#}/csf/js/index/ctrl.js",
+            "type": "js"
+        },
+        "js/index/index.js": {
+            "uri": "{#assets_url#}/csf/js/index/index.js",
+            "type": "js"
+        },
+        "js/index/model.js": {
+            "uri": "{#assets_url#}/csf/js/index/model.js",
+            "type": "js"
+        }
+    },
+    "pkg": {}
+}

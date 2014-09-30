@@ -1,0 +1,1 @@
+@fis release  --dest ../ --pack --domains --watch --live %*
