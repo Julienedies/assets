@@ -1,1 +1,1 @@
-@fis release  --dest ../ --pack --domains --watch --live %*
+@fis release --file fis-conf-dev.js --dest ./server --pack --domains --watch --live %*
