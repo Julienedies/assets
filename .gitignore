@@ -1,7 +1,7 @@
 bower_components/
-bower_components/*
+_publish/
 _site/*
-_theme_packages/*
+_theme_packages/
 _pim_
 ~*.xlsx
 .idea/
