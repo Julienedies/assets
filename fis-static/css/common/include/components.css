@@ -1,0 +1,321 @@
+/*
+组件样式定义
+=========================================================
+ */
+
+.nav-2{
+    position: relative;
+    top:2px;
+    border-left:solid 1px #e6e9ed;
+}
+.nav-2 > li{
+    line-height: 48px;
+    border-right:solid 1px #e6e9ed;
+    border-bottom: solid 2px transparent;
+}
+.nav-2 > li.active, .nav-2 > li:hover{
+    border-bottom-color: #dc8412;
+}
+.nav-2 > li a{
+    color: inherit;
+    padding:0 20px;
+    display: inline-block;
+    border-bottom: solid 4px transparent;
+}
+.nav-2 > li a:hover, .nav-2 > li.active a{
+    font-weight: bold;
+    border-bottom-color: #ff9915;
+}
+
+.title-1{
+    position: relative;
+    border-bottom:solid 3px #1a1c39;
+}
+
+.title-1 .text{
+    position: relative;
+    top:3px;
+    border-bottom: solid 3px #ff9915;
+}
+
+
+
+.title-2{
+    position: relative;
+    padding: 6px 0;
+    border-bottom: solid 3px #1a1c39;
+}
+
+.title-2 .more{
+    position: absolute;
+    top:6px;
+    right: 0;
+}
+
+
+.title-3{
+    line-height: 1;
+    margin:30px 0 10px 0;
+    padding-left: 8px;
+    border-left: solid 5px #ff9915;
+}
+
+.list-1 li{
+    position:relative;
+    padding:0 10px;
+}
+.list-1 li:hover{
+    background: #e7edf7;
+}
+.list-1 li a{
+    margin-left:1em;
+}
+.list-1 li time{
+    position:absolute;
+    right:5px;
+    color: #afb7c1;
+    font-size:12px;
+}
+
+
+
+.list-2{
+
+}
+
+.list-2 li{
+    margin: 15px 0 0 0 ;
+    padding:0 0 0 15px;
+}
+.list-2 .digest{
+    margin:10px 0 0 0;
+}
+
+
+.menu-3{
+    margin-top:2px;
+    background: #fff;
+    border:solid 1px #e9eaeb;
+    border-bottom: solid 2px #dcdddd;
+    box-shadow: gray 2px 2px 6px;
+}
+.menu-3 li{
+    display: block;
+    width:100%;
+    padding:0;
+    border-bottom:solid 1px #e9eaeb;
+    text-align: center;
+    line-height: 3;
+}
+.menu-3 li a{
+    width:100%;
+    padding: 0;
+    display: inline-block;
+}
+.menu-3 li a:hover{
+    background: #ff9915;
+    color:#fff;
+}
+
+
+
+.table-1 {
+    width: 100%;
+}
+.table-1 th, .table-1 td{ text-align: center}
+
+
+.table-2{
+
+}
+.table-2 th{
+    padding: 15px 0 5px 10px;
+    border-bottom: solid 1px #e6e9ed;
+}
+.table-2 td{
+    padding: 15px 0 0 10px;
+}
+
+.table-3{
+
+}
+.table-3 th, .table-3 td{
+    padding: 10px 6px 10px 20px;
+    border:solid 1px #e6e9ed;
+}
+/*
+按钮样式定义
+============================================================
+ */
+.btn-group-1{
+    display: inline-block;
+    border-radius: 0.2em;
+}
+.btn-group-1 .btn{
+    border-radius: 0;
+}
+
+.btn{
+    vertical-align: middle;
+    display: inline-block;
+    padding:0.2em 0.5em;
+    cursor: pointer;
+    border-radius: 0.2em;
+}
+.btn-0,.btn-0-2{
+    color: inherit;
+    background: transparent;
+    border-radius: 0;
+    border:none;
+}
+.btn-0-2{
+    color:#ff9915;
+}
+.btn-0:hover, .btn-0-2:hover, .btn-0-2.active{
+    color:#fff;
+    background: #ff9915;
+}
+.btn-0-1:hover{
+    color:#fff;
+    background: #1a1c39;
+}
+
+.btn-1, .btn-1-1, .btn-1-2{
+    color:#fff;
+    background:#ff9915;
+    border-bottom: solid 2px #ce954b;
+}
+.btn-small{
+    font-family: sans-serif;
+    font-size:12px;
+}
+
+.btn-1-1{
+    padding:0.5em 2em;
+}
+.btn-1:hover, .btn-1-1:hover, .btn-1:active, .btn-1-1:active{
+    background:#e48913;
+}
+.btn-2{
+    font-size: 12px;
+    color: #fff;
+    font-family: sans-serif;
+    background: #656d78;
+    border-bottom: solid 2px #1a1c39;
+}
+.btn-2:hover, .btn-2:active{
+    background:#4b5159;
+}
+
+
+.btn-3{
+    background: #e6e9ed;
+    color:#cacfd7;
+}
+/*
+其它
+===============================================================
+*/
+.bor-1{
+    border-top:solid 1px #e6e9ed;
+    border-bottom: solid 2px #e6e9ed;
+}
+.bl-1-1, .bl-1-2, .bl-1-3,.bl-1-4,.bl-1-5, .bl-1-6{
+    border-left: solid 4px transparent;
+}
+.bl-1-1{
+     border-color:#da4453;
+ }
+.bl-1-2{
+    border-color:#fc6e51;
+}
+.bl-1-3{
+    border-color:#37bc9b;
+}
+.bl-1-4{
+    border-color:#967adc;
+}
+.bl-1-5{
+    border-color:#f6bb42;
+}
+.bl-1-6{
+    border-color:#4fc1e9;
+}
+
+.level-up-1,.level-up-2,.level-up-3,.level-up-4,.level-up-5,.level-up-6,.level-up-7,.level-up-8{
+    border-top:solid 1px #fb7171;
+    border-bottom: solid 1px #de504f;
+    color: #fff;
+}
+.level-up-5,.level-up-6,.level-up-7,.level-up-8{
+    border-top: solid 1px #FC8686;
+    border-bottom: solid 1px #F77B7B;
+}
+.level-up-1{
+    background: #ea1e1d;
+}
+.level-up-2{
+    background: #ee3a3b;
+}
+.level-up-3{
+    background: #f34b4a;
+}
+.level-up-4{
+    background: #f35b5a;
+}
+.level-up-5{
+    background: #f27070;
+}
+.level-up-6{
+    background: #f38383;
+}
+.level-up-7{
+    background: #f39595;
+}
+.level-up-8{
+    background: #f3acac;
+}
+
+.level-down-1,.level-down-2,.level-down-3,.level-down-4,.level-down-5,.level-down-6,.level-down-7,.level-down-8{
+    border-top:solid 1px #3ec8a5;
+    border-bottom: solid 1px #00a57c;
+    color: #fff;
+}
+.level-down-1{
+    background: #00b084;
+}
+.level-down-2{
+    background: #00bf8f;
+}
+.level-down-3{
+    background: #00cb98;
+}
+.level-down-4{
+    background: #17d6a6;
+}
+.level-down-5{
+    background: #35deb4;
+}
+
+.level-32{
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+}
+.level-52{
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px;
+}
+
+
+.bg-3{
+    background: #f5f7fa;
+}
+
+.bg-4{
+    background: #f5f7f9;
+}
+

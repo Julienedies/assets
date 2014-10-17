@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="/assets/css/vender/normalize.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vender/main.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vender/pure-min.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/common/common.css">
+<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/common/ie-hack.css">
+    <![endif]-->
+    <style>
+#mainbody section{
+    width:1000px;
+    margin:20px auto 0 auto;
+}
+
+#slide-box, #news-box{
+    height: 350px!important;
+}
+
+#slide-box{
+    width:560px;
+    overflow: hidden;
+}
+
+#slide-box ol li{
+    width:14px;
+    height:14px;
+    margin:0 6px;
+    border-radius: 7px;
+    background: #fff;
+}
+#slide-box ol li.active{
+    background:#ff9915;
+}
+#slide-box .btn{
+    position: absolute;
+    top:36%;
+}
+#slide-box .btn:hover{
+    background: rgba(0, 0, 0, 0.4);
+}
+#slider{
+    width: 560px;
+    height: 350px!important;
+    overflow: hidden;
+}
+#news-box{
+    width:400px;
+    margin-left:30px;
+}
+
+
+
+#recommend-box, #recommend-rel-info-box{
+    height: 440px;
+}
+
+#recommend-box{
+    width:500px;
+    margin:15px 0 0 0;
+}
+#recommend-rel-info-box{
+    width: 460px;
+    margin-left:30px;
+    padding:15px 0 0 0;
+}
+
+#recommend-box .item{
+    width:185px;
+    height: 145px;
+    padding:15px 25px 25px 25px;
+    margin: 10px 5px 0 7px;
+    background: url(/assets/img/rem-stock-bg.png?__sprite) no-repeat 0 0;
+    cursor: pointer;
+}
+
+#recommend-box .item.active{
+    background: url(/assets/img/rem-stock-bg-1.png?__sprite) no-repeat 0 0;
+}
+
+#industry-change-box{
+    width: 500px;
+    padding:15px 15px 0 0;
+}
+
+#industry-change-box .a, #industry-change-box .b{
+    padding:8px 36px;
+}
+#industry-change-box .a.active{
+    color: #fff;
+    background: #ed5565;
+}
+
+#industry-change-box .b.active{
+    color:#fff;
+    background: #37bc9b;
+}
+
+#industry-change-rel-info-box{
+    width:460px;
+    margin-left:15px;
+    padding:15px 0 0 0;
+}
+
+#industry-change-rel-info-box li i{
+    margin-right:6px;
+}
+#industry-change-rel-info-box li a{
+    vertical-align: middle;
+}
+
+
+
+#hgt-box{
+    width: 500px;
+    height: 300px;
+    padding:15px 15px 0 0;
+}
+
+#hgt-rel-info-box{
+    width:460px;
+    margin-left:15px;
+    padding:15px 0 0 0;
+}
+
+
+
+#otc-box{
+    width: 500px;
+    height: 480px;
+    margin:15px 0 0 0;
+}
+
+#otc-box .item{
+    width: 190px;
+    height: 115px;
+    padding: 15px 20px 5px 20px;
+    margin: 12px 0 0 13px;
+    background: url(/assets/img/otc-stock-bg.png?__sprite) no-repeat 0 0;
+ }
+
+#otc-rel-info-box{
+    width:460px;
+    margin-left: 30px;
+    padding:15px 0 0 0;
+}
+
+</style>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="wraper">
+
+    <!--[if lt IE 7]>
+<p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
+<![endif]-->
+
+<header id="header">
+
+    <div id="logo-box">
+        <div class="inline fl"><i class="icon icon-logo mr-15"></i><a class="btn btn-2" href="#">怀念旧版</a></div>
+        <div style="float:right;padding:14px 0 0 0;">
+            <div class="inline search">
+                <i class="icon icon-search"></i>
+                <input type="text" placeholder="公司/新闻搜索" rel="search">
+                <span class="hint t-6">回车搜索 <i class="icon icon-enter"></i></span>
+            </div>
+            <div class="inline">
+                <a class="btn btn-0 mr-15 br-1 fc-2" href="#">登录</a>
+                <a class="btn btn-0-1 ml-15 mr-30" href="#">注册</a>
+            </div>
+            <div class="inline" style="display: none;">
+                <a class="mr-15 fc-2" href="#">xxxx</a>
+                <a class="ml-15 mr-30 fc-2" href="#">退出</a>
+            </div>
+
+            <a class="btn btn-0-1" href="#">EN</a>
+        </div>
+    </div>
+
+    <nav id="nav-box" class="fc-1">
+        <div id="nav-wrap">
+            <ul class="inline-list v-top fl">
+                <li><a class="active" href="#">首页</a></li>
+                <li><a href="#">股票</a></li>
+                <li><a href="#">涨跌榜</a></li>
+                <li><a href="#">沪港通</a></li>
+                <li><a href="#">场外市场</a></li>
+                <li><a href="#">咨询</a></li>
+                <li><a href="#">个人中心</a></li>
+            </ul>
+            <div class="inline v-top fr">
+                <a href="#">插件下载</a>
+                <a href="#"><i class="icon icon-phone"></i> 客户端</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+</header>
+
+    <div id="msg-box">
+    <div id="msg-wrap">
+        <h6 class="inline v-top"><span>最新资讯</span> <i class="icon icon-msg"></i></h6>
+
+        <div class="inline" style="position:relative;width:900px;height:40px;" ic-slider="msg" ic-slider-interval="4000"
+             ic-slider-direction="1">
+            <ul class="inline-list" ic-role-slider-view>
+                <li ic-role-slider-item><span class="fc-6"> [新闻]</span> <a href="#">中铝经营亏损 股票有抛出可能</a></li>
+                <li ic-role-slider-item><span class="fc-6"> [新闻]</span> <a href="#">中铝经营亏损 股票有抛出可能</a></li>
+            </ul>
+            <a href="javascript:void(0);" class="icon icon-triangle-02" style="position: absolute; top:0; right: 0"
+               ic-role-slider-prev></a>
+            <a href="javascript:void(0);" class="icon icon-triangle-01" style="position: absolute; bottom:0; right: 0"
+               ic-role-slider-next></a>
+        </div>
+
+    </div>
+</div>
+
+    <div id="mainbody">
+
+        <section>
+
+    <div id="slide-box" class="inline v-top" ic-slider="a" ic-slider-interval="4000">
+        <ul ic-role-slider-view>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="/assets/img/slide.png"/></a></li>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="/assets/img/slide.png"/></a></li>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="/assets/img/slide.png"/></a></li>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="/assets/img/slide.png"/></a></li>
+        </ul>
+        <span class="btn btn-0" style="left:0;" ic-role-slider-prev>
+            <i class="icon icon-arrows-left"></i>
+        </span>
+        <span class="btn btn-0" style="right:0;" ic-role-slider-next>
+            <i class="icon icon-arrows-right"></i>
+        </span>
+        <ol class="inline-list-1 hc" style="position: absolute; bottom: 10px;width:100%">
+            <li class="" ic-role-slider-pagination="1"></li>
+            <li class="" ic-role-slider-pagination="2"></li>
+            <li class="" ic-role-slider-pagination="3"></li>
+            <li class="" ic-role-slider-pagination="4"></li>
+        </ol>
+    </div>
+
+    <div id="news-box" class="inline v-top">
+        <h2 class="t-1 mb-10">热点新闻</h2>
+        <ul class="list-1 lg-32">
+            <li>
+                <span>[金融证券]</span>
+                <a href="#" target="_blank" class="t-3">商务部：各地勿轻易效仿自贸区负面清单</a>
+                <p class="lg-24">记着9月24日从商务部获悉，商务部昨日召开“简政放权深化行政审批制度
+                    改革”专题新闻发布会...<a class="fc-2" href="#" target="_blank">[查看详细]</a></p>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+            <li>
+                <span>[金融政治]</span>
+                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+        <!--
+====================================================
+-->
+<section>
+
+    <h2 class="title-1"><strong class="inline text t-1">今日推荐</strong></h2>
+
+    <div id="recommend-box" class="inline v-top bg-1" ic-slider="b">
+        <ul class="inline-list" ic-tabs="a" ic-tabs-interval="3000" ic-role-slider-view>
+            <li ic-role-slider-item>
+                <div class="item inline" ic-role-tab="1">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="2">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="3">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-down">-2.07(-0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="4">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+            </li>
+            <li ic-role-slider-item>
+                <div class="item inline" ic-role-tab="1">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="2">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="3">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-down">-2.07(-0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="4">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+            </li>
+            <li ic-role-slider-item>
+                <div class="item inline" ic-role-tab="1">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="2">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="3">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-down">-2.07(-0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+                <div class="item inline" ic-role-tab="4">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
+                    <div class="t-10">601398_SH</div>
+                    <div class="t-10">工商银行</div>
+                    <div class="h-right fc-up">+2.07(+0.5%)</div>
+                    <div class="h-right t-12">28.56</div>
+                </div>
+            </li>
+        </ul>
+
+        <a href="#" class="btn btn-1" style="position: absolute;bottom: 15px; left:220px;" ic-role-slider-prev> &lt; </a>
+        <a href="#" class="btn btn-1"  style="position: absolute;bottom: 15px; left:260px;" ic-role-slider-next> &gt; </a>
+    </div>
+
+    <div id="recommend-rel-info-box" class="inline v-top" ic-role-tabc="a">
+
+        <div ic-role-con="1">
+            <h4 class="mb-15">
+                <strong class="t-5">工商银行1</strong>
+                <span class="mr-15"> ( 601398_SH )</span>
+                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
+            </h4>
+
+            <ul class="lg-36 list-1">
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+            </ul>
+        </div>
+
+
+        <div ic-role-con="2">
+            <h4 class="mb-15">
+                <strong class="t-5">工商银行2</strong>
+                <span class="mr-15"> ( 601398_SH )</span>
+                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
+            </h4>
+
+            <ul class="lg-36 list-1">
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+            </ul>
+        </div>
+
+        <div ic-role-con="3">
+            <h4 class="mb-15">
+                <strong class="t-5">工商银行3</strong>
+                <span class="mr-15"> ( 601398_SH )</span>
+                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
+            </h4>
+
+            <ul class="lg-36 list-1">
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+            </ul>
+        </div>
+
+        <div ic-role-con="4">
+            <h4 class="mb-15">
+                <strong class="t-5">工商银行4</strong>
+                <span class="mr-15"> ( 601398_SH )</span>
+                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
+            </h4>
+
+            <ul class="lg-36 list-1">
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[公告]</span>
+                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+                <li>
+                    <span>[新闻]</span>
+                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
+                    <time>10:56:23</time>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+        <section ic-role-tabc="b">
+
+    <h2 class="title-1"><strong class="inline text t-1">涨跌幅排名</strong></h2>
+
+    <div id="industry-change-box" class="inline v-top br-1">
+
+        <div class="h-center" ic-tabs="b">
+
+                <i class="btn btn-3 a" ic-role-tab="1">涨幅排名</i><i class="btn btn-3 b" ic-role-tab="2">跌幅排名</i>
+
+            <a href="javascript:void(0)" class="f-right btn btn-1">刷新</a>
+
+        </div>
+
+        <table ic-role-con="1">
+            <tr>
+                <td class="level-up-1 level-52">1</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">10家</td>
+            </tr>
+            <tr>
+                <td class="level-up-2 level-52">2</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">10家</td>
+            </tr>
+            <tr>
+                <td class="level-up-3 level-52">3</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">110家</td>
+            </tr>
+            <tr>
+                <td class="level-up-4 level-52">4</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">10家</td>
+            </tr>
+            <tr>
+                <td class="level-up-5 level-52">5</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">3家</td>
+            </tr>
+        </table>
+
+        <table ic-role-con="2">
+            <tr>
+                <td class="level-down-1 level-52">1</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">10家</td>
+            </tr>
+            <tr>
+                <td class="level-down-2 level-52">2</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">10家</td>
+            </tr>
+            <tr>
+                <td class="level-down-3 level-52">3</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">110家</td>
+            </tr>
+            <tr>
+                <td class="level-down-4 level-52">4</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">10家</td>
+            </tr>
+            <tr>
+                <td class="level-down-5 level-52">5</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
+                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
+                <td class="t-6 h-right">3家</td>
+            </tr>
+        </table>        
+
+        <div class="h-center"><a href="#" class="btn btn-1">查看更多排名</a></div>
+
+    </div>
+
+    
+    <div id="industry-change-rel-info-box" class="inline v-top fc-a-inherit">
+        <ul class="list-1 lg-32" ic-role-con="1">
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">1通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-up"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+        </ul>
+
+        <ul class="list-1 lg-32" ic-role-con="2">
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <i class="icon icon-down"></i>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+        <section>
+    <h2 class="title-1"><strong class="inline text t-1">沪港通溢价排名</strong></h2>
+
+    <div id="hgt-box" class="v-top inline br-1">
+        <table class="fz-12 table-1">
+            <thead>
+            <tr class="t-6">
+                <th class="w-32">排名</th>
+                <th class="w-72">A股代码</th>
+                <th class="w-36">添加</th>
+                <th class="w-64">A股名称</th>
+                <th class="w-42">A股价</th>
+                <th class="w-72">H股代码</th>
+                <th class="w-32">添加</th>
+                <th class="w-64">H股名称</th>
+                <th class="w-56">H股价</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="level-up-1 level-32">1</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-2 level-32">2</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-3 level-32">3</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-4 level-32">4</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-5 level-32">5</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-6 level-32">6</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-7 level-32">7</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            <tr>
+                <td class="level-up-8 level-32">8</td>
+                <td><a href="#">002703_SZ</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">浙江世宝</a></td>
+                <td class="fc-2 br-1">25.61</td>
+                <td class="fc-11">01057_HK</td>
+                <td><i class="icon icon-add"></i></td>
+                <td>HKD <span class="fc-2">9.90</span></td>
+                <td class="fc-6">229.12%</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div id="hgt-rel-info-box" class="v-top inline fc-a-inherit">
+        <ul class="list-1 lg-32">
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span class="fc-5">[沪港通]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+        </ul>
+    </div>
+</section>
+
+        <section>
+    <h2 class="title-1"><strong class="inline text t-1">场外市场 </strong> <span>累计成交额排名</span></h2>
+
+    <div id="otc-box" class="inline v-top bg-1" ic-slider="otc">
+        <ul ic-role-slider-view>
+            <li ic-role-slider-item>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">1=430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+            </li>
+            <li ic-role-slider-item>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">2=430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+            </li>
+            <li ic-role-slider-item>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">3=430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+                <div class="item inline">
+                    <div class="f-left">
+                        <div class="t-10">430002</div>
+                        <div class="t-10">中科软件</div>
+                    </div>
+                    <div class="f-right h-right">
+                        <div class="fc-7">累计成交额</div>
+                        <div class="fc-up">167.57M</div>
+                    </div>
+                    <div class="t-12 h-right">2,153.92M</div>
+                </div>
+            </li>
+        </ul>
+        <div style="position: absolute; bottom: 8px; width:100%; text-align: center;"><a href="#" class="btn btn-1" ic-role-slider-next>换一组</a></div>
+    </div>
+    <div id="otc-rel-info-box" class="inline v-top">
+        <ul class="list-1 lg-36">
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+            <li>
+                <span>[OTC]</span>
+                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
+                <time>2014.09.24</time>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+    </div>
+
+    <div id="reg-prompt-box" class="h-center fc-1">
+    <div class="fz-16">还没有数库账号？想获得更多数据？</div>
+    <div class="fz-20 m-10-0">立即注册，拥有前所未有</div>
+    <div><a href="#" class="btn btn-1-1">免费注册</a></div>
+</div>
+
+<footer id="footer">
+
+    <div id="site" class="inline v-top br-1">
+        <ul>
+            <li class="inline"><a href="#">关于数库</a> </li>
+            <li class="inline"><a href="#">加入数库</a> </li>
+            <li class="inline"><a href="#">联系我们</a> </li>
+            <li class="inline"><a href="#">产品介绍</a> </li>
+            <li class="inline"><a href="#">版权声明</a> </li>
+        </ul>
+    </div>
+
+    <div id="interface" class="inline v-top br-1">
+        <h4>关注我们</h4>
+        <ul>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-wx"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-wb"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-g"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-tt"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-f"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-i"></i></a> </li>
+        </ul>
+    </div>
+
+    <div id="partner" class="inline v-top br-1">
+        <h4>合作伙伴</h4>
+        <ul>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-xl"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-th"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-m"></i></a> </li>
+        </ul>
+    </div>
+
+    <div id="et" class="inline v-top">
+        <h4>企业时间</h4>
+        <a href="#" class="inline"><i class="icon icon-et"></i></a>
+    </div>
+
+    <p class="h-center t-4">© 2014 ChinaScope Financial All Rights Reserved</p>
+</footer>
+
+</div>
+
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/underscore-1.6.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/plugins.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/brick/brick.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/common.js"></script>
+<script>/**
+ * Created by julien.zhang on 2014/10/10.
+ */
+
+brick.controllers.add('recommend', function (scope) {
+
+    var timer;
+
+    $('[ic-slider=b]').on('ic-slider-pagination', function (e, active) {
+
+        clearInterval(timer);
+        var list = $(active).find('[ic-role-tab]');
+        var current = list.first().click();
+        var next;
+
+        timer = setInterval(function () {
+            next = current.next();
+            next = next.size() ? next : list.first();
+
+            next.click();
+            current = next;
+        }, 4000);
+    }).delegate('[ic-role-tab]', 'mousedown', function (e) {
+        clearInterval(timer);
+    });
+
+});
+
+
+brick.init();</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.0.178:8132/livereload.js"></script></body>
+</html>

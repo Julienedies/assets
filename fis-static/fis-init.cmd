@@ -1,2 +1,1 @@
-@npm install -g fis %*
-@npm install -g fis-postpackager-simple %*
+npm install -g fis && npm install -g fis-postpackager-simple

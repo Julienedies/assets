@@ -6,17 +6,14 @@
 
 ##环境搭建
 1：在本机安装nodeJs;
-2：执行fis-init.cmd初始化fis环境;
+2：双击执行fis-init.cmd初始化fis环境;
 
 ##使用
-1：平常进行前端开发前，执行fis-dev.cmd命令;
-2：上线部署前，执行fis-deploy.cmd命令;
-
-
-##关于发布到线上
-1：移除 fis --live 选项
-1：修改静态资源域名为线上实际域名
-
+1：本地开发，双击执行fis-dev.cmd命令; (停止监听，命令窗口执行ctrl+c; 停止服务器， 命令行执行fis server stop)
+2：php联调，双击执行fis-release.cmd命令; (停止监听，命令窗口执行ctrl+c; )
+2：上线部署前，双击执行fis-deploy.cmd命令;
 
 #技术选项
 =====================================
+##HTML5 Boilerplate
+http://html5boilerplate.com/

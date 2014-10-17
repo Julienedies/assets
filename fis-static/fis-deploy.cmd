@@ -1,1 +1,1 @@
-@fis release --file fis-conf-deploy.js --dest ../ --pack --optimize --md5 --domains  %*
+@fis release --file fis-conf/deploy.js --dest remote --pack --optimize --md5 %*

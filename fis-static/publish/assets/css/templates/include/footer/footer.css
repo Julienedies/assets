@@ -1,0 +1,33 @@
+#reg-prompt-box{height: 150px;
+    padding:30px 0 0 0;
+    
+    border-bottom:solid 4px #ff9915;background-repeat: no-repeat;}
+
+#footer{
+    padding:20px 0 30px 0;
+}
+#footer h4{
+    margin:0 0 10px 0;
+}
+#site, #interface, #partner, #et{
+    width:180px;
+    height: 160px;
+    padding: 10px 20px;
+}
+
+#site li{
+    margin:15px 20px 0 0;
+}
+
+#interface li{
+ margin:0px 10px 0 0;
+}
+
+#partner{
+    width:280px;
+}
+#partner li{
+    margin:0 7px 0 0;
+}
+#et{
+}#reg-prompt-box{background-position:0px 0px}#reg-prompt-box{background-image: url(/assets/img/footer_z.png)}

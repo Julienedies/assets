@@ -1,0 +1,84 @@
+/*
+站点基本样式定义
+======================================================
+ */
+html, body {
+    color:#656d78;
+    background: #fff;
+    line-height: 1.6;
+    font-size:14px;
+    font-family: microsoft yahei, Simsun;
+}
+
+a{
+    color:#4a7cbc;
+    text-decoration: none;
+}
+p{
+    font-family: sans-serif;
+    font-size: 12px;
+}
+article{
+    width:720px;
+    margin:2em auto;
+}
+article p{
+    margin:1.8em 0;
+    text-indent: 2em;
+    font-size: 16px;
+}
+table{
+    width: 100%;
+}
+/*
+交互样式定义
+========================================================
+ */
+
+/*
+通用基本类定义
+=========================================================
+ */
+.f-left, .fl{
+    float: left;
+}
+.f-right, .fr{
+    float: right;
+}
+.v-top{
+    vertical-align: top;
+}
+.v-middle, .vm{
+    vertical-align: middle;
+}
+.h-center, .hc{
+    text-align: center;
+}
+.h-right, .hr{
+    text-align: right;
+}
+.inline{
+    vertical-align: top;
+}
+.inline, .inline-list, .inline-list li, .inline-list-1, .inline-list-1 li{
+    display: inline-block;
+}
+.inline-list{
+    vertical-align: top;
+}
+.inline-list li{
+    float:left;
+}
+/*border 样式定义 */
+.br-1{
+    border-right:solid 1px #e6e9ed;
+}
+
+.bg-1{
+    background: #e7edf7;
+}
+
+/* 强制一行显示 */
+.line{
+    white-space:nowrap;
+}

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="/assets/css/vender/normalize.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vender/main.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vender/pure-min.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/common/common.css">
+<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/common/ie-hack.css">
+    <![endif]-->
+    <style>.info .title-2 {
+    margin: 20px 0 15px 0;
+}
+
+#summary {
+    border-top: none;
+    padding: 5px 18px;
+    border: solid 1px #e6e9ed;
+}
+
+#summary .one {
+    width: 200px;
+    position: relative;
+    border-right: solid 1px #e6e9ed;
+}
+
+#summary .two {
+    width: 220px;
+    padding-left: 15px;
+}
+
+#summary .two .fl {
+    color: #aab2bd;
+}
+
+#chart-box,
+#rel-box {
+    margin-top: 20px;
+    height: 480px;
+}
+
+#chart-box hgroup,
+#rel-box hgroup {
+    padding: 1px 10px;
+    border-top: solid 1px #e6e9ed;
+    border-bottom: solid 1px #e6e9ed;
+}
+
+#chart-box ul,
+#rel-box ul {
+    padding: 10px 0 0 0;
+}
+
+#chart-box {
+
+}
+
+#rel-box {
+    border: solid 1px #e6e9ed;
+    border-top: none;
+}
+
+#analysts tr,
+#sector li {
+    border-bottom: solid 1px #e6e9ed;
+}
+
+#analysts td {
+    height: 66px;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+
+#analysts td .line {
+    padding: 0 15px;
+    line-height: 66px;
+}
+
+#sector li {
+    height: 66px;
+    padding: 16px 0 4px 0;
+}</style>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="wraper" class="company">
+
+    <!--[if lt IE 7]>
+<p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
+<![endif]-->
+
+<header id="header">
+
+    <div id="logo-box">
+        <div class="inline fl"><i class="icon icon-logo mr-15"></i><a class="btn btn-2" href="#">怀念旧版</a></div>
+        <div style="float:right;padding:14px 0 0 0;">
+            <div class="inline search">
+                <i class="icon icon-search"></i>
+                <input type="text" placeholder="公司/新闻搜索" rel="search">
+                <span class="hint t-6">回车搜索 <i class="icon icon-enter"></i></span>
+            </div>
+            <div class="inline">
+                <a class="btn btn-0 mr-15 br-1 fc-2" href="#">登录</a>
+                <a class="btn btn-0-1 ml-15 mr-30" href="#">注册</a>
+            </div>
+            <div class="inline" style="display: none;">
+                <a class="mr-15 fc-2" href="#">xxxx</a>
+                <a class="ml-15 mr-30 fc-2" href="#">退出</a>
+            </div>
+
+            <a class="btn btn-0-1" href="#">EN</a>
+        </div>
+    </div>
+
+    <nav id="nav-box" class="fc-1">
+        <div id="nav-wrap">
+            <ul class="inline-list v-top fl">
+                <li><a class="active" href="#">首页</a></li>
+                <li><a href="#">股票</a></li>
+                <li><a href="#">涨跌榜</a></li>
+                <li><a href="#">沪港通</a></li>
+                <li><a href="#">场外市场</a></li>
+                <li><a href="#">咨询</a></li>
+                <li><a href="#">个人中心</a></li>
+            </ul>
+            <div class="inline v-top fr">
+                <a href="#">插件下载</a>
+                <a href="#"><i class="icon icon-phone"></i> 客户端</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+</header>
+
+    <div id="mainbody">
+
+        <header class="bg-3">
+
+    <hgroup class="wrap-1000" style="padding: 40px 0 20px 0;">
+        <h1>
+            <span class="t-14 vm">法国巴黎银行  (BNP_EU)</span>&nbsp;&nbsp;&nbsp;
+            <a href="javascript:void(0)">
+                <i class="icon icon-add-2"></i>&nbsp;
+                <b class="vm t-71">添加到我的个人中心</b>
+            </a>
+        </h1>
+    </hgroup>
+
+    <nav class="bor-1">
+        <div class="wrap-1000">
+            <ul class="nav-2 inline-list">
+                <li class="active"><a href="#" class="inline">公司概述</a></li>
+                <li><a href="#" class="inline">公司财务</a></li>
+                <li ic-dropdown="a">
+                    <a href="javascript:void(0);" ic-role-dropdown-toggle>
+                        个股资讯
+                        <i class="icon icon-triangle-01"></i>
+                    </a>
+                    <ul class="menu-3 fz-12" ic-role-dropdown-menu>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="#">公告</a></li>
+                        <li><a href="#">宏观指标</a></li>
+                        <li><a href="#">公司研报</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+        <div class="wrap-1000">
+
+            <section id="chart-box" class="inline w-480 mr-30">
+                <div id="container" style="width: 480px; height: 290px;"></div>
+
+                <div id="summary">
+
+                    <div class="inline one">
+                        <div class="fz-24"><span class="fc-3">EUR </span><span class="fc-2">51.33</span></div>
+                        <div class="lg-36 fz-18 fc-3">EUR 0.12</div>
+                        <div class="mb-15 lg-36 fz-18 fc-up">+0.2%</div>
+                        <div style="position: absolute; bottom: 64px; right: 10px;">
+                            <i class="icon icon-up-2"></i>
+                        </div>
+                        <div class="hc lg-56 fc-3 fz-12" style="border-top:1px solid #e6e9ed;">2014/10/13 15:03:05</div>
+
+                    </div>
+
+                    <div class="inline fz-12 lg-26 two" >
+                        <ul class="hr">
+                            <li><span class="fl">最高价：</span><span>EUR <strong class="fc-up">4.67</strong></span></li>
+                            <li><span class="fl">最低价：</span><span>EUR <em class="fc-down">4.43</em></span></li>
+                            <li><span class="fl">最高价：</span><span>EUR <em class="fc-b1">4.43</em></span></li>
+                            <li><span class="fl">成交量（股）：</span><span class="fc-b1">4,344,587</span></li>
+                            <li><span class="fl">成交额（百万）：</span><span class="fc-b1">EUR 1,000,000</span></li>
+                            <li><span class="fl">最后交易日：</span><span>2014/10/10</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="rel-box" class="inline w-480">
+
+                <div ic-dropdown="b" class="bg-4" style="height: 230px; z-index: 30;">
+                    <hgroup class="hr lg-56">
+                        <h2 class="fl t-10">今日看点</h2>
+                        <span>评级：&nbsp;&nbsp;
+                            <i class="icon icon-circle-1-up"></i>&nbsp; 正面 &nbsp;&nbsp;
+                            <i class="icon icon-circle-1-down"></i>&nbsp; 负面 &nbsp;&nbsp;
+                            <i class="icon icon-circle-1-md"></i>&nbsp; 中性
+                        </span>
+                    </hgroup>
+
+                    <div class="bg-4" style="width: 100%;height: 156px;padding-bottom:24px;" ic-role-dropdown-con>
+                    <ul class="list-1 lg-36">
+                        <li>
+                            <i class="icon icon-circle-1-up"></i>
+                            <a href="#" target="_blank">通源石油并购重组申请停审   有关方面被稽查立案</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <i class="icon icon-circle-1-md"></i>
+                            <a href="#" target="_blank">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <i class="icon icon-circle-1-down"></i>
+                            <a href="#" target="_blank">通源石油并购重组申请停审   有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <i class="icon icon-circle-1-down"></i>
+                            <a href="#" target="_blank">通源石油并购重组申请停审   有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <i class="icon icon-circle-1-up"></i>
+                            <a href="#" target="_blank">通源石油并购重组申请停审   有关方面被稽查立案</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <i class="icon icon-circle-1-md"></i>
+                            <a href="#" target="_blank">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <i class="icon icon-circle-1-down"></i>
+                            <a href="#" target="_blank">通源石油并购重组申请停审   有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                    </ul>
+
+                    <div class="hc" style="display:block;position:absolute;bottom:0;width:100%;border-bottom:solid 3px #dc8412;" ic-role-dropdown-toggle>
+                        <span class="btn btn-1" style="padding:0px 15px;">
+                            <i class="icon icon-arrows-4-down"></i>
+                        </span>
+                    </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <hgroup>
+                        <h2 class="t-10 lg-56">同业关注</h2>
+                    </hgroup>
+
+
+                    <ul class="list-1 lg-36">
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#" target="_blank">通源石油并购重组申请停审   有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[新股发行]</span>
+                            <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[新股发行]</span>
+                            <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+
+
+                <section class="info">
+
+                    <div class="inline v-top w-480 mr-30">
+
+                        <hgroup class="title-2">
+                            <h2 class="t-10">公司热点新闻</h2>
+                            <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                        </hgroup>
+
+                        <ul class="list-2">
+                            <li class="bl-1-1">
+                                <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
+                                <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
+                                    有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2" >[查看详细]</a></p>
+                            </li>
+
+                            <li class="bl-1-2">
+                                <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
+                                <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
+                                    有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2" >[查看详细]</a></p>
+                            </li>
+
+                            <li class="bl-1-3">
+                                <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
+                                <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
+                                    有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2" >[查看详细]</a></p>
+                            </li>
+
+                            <li class="bl-1-4">
+                                <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
+                                <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
+                                    有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2" >[查看详细]</a></p>
+                            </li>
+
+                            <li class="bl-1-5">
+                                <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
+                                <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
+                                    有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2" >[查看详细]</a></p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="inline v-top w-480">
+
+                        <hgroup class="title-2">
+                            <h2 class="t-10">公司热点公告</h2>
+                            <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                        </hgroup>
+
+                        <ul class="list-1 lg-36">
+                            <li>
+                                <span>[资产重组]</span>
+                                <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[新股发行]</span>
+                                <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[资产重组]</span>
+                                <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[新股发行]</span>
+                                <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[资产重组]</span>
+                                <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[新股发行]</span>
+                                <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[资产重组]</span>
+                                <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[新股发行]</span>
+                                <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[资产重组]</span>
+                                <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[新股发行]</span>
+                                <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[资产重组]</span>
+                                <a href="#">通源石油并购重组申请停审   有关方面被稽查</a>
+                                <time>2014.09.24</time>
+                            </li>
+                            <li>
+                                <span>[新股发行]</span>
+                                <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                                <time>2014.09.24</time>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div id="analysts" class="inline v-top w-480 mr-30">
+                        <hgroup class="title-2">
+                            <h2 class="t-10">研报推荐</h2>
+                            <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                        </hgroup>
+
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="line bl-1-6 t-18-0-a1">
+                                    安晓杰
+                                    </div>
+                                </td>
+                                <td style="width:6em;">
+                                    <div><h6>准确率</h6><span>60%</span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div>2014/09/24</div>
+                                        <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
+                                            彰显对未来成长强大信心</div>
+                                    </div>
+                                </td>
+                                <td><span class="line t-14-1-up">增持</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="line bl-1-6 t-18-0-a1">
+                                        安晓杰
+                                    </div>
+                                </td>
+                                <td style="width:6em;">
+                                    <div><h6>准确率</h6><span>60%</span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div>2014/09/24</div>
+                                        <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
+                                            彰显对未来成长强大信心</div>
+                                    </div>
+                                </td>
+                                <td><span class="line t-14-1-md">中性</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="line bl-1-6 t-18-0-a1">
+                                        安晓杰
+                                    </div>
+                                </td>
+                                <td style="width:6em;">
+                                    <div><h6>准确率</h6><span>60%</span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div>2014/09/24</div>
+                                        <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
+                                            彰显对未来成长强大信心</div>
+                                    </div>
+                                </td>
+                                <td><span class="line t-14-1-down">减持</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="line bl-1-6 t-18-0-a1">
+                                        安晓杰
+                                    </div>
+                                </td>
+                                <td style="width:6em;">
+                                    <div><h6>准确率</h6><span>60%</span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div>2014/09/24</div>
+                                        <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
+                                            彰显对未来成长强大信心</div>
+                                    </div>
+                                </td>
+                                <td><span class="line t-14-1-md">中性</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="line bl-1-6 t-18-0-a1">
+                                        安晓杰
+                                    </div>
+                                </td>
+                                <td style="width:6em;">
+                                    <div><h6>准确率</h6><span>60%</span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div>2014/09/24</div>
+                                        <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
+                                            彰显对未来成长强大信心</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="line t-14-1-down">减持</div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div id="sector" class="inline v-top w-480">
+
+                        <hgroup class="title-2"><h2 class="t-10">行业异动</h2>
+                            <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                        </hgroup>
+
+                        <ul class="list-3">
+
+                            <li>
+                                <h4 class="t-14-1-k1 hr">
+                                    <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
+                                    <time class="fc-7">2014/08</time>
+                                </h4>
+
+                                <div class="mt-10 hr">
+
+                                    <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
+                                    <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
+                                        <i class="icon icon-up-1"></i>
+                                    </div>
+                                    <div class="inline">同比：<span class="fc-down">-11.76%</span>
+                                        <i class="icon icon-down-1"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <h4 class="t-14-1-k1 hr">
+                                    <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
+                                    <time class="fc-7">2014/08</time>
+                                </h4>
+
+                                <div class="mt-10 hr">
+
+                                    <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
+                                    <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
+                                        <i class="icon icon-up-1"></i>
+                                    </div>
+                                    <div class="inline">同比：<span class="fc-down">-11.76%</span>
+                                        <i class="icon icon-down-1"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <h4 class="t-14-1-k1 hr">
+                                    <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
+                                    <time class="fc-7">2014/08</time>
+                                </h4>
+
+                                <div class="mt-10 hr">
+
+                                    <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
+                                    <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
+                                        <i class="icon icon-up-1"></i>
+                                    </div>
+                                    <div class="inline">同比：<span class="fc-down">-11.76%</span>
+                                        <i class="icon icon-down-1"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <h4 class="t-14-1-k1 hr">
+                                    <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
+                                    <time class="fc-7">2014/08</time>
+                                </h4>
+
+                                <div class="mt-10 hr">
+
+                                    <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
+                                    <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
+                                        <i class="icon icon-up-1"></i>
+                                    </div>
+                                    <div class="inline">同比：<span class="fc-down">-11.76%</span>
+                                        <i class="icon icon-down-1"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <h4 class="t-14-1-k1 hr">
+                                    <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
+                                    <time class="fc-7">2014/08</time>
+                                </h4>
+
+                                <div class="mt-10 hr">
+
+                                    <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
+                                    <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
+                                        <i class="icon icon-up-1"></i>
+                                    </div>
+                                    <div class="inline">同比：<span class="fc-down">-11.76%</span>
+                                        <i class="icon icon-down-1"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+        </div>
+
+
+    </div>
+
+    <div id="reg-prompt-box" class="h-center fc-1">
+    <div class="fz-16">还没有数库账号？想获得更多数据？</div>
+    <div class="fz-20 m-10-0">立即注册，拥有前所未有</div>
+    <div><a href="#" class="btn btn-1-1">免费注册</a></div>
+</div>
+
+<footer id="footer">
+
+    <div id="site" class="inline v-top br-1">
+        <ul>
+            <li class="inline"><a href="#">关于数库</a> </li>
+            <li class="inline"><a href="#">加入数库</a> </li>
+            <li class="inline"><a href="#">联系我们</a> </li>
+            <li class="inline"><a href="#">产品介绍</a> </li>
+            <li class="inline"><a href="#">版权声明</a> </li>
+        </ul>
+    </div>
+
+    <div id="interface" class="inline v-top br-1">
+        <h4>关注我们</h4>
+        <ul>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-wx"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-wb"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-g"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-tt"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-f"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-i"></i></a> </li>
+        </ul>
+    </div>
+
+    <div id="partner" class="inline v-top br-1">
+        <h4>合作伙伴</h4>
+        <ul>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-xl"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-th"></i></a> </li>
+            <li class="inline"><a href="#" class="inline"><i class="icon icon-m"></i></a> </li>
+        </ul>
+    </div>
+
+    <div id="et" class="inline v-top">
+        <h4>企业时间</h4>
+        <a href="#" class="inline"><i class="icon icon-et"></i></a>
+    </div>
+
+    <p class="h-center t-4">© 2014 ChinaScope Financial All Rights Reserved</p>
+</footer>
+
+</div>
+
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/underscore-1.6.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/highstock.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/plugins.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/brick/brick.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/common.js"></script>
+<script src="http://my.assets.chinascope.net/vcn/js/fin/fin_lang.js?v=0.1.1&lang=szh" type="text/javascript" id="ada_lang"></script>
+<script>/**
+ * Created by julien.zhang on 2014/10/15.
+ */
+
+$(function () {
+
+    $('.icon-arrows-4-down').click(function () {
+        $(this).toggleClass('icon-arrows-4-up');
+    })
+
+
+    $.getJSON('/assets/js/data/stockData.js', function (data) {
+        var usdeur = [], volume = [], dataLength = data.length;
+        for (i = 0; i < dataLength; i++) {
+            usdeur.push([
+                data[i][0], // the date
+                data[i][1] // close
+            ]);
+
+            volume.push([
+                data[i][0], // the date
+                data[i][2] // the volume
+            ])
+        }
+
+        Highcharts.setOptions({
+            lang: {
+                weekdays: [fin_lang.dayname_ri, fin_lang.dayname_yi, fin_lang.dayname_er, fin_lang.dayname_san, fin_lang.dayname_si, fin_lang.dayname_wu, fin_lang.dayname_liu],
+                months: [fin_lang.months_1, fin_lang.months_2, fin_lang.months_3, fin_lang.months_4, fin_lang.months_5, fin_lang.months_6, fin_lang.months_7, fin_lang.months_8, fin_lang.months_9, fin_lang.months_10, fin_lang.months_11, fin_lang.months_12],
+                shortMonths: [fin_lang.monthname_1, fin_lang.monthname_2, fin_lang.monthname_3, fin_lang.monthname_4, fin_lang.monthname_5, fin_lang.monthname_6, fin_lang.monthname_7, fin_lang.monthname_8, fin_lang.monthname_9, fin_lang.monthname_10, fin_lang.monthname_11, fin_lang.monthname_12],
+                rangeSelectorFrom: [fin_lang.rangeSelectorFrom],
+                rangeSelectorTo: [fin_lang.rangeSelectorTo],
+                rangeSelectorZoom: [fin_lang.rangeSelectorZoom]
+            }
+        });
+        $('#container').highcharts('StockChart', {
+            rangeSelector: {
+                buttons: [
+                    {
+                        type: 'day',
+                        count: 10,
+                        text: '10D'
+                    },
+                    {
+                        type: 'month',
+                        count: 1,
+                        text: '1M'
+                    },
+                    {
+                        type: 'month',
+                        count: 3,
+                        text: '3M'
+                    },
+                    {
+                        type: 'year',
+                        count: 1,
+                        text: '1Y'
+                    },
+                    {
+                        type: 'ytd',
+                        text: 'YTD'
+                    },
+                    {
+                        type: 'all',
+                        text: 'MAX'
+                    }
+                ],
+                selected: 2
+            },
+            yAxis: [
+                {
+                    height: 160,
+                    opposite: true,
+                    labels: {
+                        align: 'left',
+                        x: 3,
+                        y: 0
+                    },
+                    lineWidth: 0
+                },
+                {
+                    top: 220,
+
+                    height: 50,
+                    offset: 0,
+                    opposite: true,
+                    minorTickWidth: 3,
+                    labels: {
+                        align: 'left',
+                        x: 3,
+                        y: 0
+                    },
+                    lineWidth: 0
+                }
+            ],
+            title: {
+                align: 'left',
+                style: {fontSize: '12px'},
+                text: ""
+            },
+            series: [
+                {
+                    name: fin_lang.chartClose,
+                    data: usdeur,
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                },
+                {
+                    type: 'column',
+                    name: fin_lang.chartVolume,
+                    yAxis: 1,
+                    data: volume,
+                    color: '#2f7ed8',
+                    tooltip: {
+                        valueDecimals: 0
+                    }
+                }
+            ]
+        });
+    });
+
+});</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.0.178:8132/livereload.js"></script></body>
+</html>

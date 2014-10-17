@@ -1,0 +1,22 @@
+/*
+==========================================
+ */
+[ic-slider]{
+    position: relative;
+    overflow: hidden;
+}
+
+[ic-role-con]{
+}
+
+[ic-dropdown]{
+    position: relative;
+}
+[ic-role-dropdown-menu]{
+    position: absolute;
+    z-index: 10;
+    display: none;
+}
+[ic-role-dropdown-con]{
+    overflow: hidden;
+}
