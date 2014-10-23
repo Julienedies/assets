@@ -33,6 +33,9 @@
 .hp-100{
     height: 100%;
 }
+.wp-49{
+    width:49%;
+}
 .wp-100{
     width:100%;
 }
@@ -127,4 +130,8 @@
 }
 .lg-56{
     line-height: 56px;
+}
+
+.lg-60{
+    line-height: 60px;
 }

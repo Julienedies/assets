@@ -43,16 +43,31 @@ fis.config.set('roadmap.path', [
         isJsLike: true,
         useHash: true
     },
+    /* 临时使用,手机注册页面 */
+    {
+        reg: /^\/templates\/old\/(.+\.html)/i,
+        release: '/account/application/templates/vcn/user/$1',
+        isHtmlLike: true
+    },
     {
         reg: /^\/templates\/(.+\.html)/i,
         release: '/newwww/application/templates/vcn/$1',
-        isHtmlLike: true
+        isHtmlLike: true,
+        useOptimizer: true
     },
     {
         reg: '**.js',
         release: '/assets/vcn/csf/js$&',
         url: _domains_ + '/csf/js$&',
         isJsLike: true,
+        useHash: true
+    },
+    {
+        reg: /.*(?:include|src|demo)\/.+\.css/i,
+        release: '/assets/vcn/csf/css$&',
+        url: _domains_ + '/csf/css$&',
+        useSprite: true,
+        isCssLike: true,
         useHash: true
     },
     {
@@ -69,7 +84,7 @@ fis.config.set('roadmap.path', [
         url: '/vcn/csf/img/$1'
     },
     {
-        reg: /.*\/(.+\.(?:jpg|png|gif))/i,
+        reg: /\/templates\/(.+\.(?:jpg|png|gif))/i,
         release: '/assets/vcn/csf/img/$1',
         url: _domains_ + '/csf/img/$1',
         useHash: true
@@ -92,7 +107,7 @@ fis.config.merge({
     deploy : {
         remote : {
             to : '../',
-            exclude : /\/(?:include|src|demo)\/.+?\.(?:html|js|css)$/i
+            exclude : /(?:\/(?:include|src|demo|data)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
         }
     }
 });

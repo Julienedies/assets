@@ -9,20 +9,17 @@
 }
 #logo-box  .search .icon-search{
     position: absolute;
-    top: 5px;
+    top: 6px;
     left: 5px;
 }
 #logo-box .search .hint{
     position: absolute;
-    top:5px;
+    top:6px;
     right: 5px;
 }
 #logo-box .search input{
     width: 16em;
     padding:0 30px 0 30px;
-    line-height: 2;
-    border: solid 1px #ccd1d9;
-    border-radius: 0.3em;
 }
 #nav-box{
     height: 50px;
@@ -30,7 +27,7 @@
     background: #1a1c39;
 }
 #nav-box a{
-    color:inherit;
+    color:#fff;
     padding:0 16px;
 }
 #nav-box li a{

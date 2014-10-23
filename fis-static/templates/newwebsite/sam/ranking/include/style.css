@@ -1,0 +1,83 @@
+.icon-day, .icon-week, .icon-month {
+    width:66px;
+    height: 66px;
+}
+.icon-day{
+     background: url(img/icon-day.png?__sprite) no-repeat 0 0;
+ }
+.icon-day.active, .icon-day:hover {
+    background: url(img/icon-day-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-week{
+    background: url(img/icon-week.png?__sprite) no-repeat 0 0;
+}
+.icon-week.active, .icon-week:hover {
+    background: url(img/icon-week-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-month{
+    background: url(img/icon-month.png?__sprite) no-repeat 0 0;
+}
+.icon-month.active, .icon-month:hover {
+    background: url(img/icon-month-active.png?__sprite) no-repeat 0 0;
+}
+
+
+
+#mainbody{
+    background: url(img/bg-1.png) no-repeat 50% 0;
+}
+
+.table-3 td{
+    border:none;
+    border-bottom:solid 1px #e6e9ed;
+}
+
+
+h3{
+    position: relative;
+    top:-40px;
+}
+h3 b{
+    font-size:24px;
+    padding:0.3em 1em;
+    font-weight: normal;
+    color: #fff;
+    background: #545895;
+    box-shadow: 3px 3px 3px rgba(160,160,160,.6);
+}
+#section{
+    position: relative;
+    top:-60px;
+}
+
+#market{
+    position: absolute; top:64px; width:100%; text-align: center;
+}
+#market ul{
+    background: #fff;
+    padding:0.1em 1em;
+    border-radius: 0.2em;
+    border:solid 3px #ff9915;
+}
+#date{
+    position: absolute; left: 50%; top:100px; margin-left:-30px;
+}
+
+#date li{
+    margin:40px 0;
+}
+
+h2{
+    position: relative;
+    top:-30px;
+}
+
+h2 span{
+    font-size:18px;
+    color: #fff;
+    background: #1a1c39;
+    padding:0.3em 1em;
+    border-radius: 0.3em;
+}

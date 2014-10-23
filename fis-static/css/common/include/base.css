@@ -39,6 +39,21 @@ table{
 通用基本类定义
 =========================================================
  */
+.inline{
+    vertical-align: top;
+}
+.inline, .inline-list, .inline-list > li, .inline-list-1, .inline-list-1 > li{
+    display: inline-block;
+}
+.inline-list{
+    vertical-align: top;
+}
+.inline-list li{
+    float:left;
+}
+
+
+
 .f-left, .fl{
     float: left;
 }
@@ -57,18 +72,7 @@ table{
 .h-right, .hr{
     text-align: right;
 }
-.inline{
-    vertical-align: top;
-}
-.inline, .inline-list, .inline-list li, .inline-list-1, .inline-list-1 li{
-    display: inline-block;
-}
-.inline-list{
-    vertical-align: top;
-}
-.inline-list li{
-    float:left;
-}
+
 /*border 样式定义 */
 .br-1{
     border-right:solid 1px #e6e9ed;

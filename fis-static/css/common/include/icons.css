@@ -127,6 +127,16 @@
     height: 52px;
     background: url(../../../img/icons/icon-down-2.png?__sprite) no-repeat 0 0;
 }
+.icon-md-up, .icon-md-down{
+    width: 23px;
+    height: 22px;
+}
+.icon-md-up{
+    background: url(../../../img/icons/icon-md-up.png?__sprite) no-repeat 0 0;
+}
+.icon-md-down{
+    background: url(../../../img/icons/icon-md-down.png?__sprite) no-repeat 0 0;
+}
 .icon-circle-1-up{
     width: 12px;
     height: 12px;
@@ -146,6 +156,11 @@
     width: 18px;
     height: 18px;
     background: url(../../../img/icons/icon-chart.png?__sprite) no-repeat 0 0;
+}
+.icon-clear{
+    width:24px;
+    height: 24px;
+    background: url(../../../img/icons/icon-clear.png?__sprite) no-repeat 0 0;
 }
 /* footer part */
 .icon-wx{

@@ -1,31 +1,53 @@
-<!--[if lt IE 7]>
-<p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
-<![endif]-->
-
 <header id="header">
 
-    <div id="logo-box">
-        <div class="inline fl"><i class="icon icon-logo mr-15"></i><a class="btn btn-2" href="#">怀念旧版</a></div>
-        <div style="float:right;padding:14px 0 0 0;">
-            <div class="inline search">
-                <i class="icon icon-search"></i>
-                <input type="text" placeholder="公司/新闻搜索" rel="search">
-                <span class="hint t-6">回车搜索 <i class="icon icon-enter"></i></span>
-            </div>
-            <div class="inline">
-                <a class="btn btn-0 mr-15 br-1 fc-2" href="#">登录</a>
-                <a class="btn btn-0-1 ml-15 mr-30" href="#">注册</a>
-            </div>
-            <div class="inline" style="display: none;">
-                <a class="mr-15 fc-2" href="#">xxxx</a>
-                <a class="ml-15 mr-30 fc-2" href="#">退出</a>
-            </div>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
+    <![endif]-->
 
-            <a class="btn btn-0-1" href="#">EN</a>
+    <div id="logo-box" class="hr">
+
+        <div class="inline fl">
+            <a href="#"><i class="icon icon-logo"></i></a>&nbsp;&nbsp;
+            <a href="#" class="btn btn-2">数据库</a>
         </div>
+
+        <div class="inline vm lg-60 search">
+            <div class="lgp-2" style="line-height: 1.5;">
+                <i class="icon icon-search"></i>
+                <input type="text" placeholder="公司/新闻搜索" class="text">
+                <span class="hint t-6"><span class="vm">回车搜索</span> <i class="icon icon-enter"></i></span>
+            </div>
+        </div>
+
+        <div class="inline lg-60 vm">
+            <a href="#" class="btn btn-0-2 t-14-1-y1" style="margin:0 15px;">登录</a>
+            <b class="inline" style="border-left:solid 1px #ced1d6; height: 36px; vertical-align: middle; "></b>
+            <a href="#" class="btn btn-0-1 t-14-1-k1" style="margin:0 15px;">注册</a>
+        </div>
+
+        <div class="inline" ic-dropdown="user" style="display: none;">
+
+            <a href="#" class="inline t-14-1-y1"
+               style="padding: 0 1em; line-height:60px; height:60px; overflow: hidden; border:solid 1px #ccd1d9; border-top:none; border-bottom: none;" ic-role-dropdown-toggle>
+                <b class="vm">DaXiangA</b>&nbsp;&nbsp;
+                <i class="icon icon-triangle-01"></i>
+            </a>
+            <ul class="menu-3-1 fz-12" ic-role-dropdown-menu>
+                <li><a href="#">帐号信息</a></li>
+                <li><a href="#">更改密码</a></li>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">登出帐号</a></li>
+            </ul>
+
+        </div>
+
+        <div class="inline lg-60 vm" style="margin:0 15px;">
+            <a href="#" class="btn btn-0-1 t-14-1-k1">EN</a>
+        </div>
+
     </div>
 
-    <nav id="nav-box" class="fc-1">
+    <nav id="nav-box">
         <div id="nav-wrap">
             <ul class="inline-list v-top fl">
                 <li><a class="active" href="#">首页</a></li>
@@ -38,12 +60,9 @@
             </ul>
             <div class="inline v-top fr">
                 <a href="#">插件下载</a>
-                <a href="#"><i class="icon icon-phone"></i> 客户端</a>
+                <a href="#"><i class="icon icon-phone"></i> &nbsp;客户端</a>
             </div>
         </div>
     </nav>
-
-
-
 
 </header>

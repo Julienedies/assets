@@ -17,6 +17,7 @@
         __inline('src/widget/slider.js');
         __inline('src/widget/tabs.js');
         __inline('src/widget/dropdown.js');
+        __inline('src/widget/pagination.js');
 
         $(function(){
             directives.init();

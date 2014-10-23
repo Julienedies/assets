@@ -9,115 +9,113 @@ $(function () {
     })
 
 
-    $.getJSON('/assets/js/data/stockData.js', function (data) {
-        var usdeur = [], volume = [], dataLength = data.length;
-        for (i = 0; i < dataLength; i++) {
-            usdeur.push([
-                data[i][0], // the date
-                data[i][1] // close
-            ]);
-
-            volume.push([
-                data[i][0], // the date
-                data[i][2] // the volume
-            ])
-        }
-
-        Highcharts.setOptions({
-            lang: {
-                weekdays: [fin_lang.dayname_ri, fin_lang.dayname_yi, fin_lang.dayname_er, fin_lang.dayname_san, fin_lang.dayname_si, fin_lang.dayname_wu, fin_lang.dayname_liu],
-                months: [fin_lang.months_1, fin_lang.months_2, fin_lang.months_3, fin_lang.months_4, fin_lang.months_5, fin_lang.months_6, fin_lang.months_7, fin_lang.months_8, fin_lang.months_9, fin_lang.months_10, fin_lang.months_11, fin_lang.months_12],
-                shortMonths: [fin_lang.monthname_1, fin_lang.monthname_2, fin_lang.monthname_3, fin_lang.monthname_4, fin_lang.monthname_5, fin_lang.monthname_6, fin_lang.monthname_7, fin_lang.monthname_8, fin_lang.monthname_9, fin_lang.monthname_10, fin_lang.monthname_11, fin_lang.monthname_12],
-                rangeSelectorFrom: [fin_lang.rangeSelectorFrom],
-                rangeSelectorTo: [fin_lang.rangeSelectorTo],
-                rangeSelectorZoom: [fin_lang.rangeSelectorZoom]
-            }
-        });
+    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+        // Create the chart
         $('#container').highcharts('StockChart', {
-            rangeSelector: {
-                buttons: [
-                    {
-                        type: 'day',
-                        count: 10,
-                        text: '10D'
-                    },
-                    {
-                        type: 'month',
-                        count: 1,
-                        text: '1M'
-                    },
-                    {
-                        type: 'month',
-                        count: 3,
-                        text: '3M'
-                    },
-                    {
-                        type: 'year',
-                        count: 1,
-                        text: '1Y'
-                    },
-                    {
-                        type: 'ytd',
-                        text: 'YTD'
-                    },
-                    {
-                        type: 'all',
-                        text: 'MAX'
-                    }
-                ],
-                selected: 2
-            },
-            yAxis: [
-                {
-                    height: 160,
-                    opposite: true,
-                    labels: {
-                        align: 'left',
-                        x: 3,
-                        y: 0
-                    },
-                    lineWidth: 0
-                },
-                {
-                    top: 220,
 
-                    height: 50,
-                    offset: 0,
-                    opposite: true,
-                    minorTickWidth: 3,
-                    labels: {
-                        align: 'left',
-                        x: 3,
-                        y: 0
-                    },
-                    lineWidth: 0
-                }
-            ],
-            title: {
-                align: 'left',
-                style: {fontSize: '12px'},
-                text: ""
+
+            rangeSelector: {
+                selected: 1,
+                inputEnabled: $('#container').width() > 480
             },
+
+            title: {
+                text: ''
+            },
+
             series: [
                 {
-                    name: fin_lang.chartClose,
-                    data: usdeur,
+                    name: '',
+                    data: data,
                     tooltip: {
                         valueDecimals: 2
-                    }
-                },
-                {
-                    type: 'column',
-                    name: fin_lang.chartVolume,
-                    yAxis: 1,
-                    data: volume,
-                    color: '#2f7ed8',
-                    tooltip: {
-                        valueDecimals: 0
                     }
                 }
             ]
         });
     });
+
+
+    //////////////////////////////////////////////////
+    (function () {
+
+        //analysts td h6+span
+        $('#analysts td h6+span').each(function () {
+            var th = $(this);
+            var p1 = parseFloat(th.text().replace('%', ''));
+            var con = th.parent().empty().css({width: 64, height: 64});
+
+            var ec = echarts.init(con[0]);
+
+            var labelTop = {
+                normal: {
+                    color: '#609aec',
+                    label: {
+                        show: true,
+                        position: 'center',
+                        textStyle: {
+                            fontWeight: 'bold',
+                            color: '#c5cad0',
+                            baseline: 'bottom'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                }
+            };
+            var labelBottom = {
+                normal: {
+                    color: '#e5e9ec',
+                    label: {
+                        show: true,
+                        position: 'center',
+                        formatter: function (a, b, c) {
+                            return 100 - c + '%'
+                        },
+                        textStyle: {
+                            lingHeight: 1.4,
+                            color: '#609aec',
+                            baseline: 'top'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                },
+                emphasis: {
+                    color: 'rgba(0,0,0,0)'
+                }
+            };
+            var radius = [27, 32];
+            option = {
+                toolbox: {
+                    show: false,
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        center: ['50%', '50%'],
+                        radius: radius,
+                        data: [
+                            {name: 'other', value: 100 - p1, itemStyle: labelBottom},
+                            {name: '准确率', value: p1, itemStyle: labelTop}
+                        ]
+                    }
+
+                ]
+            };
+
+            ec.setOption(option);
+
+        });
+
+
+    })();
 
 });

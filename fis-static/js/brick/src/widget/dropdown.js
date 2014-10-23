@@ -11,14 +11,18 @@ directives.add('ic-dropdown', function () {
         th.css({position:'relative'});
         var h = th.height();
 
-        var menu = th.find('[ic-role-dropdown-menu]').css({position:'absolute', top: h+'px', left:0});
+        var menu = th.find('[ic-role-dropdown-menu]').css({position:'absolute', top: h+'px'});
 
+        var timer;
         if(menu.size()){
             th.hover(function (e) {
-                menu.slideDown(300);
+                timer = setTimeout(function(){
+                    menu.show(300);
+                },200);
             },function(){
+                clearTimeout(timer);
                 menu.slideUp(200);
-            })
+            });
         }
 
         var con = th.find('[ic-role-dropdown-con]').css({position:'absolute',overflow:'hidden'});

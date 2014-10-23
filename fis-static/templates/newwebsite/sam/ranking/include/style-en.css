@@ -1,0 +1,27 @@
+.icon-day, .icon-week, .icon-month {
+    width:66px;
+    height: 66px;
+}
+.icon-day{
+    background: url(img/en/icon-day.png?__sprite) no-repeat 0 0;
+}
+.icon-day.active, .icon-day:hover {
+    background: url(img/en/icon-day-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-week{
+    background: url(img/en/icon-week.png?__sprite) no-repeat 0 0;
+}
+.icon-week.active, .icon-week:hover {
+    background: url(img/en/icon-week-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-month{
+    background: url(img/en/icon-month.png?__sprite) no-repeat 0 0;
+}
+.icon-month.active, .icon-month:hover {
+    background: url(img/en/icon-month-active.png?__sprite) no-repeat 0 0;
+}
+
+
+

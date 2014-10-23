@@ -10,6 +10,10 @@ var directives = {
         this._pool[name] = definition;
     },
 
+    get: function(name){
+        return this._pool[name];
+    },
+
     init: function (name) {
         var _pool = this._pool;
         for (var i in _pool) {

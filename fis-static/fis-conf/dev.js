@@ -54,6 +54,22 @@ fis.config.set('roadmap.path', [
         useHash: true
     },
     {
+        reg: /.*(?:include|src|demo)\/.+\.css/i,
+        release: '/assets/css$&',
+        url: '/assets/css$&',
+        useSprite: true,
+        isCssLike: true,
+        useHash: true
+    },
+    {
+        reg: /.*\/(.+\.css)/i,
+        release: '/assets/css/$1',
+        url: '/assets/css/$1',
+        useSprite: true,
+        isCssLike: true,
+        useHash: true
+    },
+    {
         reg: '**.css',
         release: '/assets/css$&',
         url: '/assets/css$&',
@@ -62,7 +78,7 @@ fis.config.set('roadmap.path', [
         useHash: true
     },
     {
-        reg: /.*\/(.+\.(?:jpg|png|gif))/i,
+        reg: /\/templates\/(.+\.(?:jpg|png|gif))/i,
         release: '/assets/img/$1',
         url: '/assets/img/$1'
     },
@@ -82,8 +98,8 @@ fis.config.set('settings.spriter.csssprites.layout', 'matrix');
 fis.config.merge({
     deploy : {
         local : {
-            to : './publish',
-            exclude : /\/(?:include|src|demo)\/[-_\w]+?\.(?:html|js|css)$/i
+            to : './_publish',
+            exclude : /(?:\/(?:include|src|demo)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
         }
     }
 });

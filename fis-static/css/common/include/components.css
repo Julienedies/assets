@@ -2,10 +2,65 @@
 组件样式定义
 =========================================================
  */
+.pagination, .pagination-1{
+    margin:1em 0;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+.pagination .num, .pagination .prev, .pagination .next,
+.pagination-1 .num, .pagination-1 .prev, .pagination-1 .next
+{
+    color: #ff9815;
+    background: #fff;
+    font-size:1.1em;
+    padding:0.2em 0.6em;
+    margin:0 0.2em;
+    cursor:pointer;
+    vertical-align: middle;
+}
+.pagination .num,
+.pagination-1 .num
+{
+    border: solid 1px transparent;
+}
+
+.pagination-1 .num{
+    font-size: 1em;
+    margin:0 0 0 -1px;
+    border:solid 1px #ff9815;
+}
+.pagination .num:hover, .pagination .num.active,
+.pagination-1 .num:hover, .pagination-1 .num.active
+{
+    color:#fff;
+    background: #ff9815;
+    border:solid 1px #ff9815;
+}
+.pagination .prev, .pagination .next{
+    font-weight: bold;
+    border:solid 1px #ff9815;
+}
+.pagination .prev.disabled, .pagination .next.disabled{
+    color: #aeb7c0;
+    border-color: #aeb7c0;
+}
+.text{
+    min-width: 12em;
+    padding:5px 0 5px 0.5em;
+    border: solid 1px #ccd1d9;
+    border-radius: 0.3em;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 32px;
+    height: 32px;
+    font-size: 12px;
+}
 
 .nav-2{
     position: relative;
-    top:2px;
     border-left:solid 1px #e6e9ed;
 }
 .nav-2 > li{
@@ -17,15 +72,17 @@
     border-bottom-color: #dc8412;
 }
 .nav-2 > li a{
-    color: inherit;
+    color: #434a54;
     padding:0 20px;
     display: inline-block;
     border-bottom: solid 4px transparent;
 }
-.nav-2 > li a:hover, .nav-2 > li.active a{
+.nav-2 > li a:hover,.nav-2 > li:hover > a, .nav-2 > li.active a{
     font-weight: bold;
     border-bottom-color: #ff9915;
 }
+
+
 
 .title-1{
     position: relative;
@@ -92,27 +149,39 @@
 }
 
 
-.menu-3{
-    margin-top:2px;
+.menu-3,.menu-3-1 {
+    display: block;
+    min-width:100%;
+    width:100%;
     background: #fff;
     border:solid 1px #e9eaeb;
     border-bottom: solid 2px #dcdddd;
     box-shadow: gray 2px 2px 6px;
 }
-.menu-3 li{
+.menu-3-1{
+    border-top:solid 1px #ccd1d9;
+}
+.menu-3{
+    margin-top:2px;
+}
+.menu-3 li, .menu-3-1 li{
     display: block;
-    width:100%;
+    float:none;
     padding:0;
     border-bottom:solid 1px #e9eaeb;
     text-align: center;
     line-height: 3;
 }
-.menu-3 li a{
+.menu-3-1 li{
+    border:none;
+}
+.menu-3 li a, .menu-3-1 li a{
     width:100%;
     padding: 0;
     display: inline-block;
+    color:#494f57;
 }
-.menu-3 li a:hover{
+.menu-3 li a:hover, .menu-3-1 li a:hover{
     background: #ff9915;
     color:#fff;
 }
@@ -158,14 +227,16 @@
 .btn{
     vertical-align: middle;
     display: inline-block;
-    padding:0.2em 0.5em;
+    padding:0.3em 0.5em 0.2em 0.5em;
+    line-height: 1.6;
     cursor: pointer;
+    border:none;
+    background: none;
     border-radius: 0.2em;
 }
 .btn-0,.btn-0-2{
     color: inherit;
     background: transparent;
-    border-radius: 0;
     border:none;
 }
 .btn-0-2{
