@@ -30,6 +30,18 @@ article p{
 table{
     width: 100%;
 }
+select{
+    font-size:inherit;
+    box-sizing: border-box;
+    padding:0 0.5em;
+    line-height: 3.2;;
+    height: 3.2em;
+    border-radius: 0.2em;;
+    border:solid 1px #ccd1d9;
+}
+i,b{
+    font-style:normal;
+}
 /*
 交互样式定义
 ========================================================
@@ -52,19 +64,24 @@ table{
     float:left;
 }
 
-
-
+/*垂直对齐，水平对齐 */
 .f-left, .fl{
     float: left;
 }
 .f-right, .fr{
     float: right;
 }
-.v-top{
+.v-top, .vt{
     vertical-align: top;
 }
 .v-middle, .vm{
     vertical-align: middle;
+}
+.vb{
+    vertical-align: bottom;
+}
+.hl{
+    text-align: left;
 }
 .h-center, .hc{
     text-align: center;
@@ -73,7 +90,12 @@ table{
     text-align: right;
 }
 
-/*border 样式定义 */
+/* 强制一行显示 */
+.line{
+    white-space:nowrap;
+}
+
+/*border background样式定义 */
 .br-1{
     border-right:solid 1px #e6e9ed;
 }
@@ -82,7 +104,12 @@ table{
     background: #e7edf7;
 }
 
-/* 强制一行显示 */
-.line{
-    white-space:nowrap;
+
+/* 半透明黑色背景图片 */
+.bg-t1{
+   background: url(../../../img/bg/transparent-bg.png) repeat 0 0;
+}
+
+.disabled{
+    cursor: not-allowed!important;
 }

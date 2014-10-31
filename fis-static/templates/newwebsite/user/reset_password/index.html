@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../css/common/common.css">
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
+    <![endif]-->
+    <link rel="stylesheet" href="../include/sign.css?__inline">
+    <link rel="stylesheet" href="include/style.css?__inline">
+    <!-- 如果是英文版本，则输出英文版本css补丁 -->
+    <link rel="stylesheet" href="../../../../css/common/common-en.css">
+    <script src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body class="sign">
+
+<div id="wraper">
+
+    <header class="wrap-1000 hr">
+        <a href="#" class="fl"><i class="icon icon-logo"></i> </a>
+        <div class="inline lg-60">
+            <a href="#" class="btn btn-0-1 t-14-1-k1">EN</a>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+
+    <div id="mainbody">
+
+        <div class="wrap-1000">
+
+            <!-- 场景1， 输入账号 -->
+            <section ic-scene="input-account">
+                <div class="hc"><i class="icon icon-step-1"></i> </div>
+
+                <div class="_panel">
+                    <h2 class="hc t-18-0-k1">请输入需要重设的用户帐号</h2>
+
+                    <table class="table-fixed-1">
+                        <tr>
+                            <td class="hr">
+                                <label><b>*</b>账号:</label>
+                            </td>
+                            <td>
+                                <input type="text" placeholder="" class="input-text-md" role="">
+                                <p class="warning" role="msg">手机号码 / 数库帐号 / 电子邮箱</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="padding-top:20px;">
+                                <button class="btn btn-1-1 disabled" role="">下一步</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 场景2， 选择重设密码方式 -->
+            <section ic-scene="select-resetPassword-type" ic-scene-active="1">
+                <div class="hc"><i class="icon icon-step-2"></i> </div>
+
+                <div class="_panel scene2">
+                    <h2 class="hc t-18-0-k1">请选择重设密码的方式</h2>
+
+                    <div>
+
+                        <h3 class="hc" style="padding: 20px 0;" ic-tabs="selectType" ic-tab-select=".icon" ic-tab-active="xx" ic-con-select=">table">
+                            <i class="icon icon-phone-type" style="margin-right:70px;">
+                                <b class="inline">手机号码</b>
+                            </i>
+                            <i class="icon icon-email-type">
+                                <b class="inline">电子邮箱</b>
+                            </i>
+                        </h3>
+
+                        <div ic-role-tabc="selectType">
+
+                            <table class="table-fixed-1" ic-role-con>
+                                <tr>
+                                    <td class="hr">
+                                        <label><b>*</b>验证码 :</label>
+                                    </td>
+                                    <td>
+                                        <div class="inline">
+                                            <input type="text" placeholder="" class="input-text-sm" role="captcha">
+                                            <p class="warning" role="msg" style="width:10em;">请输入图中的验证码，不区分大小写</p>
+                                        </div>
+                                        <div class="inline">
+                                            <img src="../include/cap.png" height="44" class="vm">
+                                            <div class="hc"><span class="btn" role="changeCaptcha">换一张</span></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="hr">
+                                        <label><b>*</b>手机验证码 :</label>
+                                    </td>
+                                    <td>
+                                        <div class="inline">
+                                            <input type="text" placeholder="" class="input-text-sm" role="phoneCaptcha">
+                                            <p class="warning" role="msg">输入手机收到的验证码</p>
+                                        </div>
+                                        <div class="inline">
+                                            <button class="btn btn-b1 btn-md" role="getPhoneCaptcha">获取手机验证码</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-1-1 disabled" role="">下一步</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table class="table-fixed-1" ic-role-con>
+                                <tr>
+                                    <td class="hr">
+                                        <label><b>*</b>电子邮箱:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="" class="input-text-md" role="phoneNum">
+                                        <p class="warning" role="msg">请输入有效的邮箱地址</p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="hr">
+                                        <label><b>*</b>验证码 :</label>
+                                    </td>
+                                    <td>
+                                        <div class="inline">
+                                            <input type="text" placeholder="" class="input-text-sm" role="captcha">
+                                            <p class="warning" role="msg" style="width:10em;">请输入图中的验证码，不区分大小写</p>
+                                        </div>
+                                        <div class="inline">
+                                            <img src="../include/cap.png" height="44" class="vm">
+                                            <div class="hc"><span class="btn" role="changeCaptcha">换一张</span></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-1-1" role="">发送验证邮件</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+    </div>
+
+    <link rel="import" href="../../../include/footer/footer.html?__inline">
+
+</div>
+
+<script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
+<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/plugins.js"></script>
+<script src="../../../../js/brick/brick.js"></script>
+<script src="../../../../js/common/lang.js"></script>
+<script src="../../../../js/common/common.js"></script>
+<script>
+    $('[ic-timer]').on('ic-timer.end', function(){
+        alert('跳转.');
+    });
+</script>
+</body>
+</html>

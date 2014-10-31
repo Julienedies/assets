@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../css/common/common.css">
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
+    <![endif]-->
+    <link rel="stylesheet" href="../include/sign.css?__inline">
+    <link rel="stylesheet" href="include/style.css?__inline">
+    <!-- 如果是英文版本，则输出英文版本css补丁 -->
+    <link rel="stylesheet" href="../../../../css/common/common-en.css">
+    <script src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body class="sign">
+
+<div id="wraper">
+
+    <header class="wrap-1000 hr">
+        <a href="#" class="fl"><i class="icon icon-logo"></i> </a>
+        <div class="inline lg-60">
+            <a href="#" class="btn btn-0-1 t-14-1-k1">EN</a>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+
+    <div id="mainbody">
+
+        <div class="wrap-1000">
+
+            <!-- 场景3， 重设密码 -->
+            <section ic-scene="resetPassword" ic-scene-active="1">
+
+                <div class="hc"><i class="icon icon-step-3"></i> </div>
+
+                <div class="_panel">
+
+                    <h2 class="hc t-18-0-k1 mb-15">请设置新密码</h2>
+
+                    <table class="table-fixed-1">
+                        <tr>
+                            <td class="hr">
+                                <label><b>*</b>密码:</label>
+                            </td>
+                            <td>
+                                <input type="password" placeholder="" class="input-text-md" role="pass">
+
+                                <p class="warning" role="msg">密码长度不得小于8位，可使用数字、字母和符号</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="hr">
+                                <label><b>*</b>确认密码:</label>
+                            </td>
+                            <td>
+                                <input type="password" placeholder="" class="input-text-md" role="pass">
+
+                                <p class="warning" role="msg">请再次输入密码</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-1-1" role="" ic-scene-next="resetPassOk">完成重设</button>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </section>
+
+
+            <!-- 场景4， 密码设置成功 -->
+            <section ic-scene="resetPassOk">
+
+                <h2 class="hc t-24-1-w">重设成功！</h2>
+
+                <div class="_panel fc-a3 hc lg-42" style="padding: 30px;">
+                    <div><i class="icon icon-dialog-ok"></i></div>
+                    <div class="fz-24 fc-g1 mt-30">密码重设成功</div>
+                    <div class="fz-18 fc-a1">请使用新密码登录</div>
+                    <div class="lg-56">
+                        <b ic-timer="a" ic-timer-count="6">6</b>
+                        秒后即将跳转到登录页面
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <link rel="import" href="../../../include/footer/footer.html?__inline">
+
+</div>
+
+<script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
+<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/plugins.js"></script>
+<script src="../../../../js/brick/brick.js"></script>
+<script src="../../../../js/common/lang.js"></script>
+<script src="../../../../js/common/common.js"></script>
+<script>
+    $('[ic-timer]').on('ic-timer.end', function(){
+    });
+</script>
+</body>
+</html>

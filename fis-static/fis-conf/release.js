@@ -106,7 +106,7 @@ fis.config.merge({
     deploy : {
         remote : {
             to : '../',
-            exclude : /(?:\/(?:include|src|demo|data)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
+            exclude : /(?:\/(?:include|src|demo|example|data|test)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
         }
     }
 });

@@ -13,7 +13,6 @@ $(function () {
         // Create the chart
         $('#container').highcharts('StockChart', {
 
-
             rangeSelector: {
                 selected: 1,
                 inputEnabled: $('#container').width() > 480

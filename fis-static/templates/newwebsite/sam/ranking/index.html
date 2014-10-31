@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +29,7 @@
 
         <div class="wrap-1000 mh-400">
 
-            <section style="position: relative; padding:60px 0 0 0;">
+            <section style="position: relative; padding:20px 0 0 0;">
 
                 <div id="section" class="hc">
                     <ul class="inline-list pagination-1" ic-tabs="section" ic-tab-select=".num">
@@ -47,7 +43,6 @@
                     <ul class="inline">
                         <li>内地市场</li>
                         <li></li>
-                        <li></li>
                     </ul>
                 </div>
 
@@ -57,7 +52,13 @@
                     <li><i class="icon icon-month"></i></li>
                 </ul>
 
-                <div class="inline" style="width:460px; padding:20px 40px 90px 0; border-right:4px solid #e6e9ed;">
+                <div class="hc bg-t1" style="position:absolute;display: none; pointer-events: none;" role="operation">
+                    <a href="javascript:void (0);" class="fc-y1">加入对比</a>
+                    <i class="inline vm" style="margin:0 20px;min-height:32px; border-right:solid 1px #878788;"></i>
+                    <a href="javascript:void (0);" class="fc-y1">查看成分股</a>
+                </div>
+
+                <div class="inline" style="width:460px; padding:20px 40px 70px 0; border-right:4px solid #e6e9ed;">
                     <h3 class="hc"><b>涨幅排名</b></h3>
                     <table class="table-3">
                         <tr>
@@ -88,10 +89,24 @@
                                     class="vm t-16-1-up">+1.95%</span></td>
                             <td class="t-16-1-a3">5</td>
                         </tr>
+                        <tr>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">石油与天然气的勘探与生产</td>
+                            <td class="hr"><i class="icon icon-md-up"></i>&nbsp; &nbsp;<span
+                                    class="vm t-16-1-up">+1.95%</span></td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">石油与天然气的勘探与生产</td>
+                            <td class="hr"><i class="icon icon-md-up"></i>&nbsp; &nbsp;<span
+                                    class="vm t-16-1-up">+1.95%</span></td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
                     </table>
                 </div>
 
-                <div class="inline" style="width:460px; padding:20px 0 90px 30px; ">
+                <div class="inline" style="width:460px; padding:20px 0 70px 30px; ">
                     <h3 class="hc"><b>跌幅排名</b></h3>
                     <table class="table-3">
                         <tr>
@@ -122,22 +137,61 @@
                             </td>
                             <td class="t-16-1-a3">5</td>
                         </tr>
+                        <tr>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">保健护理产品经销商</td>
+                            <td class="hr"><i class="icon icon-md-down"></i>&nbsp; &nbsp;<span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">保健护理产品经销商</td>
+                            <td class="hr"><i class="icon icon-md-down"></i>&nbsp; &nbsp;<span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
                     </table>
                 </div>
 
             </section>
 
-
-            <section>
-                <h2 class="hc"><span>行业对比</span></h2>
-
-                <div>所选行业：
-                    <button class="btn btn-1-1">清空</button>
-                </div>
-            </section>
-
-
         </div>
+
+
+        <section style="background: #f5f7fa; border-top:solid 2px #f1f4f8;">
+
+            <div class="wrap-1000">
+                <div>
+                    <h2 class="hc"><span>行业对比</span></h2>
+
+                    <div class="fz-16"
+                         style="border-bottom: solid 2px #e6e9ed; padding: 10px 0 5px 1em; position: relative;">
+                        <strong class="vm">所选行业：</strong>
+
+                        <div class="inline vm" ic-tpl="label">
+                        <span>
+                            <b class="vm fc-y1" ic-bind="name">保健护理服务</b>
+                            <i class="icon icon-clear"></i>
+                        </span>
+                            &nbsp;&nbsp;&nbsp;
+                        <span>
+                            <b class="vm fc-b1" ic-bind="name">航空航天与国防</b>
+                            <i class="icon icon-clear"></i>
+                        </span>
+                        </div>
+
+                        <button class="btn btn-label btn-1-1 fz-16" style="position: absolute; right: 0; bottom: -2px;">
+                            清空
+                        </button>
+                    </div>
+                </div>
+
+                <div id="chart" style="width:860px; height: 300px; margin:30px auto;">
+
+                </div>
+            </div>
+        </section>
 
     </div>
 

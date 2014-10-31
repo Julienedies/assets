@@ -1,0 +1,55 @@
+.icon-step-1,
+.icon-step-2,
+.icon-step-3
+{
+    width: 467px;
+    height: 68px;
+    background: url(step-1.png?__sprite) no-repeat 0 0;
+}
+.icon-step-2{
+    background: url(step-2.png?__sprite) no-repeat 0 0;
+}
+.icon-step-3{
+    background: url(step-3.png?__sprite) no-repeat 0 0;
+}
+
+.icon-phone-type,
+.icon-email-type
+{
+    width:104px;
+    height: 104px;
+    background: url(icon-phone-type.png?__sprite) no-repeat 0 0;
+}
+.icon-phone-type.active{
+    background: url(icon-phone-type-active.png?__sprite) no-repeat 0 0;
+}
+.icon-email-type{
+    background: url(icon-email-type.png?__sprite) no-repeat 0 0;
+}
+.icon-email-type.active{
+    background: url(icon-email-type-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-phone-type.disabled{
+    background: url(icon-phone-type-disabled.png?__sprite) no-repeat 0 0;
+}
+.icon-email-type.disabled{
+    background: url(icon-email-type-disabled.png?__sprite) no-repeat 0 0;
+}
+
+._panel{
+    margin-top:40px;
+}
+
+.scene2 i b{
+    margin-top:62px;
+    color:#48cfad;
+    font-weight: normal;
+    font-style:normal;
+}
+.scene2 i.active b{
+    color: #fff;
+}
+.scene2 i.disabled b{
+    color: #ccd1d9;
+}

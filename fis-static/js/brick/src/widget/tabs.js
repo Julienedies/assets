@@ -8,19 +8,20 @@ directives.add('ic-tabs', function () {
 
         var th = $(this);
         var name = th.attr('ic-tabs');
-        var tabSelect= th.attr('ic-tab-select');
+        var tabSelect = th.attr('ic-tab-select');
         var conSelect = th.attr('ic-con-select');
+        var activeTab = th.attr('ic-tab-active')
 
-        if(tabSelect){
-            th.find(tabSelect).each(function(i){
+        if (tabSelect) {
+            th.find(tabSelect).each(function (i) {
                 $(this).attr('ic-role-tab', i);
             });
         }
 
-        tabc = $('[ic-role-tabc=' + name + ']');
+        var tabc = $('[ic-role-tabc=' + name + ']');
 
-        if(tabc && conSelect){
-            tabc.find(conSelect).each(function(i){
+        if (tabc && conSelect) {
+            tabc.find(conSelect).each(function (i) {
                 $(this).attr('ic-role-con', i);
             });
         }
@@ -32,16 +33,20 @@ directives.add('ic-tabs', function () {
 
         }
 
-        var activeTab = th.find('[ic-role-tab]').first().addClass('active');
+        if(activeTab){
+            activeTab = th.find('[ic-role-tab=' + activeTab + ']');
+        }else{
+            activeTab = th.find('[ic-role-tab]').first();
+        }
 
-        var activeCon = activeTab.attr('ic-role-tab');
+        var activeCon = activeTab.addClass('active').attr('ic-role-tab');
 
         activeCon = tabc.length && tabc.find('[ic-role-con]').hide().filter('[ic-role-con=' + activeCon + ']').show();
 
         th.delegate('[ic-role-tab]', 'click', tabc.length ? call_1 : call_2);
-        
 
-        function call_1(e){
+
+        function call_1(e) {
             call_2(e, this);
 
             var con = activeTab.attr('ic-role-tab');
@@ -49,11 +54,11 @@ directives.add('ic-tabs', function () {
             activeCon = tabc.find('[ic-role-con=' + con + ']').show();
         }
 
-        function call_2(e, that){
+        function call_2(e, that) {
             activeTab && activeTab.removeClass('active');
             activeTab = $(that || this).addClass('active');
-            th.trigger('ic-tabs.'+name+'.change', {activeTab:activeTab});
-            _cc('ic-tabs.'+name+'.change', {activeTab:activeTab});
+            th.trigger('ic-tabs.' + name + '.change', {activeTab: activeTab});
+            _cc('ic-tabs.' + name + '.change', {activeTab: activeTab});
         }
 
 

@@ -205,6 +205,10 @@ var controllers = (function (){
                 }
 
             }
+        },
+
+        _look: function(){
+            return _ctrls;
         }
     };
 

@@ -14,13 +14,28 @@
         __inline('src/createRender.js');
         __inline('src/init.js');
 
+        __inline('src/widget/$extension.js');
         __inline('src/widget/slider.js');
         __inline('src/widget/tabs.js');
         __inline('src/widget/dropdown.js');
         __inline('src/widget/pagination.js');
+        __inline('src/widget/scene.js');
+        __inline('src/widget/timer.js');
+        __inline('src/widget/dialog.js');
+        __inline('src/widget/form.js');
+        __inline('src/widget/ajax.js');
+
 
         $(function(){
-            directives.init();
+
+            setTimeout(function(){
+                //console.table(brick.controllers._look());
+                controllers.init();
+                directives.init();
+            }, 30);
+
         });
+
+
 
 })(window);

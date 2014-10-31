@@ -127,6 +127,11 @@
     height: 52px;
     background: url(../../../img/icons/icon-down-2.png?__sprite) no-repeat 0 0;
 }
+.icon-up-3{
+    width:16px;
+    height: 20px;
+    background: url(../../../img/icons/icon-up-3.png?__sprite) no-repeat 0 0;
+}
 .icon-md-up, .icon-md-down{
     width: 23px;
     height: 22px;
@@ -162,6 +167,74 @@
     height: 24px;
     background: url(../../../img/icons/icon-clear.png?__sprite) no-repeat 0 0;
 }
+.icon-search-1{
+    width:44px;
+    height: 40px;
+    background: url(../../../img/icons/icon-search-1.png?__sprite) no-repeat 0 0;
+}
+.icon-pdf{
+    width:43px;
+    height: 43px;
+    background: url(../../../img/icons/icon-pdf.png?__sprite) no-repeat 0 0;
+}
+
+/* dialog 相关 */
+.icon-dialog-ok{
+    width:73px;
+    height: 73px;
+    background: url(../../../img/icons/icon-dialog-ok.png?__sprite) no-repeat 0 0;
+}
+.icon-dialog-success{
+    width:73px;
+    height: 73px;
+    background: url(../../../img/icons/icon-dialog-success.png?__sprite) no-repeat 0 0;
+}
+.icon-dialog-warning{
+    width:77px;
+    height: 65px;
+    background: url(../../../img/icons/icon-dialog-warning.png?__sprite) no-repeat 0 0;
+}
+
+.icon-dialog-disabled{
+    width:72px;
+    height: 63px;
+    background: url(../../../img/icons/icon-dialog-disabled.png?__sprite) no-repeat 0 0;
+}
+.icon-dialog-error{
+    width:76px;
+    height: 63px;
+    background: url(../../../img/icons/icon-dialog-error.png?__sprite) no-repeat 0 0;
+}
+.icon-dialog-file-error{
+    width:72px;
+    height: 62px;
+    background: url(../../../img/icons/icon-dialog-file-error.png?__sprite) no-repeat 0 0;
+}
+
+/* 我的股票相关 */
+
+.icon-view{
+    width:28px;
+    height: 28px;
+    background: url(../../../img/icons/icon-view.png?__sprite) no-repeat 0 0;
+}
+.icon-parse{
+    width:28px;
+    height: 28px;
+    background: url(../../../img/icons/icon-parse.png?__sprite) no-repeat 0 0;
+}
+.icon-del{
+    width:28px;
+    height: 28px;
+    background: url(../../../img/icons/icon-del.png?__sprite) no-repeat 0 0;
+}
+.icon-return{
+    width:26px;
+    height: 25px;
+    background: url(../../../img/icons/icon-return.png?__sprite) no-repeat 0 0;
+}
+
+
 /* footer part */
 .icon-wx{
     width:47px;

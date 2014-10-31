@@ -98,8 +98,7 @@ fis.config.set('settings.spriter.csssprites.layout', 'matrix');
 fis.config.merge({
     deploy : {
         local : {
-            to : './_publish',
-            exclude : /(?:\/(?:include|src|demo)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
+            to : './_publish'
         }
     }
 });
