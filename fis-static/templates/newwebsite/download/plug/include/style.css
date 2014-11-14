@@ -1,0 +1,27 @@
+#mainbody header{
+    height: 405px;
+    background: url(img/bg-blue-gird.png) repeat 0 0;
+}
+
+#mainbody{
+    font-size: 18px;
+}
+
+section{
+    padding:40px 0;
+    border-bottom: solid 1px #e6e9ed;
+    clear:both;
+}
+#mainbody p{
+    font-size:18px;
+    font-family: inherit;
+}
+section h3{
+    font-size:36px;
+}
+
+section:after{
+    content: '';
+    display: block;
+    clear: both;
+}

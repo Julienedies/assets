@@ -1,0 +1,88 @@
+.icon-sign-peple{width:33px;
+     height: 32px;background-repeat: no-repeat;}
+.icon-sign-phone{width:33px;
+    height: 32px;background-repeat: no-repeat;}
+.icon-sign-email{width:33px;
+    height: 32px;background-repeat: no-repeat;}
+
+
+#reg-prompt-box{
+    display: none;
+}
+
+
+#mainbody{padding-top: 60px;
+    min-height: 500px;
+    border-top:solid 4px #ff9915;
+    border-bottom:solid 4px #ff9915;background-repeat: no-repeat;}
+
+.panel, ._panel, ._panel-1{
+    width:563px;
+    padding:30px 20px;
+    margin: 20px auto;
+    background: #fff;
+}
+._panel-1{
+    width: 603px;
+    padding: 0;
+}
+.btn-group .btn{
+    text-align: center;
+    padding:0;
+    min-width:200px;
+    width:33%;
+    line-height: 70px;
+    border-right:solid 1px #cfd8e5;
+    background: #e7f1ff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-group .btn.active{
+    background: #fff;
+}
+
+table td{
+    vertical-align: top;
+    padding:5px 7px;
+}
+
+label{
+    color:#434a54;
+    white-space: nowrap;
+    font-weight: bold;
+    line-height: 36px;
+}
+
+label b{
+    color:red;
+    margin-right:0.5em;
+}
+
+.tip{
+    font-family: inherit;
+    color:#aab2bd;
+}
+[ic-scene="select"]{
+    margin:0 -20px;
+    height: 500px;
+    background: #1b1c3a;
+}
+[ic-scene="select"] .a, [ic-scene="select"] .b{padding-top:150px;
+    width: 398px;;
+    height: 248px;
+    
+    color: #fff;
+    cursor: pointer ;background-repeat: no-repeat;}
+[ic-scene="select"] .b{margin-left:90px;background-repeat: no-repeat;}
+
+[ic-scene="select"] h3{
+    font-size:32px;
+}
+[ic-scene="select"] h6{
+     font-size:16px;
+ }
+
+[role="student-reg-item"]{
+    display: none;
+}#mainbody{background-position:0px 0px}[ic-scene="select"] .a, [ic-scene="select"] .b{background-position:-1057px 0px}[ic-scene="select"] .b{background-position:-1057px -408px}.icon-sign-peple{background-position:-1057px -816px}.icon-sign-phone{background-position:-1100px -816px}.icon-sign-email{background-position:-1143px -816px}#mainbody,[ic-scene="select"] .a, [ic-scene="select"] .b,[ic-scene="select"] .b,.icon-sign-peple,.icon-sign-phone,.icon-sign-email{background-image: url(/assets/img/newwebsite/user/include/sign_z.png)}

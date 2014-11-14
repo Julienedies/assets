@@ -1,0 +1,72 @@
+.info .title-2 {
+    margin: 20px 0 15px 0;
+}
+
+#summary {
+    border-top: none;
+    padding: 5px 18px;
+    border: solid 1px #e6e9ed;
+}
+
+#summary .one {
+    width: 200px;
+    position: relative;
+    border-right: solid 1px #e6e9ed;
+}
+
+#summary .two {
+    width: 220px;
+    padding-left: 15px;
+}
+
+#summary .two .fl {
+    color: #aab2bd;
+}
+
+#chart-box,
+#rel-box {
+    margin-top: 20px;
+    height: 480px;
+}
+
+#chart-box hgroup,
+#rel-box hgroup {
+    padding: 1px 10px;
+    border-top: solid 1px #e6e9ed;
+    border-bottom: solid 1px #e6e9ed;
+}
+
+#chart-box ul,
+#rel-box ul {
+    padding: 10px 0 0 0;
+}
+
+#chart-box {
+
+}
+
+#rel-box {
+    border: solid 1px #e6e9ed;
+    border-top: none;
+}
+
+#analysts tr,
+#sector li {
+    border-bottom: solid 1px #e6e9ed;
+}
+
+#analysts td {
+    height: 66px;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+
+#analysts td .line {
+    padding: 0 15px;
+    line-height: 66px;
+}
+
+#sector li {
+    height: 66px;
+    padding: 16px 0 4px 0;
+}

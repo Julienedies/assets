@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vendor/main.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/common/common.css">
+<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/common/ie-hack.css">
+    <![endif]-->
+    <style>.icon-day, .icon-week, .icon-month {
+    width:66px;
+    height: 66px;
+}
+.icon-day{
+     background: url(/assets/img/newwebsite/sam/ranking/include/img/icon-day.png?__sprite) no-repeat 0 0;
+ }
+.icon-day.active, .icon-day:hover {
+    background: url(/assets/img/newwebsite/sam/ranking/include/img/icon-day-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-week{
+    background: url(/assets/img/newwebsite/sam/ranking/include/img/icon-week.png?__sprite) no-repeat 0 0;
+}
+.icon-week.active, .icon-week:hover {
+    background: url(/assets/img/newwebsite/sam/ranking/include/img/icon-week-active.png?__sprite) no-repeat 0 0;
+}
+
+.icon-month{
+    background: url(/assets/img/newwebsite/sam/ranking/include/img/icon-month.png?__sprite) no-repeat 0 0;
+}
+.icon-month.active, .icon-month:hover {
+    background: url(/assets/img/newwebsite/sam/ranking/include/img/icon-month-active.png?__sprite) no-repeat 0 0;
+}
+
+
+
+#mainbody{
+    background: url(/assets/img/newwebsite/sam/ranking/include/img/bg-1.png) no-repeat 50% 0;
+}
+
+.table-3 td{
+    border:none;
+    border-bottom:solid 1px #e6e9ed;
+    position: relative;
+}
+
+
+h3{
+    position: relative;
+    top:-40px;
+}
+h3 b{
+    font-size:24px;
+    padding:0.3em 1em;
+    font-weight: normal;
+    color: #fff;
+    background: #545895;
+    box-shadow: 3px 3px 3px rgba(160,160,160,.6);
+}
+#section{
+    position: relative;
+    top:-10px;
+}
+
+#market{
+    position: absolute; top:64px; width:100%; text-align: center;
+}
+#market ul{
+    background: #fff;
+    border-radius: 0.2em;
+    border:solid 3px #ff9915;
+}
+#market ul li{
+    padding:0.1em 1em;
+}
+/*#market ul li.active, #market ul li:hover{
+    background: #ff9915;
+    color: #fff;
+}*/
+#date{
+    position: absolute; left: 50%; top:100px; margin-left:-30px;
+}
+
+#date li{
+    margin:40px 0;
+}
+
+h2{
+    position: relative;
+    top:-20px;
+}
+
+h2 span{
+    font-size:18px;
+    color: #fff;
+    background: #1a1c39;
+    padding:0.3em 1em;
+    border-radius: 0.3em;
+}
+
+.operation{
+    display: none;
+    font-size:14px;
+    font-weight: normal;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 20;
+    width:0;
+}
+
+.operation i{
+    margin:0 20px;min-height:32px; border-right:solid 1px #878788;
+}</style>
+    <!-- 如果是英文版本，则输出英文版本css补丁 -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/common/common-en.css">
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+<script>
+        //行业数据
+        var data = {"asc":{"0":{"code":"CP001","change":-6.19,"date":"2014-06-10","count":10,"name":"\u7535\u8111\u786c\u4ef6"},"1":{"code":"CT001","change":-4.69,"date":"2014-06-10","count":5,"name":"\u91d1\u5c5e\u4e0e\u73bb\u7483\u5bb9\u5668"},"2":{"code":"CC003","change":-3.6,"date":"2014-06-10","count":11,"name":"\u5316\u80a5\u4e0e\u519c\u7528\u836f\u5242"},"3":{"code":"MM001","change":-2.59,"date":"2014-06-10","count":10,"name":"\u94dd"},"4":{"code":"RE004","change":-2.41,"date":"2014-06-10","count":9,"name":"\u623f\u5730\u4ea7\u670d\u52a1"},"5":{"code":"MM004001","change":-2.07,"date":"2014-06-10","count":15,"name":"\u5176\u4ed6\u6709\u8272\u91d1\u5c5e"},"6":{"code":"MM017","change":-1.89,"date":"2014-06-10","count":7,"name":"\u7a00\u6709\u91d1\u5c5e"},"7":{"code":"MM008","change":-1.59,"date":"2014-06-10","count":13,"name":"\u9ec4\u91d1"},"8":{"code":"IT002","change":-1.54,"date":"2014-06-10","count":4,"name":"\u6570\u636e\u5904\u7406\u4e0e\u5916\u5305\u670d\u52a1"},"9":{"code":"PF001","change":-1.39,"date":"2014-06-10","count":10,"name":"\u6797\u4e1a\u4ea7\u54c1"},"10":{"code":"HC004","change":-1.3,"date":"2014-06-10","count":21,"name":"\u4fdd\u5065\u62a4\u7406\u670d\u52a1"},"11":{"code":"MM002","change":-1.08,"date":"2014-06-10","count":18,"name":"\u94dc\u548c\u94bc"},"12":{"code":"MM011","change":-0.99,"date":"2014-06-10","count":8,"name":"\u8d35\u91cd\u91d1\u5c5e\u4e0e\u77ff\u77f3"},"13":{"code":"FN002","change":-0.58,"date":"2014-06-10","count":4,"name":"\u4e92\u52a9\u50a8\u84c4\u94f6\u884c\u4e0e\u62b5\u62bc\u8d37\u6b3e"},"14":{"code":"ME003","change":-0.5,"date":"2014-06-10","count":6,"name":"\u6709\u7ebf\u548c\u536b\u661f\u7535\u89c6"},"15":{"code":"SW001","change":-0.42,"date":"2014-06-10","count":24,"name":"\u5e94\u7528\u8f6f\u4ef6"},"16":{"code":"EC002","change":0.17,"date":"2014-06-10","count":15,"name":"\u7535\u5b50\u5236\u9020\u670d\u52a1"},"17":{"code":"CG003","change":0.19,"date":"2014-06-10","count":20,"name":"\u978b\u7c7b"},"18":{"code":"ST003","change":0.37,"date":"2014-06-10","count":7,"name":"\u98df\u54c1\u96f6\u552e"},"19":{"code":"PF002","change":0.43,"date":"2014-06-10","count":11,"name":"\u7eb8\u5236\u54c1"},"20":{"code":"TR004","change":0.58,"date":"2014-06-10","count":8,"name":"\u673a\u573a\u670d\u52a1"},"21":{"code":"HP001","change":0.63,"date":"2014-06-10","count":4,"name":"\u5c45\u5bb6\u7528\u54c1"},"22":{"code":"WC002","change":0.71,"date":"2014-06-10","count":6,"name":"\u7efc\u5408\u7535\u4fe1\u4e1a\u52a1"},"23":{"code":"ST004","change":0.72,"date":"2014-06-10","count":7,"name":"\u5927\u5356\u573a\u4e0e\u8d85\u5e02"},"24":{"code":"CS008","change":0.76,"date":"2014-06-10","count":11,"name":"\u6d88\u95f2\u8bbe\u65bd"},"25":{"code":"CS004","change":0.87,"date":"2014-06-10","count":13,"name":"\u7279\u6b8a\u6d88\u8d39\u8005\u670d\u52a1"},"26":{"code":"CS003","change":1.34,"date":"2014-06-10","count":9,"name":"\u6559\u80b2\u670d\u52a1"},"27":{"code":"HA004","change":1.5,"date":"2014-06-10","count":12,"name":"\u5bb6\u5ead\u88c5\u9970\u54c1"},"28":{"code":"CR001","change":1.56,"date":"2014-06-10","count":23,"name":"\u7ecf\u9500\u5546"},"29":{"code":"PP001","change":1.64,"date":"2014-06-10","count":15,"name":"\u4e2a\u4eba\u7528\u54c1"},"30":{"code":"ST002","change":1.67,"date":"2014-06-10","count":11,"name":"\u98df\u54c1\u5206\u9500\u5546"},"31":{"code":"MM009","change":1.77,"date":"2014-06-10","count":27,"name":"\u7164\u4e0e\u6d88\u8d39\u7528\u71c3\u6599"},"32":{"code":"CR009","change":1.89,"date":"2014-06-10","count":17,"name":"\u6c7d\u8f66\u96f6\u552e"},"33":{"code":"PS005","change":2.31,"date":"2014-06-10","count":23,"name":"\u7efc\u5408\u652f\u6301\u670d\u52a1"},"34":{"code":"BE001","change":2.34,"date":"2014-06-10","count":7,"name":"\u5564\u9152\u917f\u9020\u5546"},"35":{"code":"CR003","change":2.53,"date":"2014-06-10","count":29,"name":"\u767e\u8d27\u5546\u5e97"},"36":{"code":"MM018","change":2.61,"date":"2014-06-10","count":26,"name":"\u94a2\u94c1"},"37":{"code":"FP002","change":2.8,"date":"2014-06-10","count":59,"name":"\u5305\u88c5\u98df\u54c1\u4e0e\u8089\u7c7b"},"38":{"code":"FA003","change":3.06,"date":"2014-06-10","count":74,"name":"\u5efa\u7b51\u4e0e\u5de5\u7a0b"},"39":{"code":"CM001","change":3.25,"date":"2014-06-10","count":31,"name":"\u5efa\u7b51\u6750\u6599"},"40":{"code":"HA003","change":3.26,"date":"2014-06-10","count":5,"name":"\u5bb6\u7528\u5668\u5177\u4e0e\u7279\u6b8a\u6d88\u8d39\u54c1"},"41":{"code":"CR010","change":3.36,"date":"2014-06-10","count":4,"name":"\u5bb6\u5ead\u88c5\u9970\u96f6\u552e"},"42":{"code":"IT001","change":3.53,"date":"2014-06-10","count":50,"name":"\u4fe1\u606f\u79d1\u6280\u54a8\u8be2\u4e0e\u5176\u5b83\u670d\u52a1"},"43":{"code":"FP001","change":3.54,"date":"2014-06-10","count":21,"name":"\u519c\u4ea7\u54c1"},"44":{"code":"PH002","change":3.54,"date":"2014-06-10","count":35,"name":"\u5236\u836f"},"45":{"code":"RE002","change":3.69,"date":"2014-06-10","count":272,"name":"\u623f\u5730\u4ea7\u7ecf\u8425\u516c\u53f8"},"46":{"code":"MM004","change":3.7,"date":"2014-06-10","count":26,"name":"\u591a\u79cd\u91d1\u5c5e\u4e0e\u91c7\u77ff"},"47":{"code":"EC003","change":3.72,"date":"2014-06-10","count":23,"name":"\u6280\u672f\u4ea7\u54c1\u7ecf\u9500\u5546"},"48":{"code":"TR001","change":3.72,"date":"2014-06-10","count":49,"name":"\u822a\u7a7a\u8d27\u8fd0\u4e0e\u7269\u6d41"},"49":{"code":"PS008","change":3.74,"date":"2014-06-10","count":21,"name":"\u8c03\u67e5\u548c\u54a8\u8be2\u670d\u52a1"},"time":"2014-11-10 15:53"},"desc":{"0":{"code":"CP002","change":30.17,"date":"2014-06-10","count":5,"name":"\u7535\u8111\u5b58\u50a8\u4e0e\u5916\u56f4\u8bbe\u5907"},"1":{"code":"CT002","change":27.64,"date":"2014-06-10","count":22,"name":"\u7eb8\u6750\u6599\u5305\u88c5"},"2":{"code":"WC001","change":23.31,"date":"2014-06-10","count":22,"name":"\u65e0\u7ebf\u7535\u4fe1\u4e1a\u52a1"},"3":{"code":"ME005","change":19.95,"date":"2014-06-10","count":32,"name":"\u7535\u5f71\u4e0e\u5a31\u4e50"},"4":{"code":"CR005","change":19.15,"date":"2014-06-10","count":4,"name":"\u4e92\u8054\u7f51\u96f6\u552e"},"5":{"code":"CR006","change":16.8,"date":"2014-06-10","count":7,"name":"\u7535\u8111\u4e0e\u7535\u5b50\u4ea7\u54c1\u96f6\u552e"},"6":{"code":"EG001","change":13.16,"date":"2014-06-10","count":17,"name":"\u77f3\u6cb9\u5929\u7136\u6c14\u8bbe\u5907\u4e0e\u670d\u52a1"},"7":{"code":"EC001","change":11.57,"date":"2014-06-10","count":43,"name":"\u7535\u5b50\u5143\u4ef6"},"8":{"code":"SS001","change":11.45,"date":"2014-06-10","count":28,"name":"\u4e92\u8054\u7f51\u8f6f\u4ef6\u4e0e\u670d\u52a1"},"9":{"code":"SW002","change":11.33,"date":"2014-06-10","count":6,"name":"\u5bb6\u5ead\u5a31\u4e50\u8f6f\u4ef6"},"10":{"code":"UT003","change":11.17,"date":"2014-06-10","count":16,"name":"\u71c3\u6c14\u516c\u7528\u4e8b\u4e1a"},"11":{"code":"PS002","change":10.87,"date":"2014-06-10","count":16,"name":"\u73af\u5883\u4e0e\u8bbe\u65bd\u670d\u52a1"},"12":{"code":"FN018","change":10.53,"date":"2014-06-10","count":7,"name":"\u8d22\u4ea7\u4e0e\u610f\u5916\u4f24\u5bb3\u4fdd\u9669"},"13":{"code":"PH001","change":10.48,"date":"2014-06-10","count":17,"name":"\u751f\u7269\u79d1\u6280"},"14":{"code":"FA005","change":10.31,"date":"2014-06-10","count":11,"name":"\u91cd\u578b\u7535\u6c14\u8bbe\u5907"},"15":{"code":"ST001","change":9.96,"date":"2014-06-10","count":11,"name":"\u836f\u54c1\u96f6\u552e"},"16":{"code":"FN016","change":9.88,"date":"2014-06-10","count":11,"name":"\u4eba\u5bff\u4e0e\u5065\u5eb7\u4fdd\u9669"},"17":{"code":"SE002","change":9.71,"date":"2014-06-10","count":25,"name":"\u534a\u5bfc\u4f53\u4ea7\u54c1"},"18":{"code":"EG004","change":9.65,"date":"2014-06-10","count":8,"name":"\u77f3\u6cb9\u4e0e\u5929\u7136\u6c14\u7684\u50a8\u5b58\u4e0e\u8fd0\u8f93"},"19":{"code":"HA001","change":9.63,"date":"2014-06-10","count":23,"name":"\u5bb6\u7528\u7535\u5668"},"20":{"code":"UT004","change":8.79,"date":"2014-06-10","count":13,"name":"\u6c34\u516c\u7528\u4e8b\u4e1a"},"21":{"code":"FN015","change":8.75,"date":"2014-06-10","count":4,"name":"\u4fdd\u9669\u7ecf\u7eaa\u5546"},"22":{"code":"EE001","change":8.7,"date":"2014-06-10","count":23,"name":"\u7535\u5b50\u8bbe\u5907\u548c\u4eea\u5668"},"23":{"code":"FN004","change":8.57,"date":"2014-06-10","count":48,"name":"\u5176\u5b83\u7efc\u5408\u6027\u91d1\u878d\u670d\u52a1"},"24":{"code":"FA004","change":8.49,"date":"2014-06-10","count":30,"name":"\u7535\u6c14\u90e8\u4ef6\u4e0e\u8bbe\u5907"},"25":{"code":"HW001","change":8.41,"date":"2014-06-10","count":32,"name":"\u901a\u4fe1\u8bbe\u5907"},"26":{"code":"CS007","change":8.39,"date":"2014-06-10","count":35,"name":"\u9910\u9986"},"27":{"code":"WC00201","change":8.1,"date":"2014-06-10","count":5,"name":"\u975e\u4f20\u7edf\u7535\u4fe1\u8fd0\u8425\u5546"},"28":{"code":"CG001","change":8.08,"date":"2014-06-10","count":80,"name":"\u670d\u88c5\u3001\u670d\u9970\u4e0e\u5962\u4f88\u54c1"},"29":{"code":"UT005","change":8.02,"date":"2014-06-10","count":48,"name":"\u72ec\u7acb\u7535\u529b\u751f\u4ea7\u5546\u4e0e\u80fd\u6e90\u8d38\u6613\u5546"},"30":{"code":"AC003","change":7.77,"date":"2014-06-10","count":14,"name":"\u6c7d\u8f66\u5236\u9020\u5546"},"31":{"code":"TR003","change":7.74,"date":"2014-06-10","count":5,"name":"\u94c1\u8def"},"32":{"code":"TR008","change":7.46,"date":"2014-06-10","count":16,"name":"\u6d77\u8fd0"},"33":{"code":"EG003","change":7.28,"date":"2014-06-10","count":12,"name":"\u77f3\u6cb9\u4e0e\u5929\u7136\u6c14\u7684\u70bc\u5236\u548c\u8425\u9500"},"34":{"code":"FN008","change":6.83,"date":"2014-06-10","count":57,"name":"\u6295\u8d44\u94f6\u884c\u4e1a\u4e0e\u7ecf\u7eaa\u4e1a"},"35":{"code":"FN001","change":6.6,"date":"2014-06-10","count":20,"name":"\u7efc\u5408\u6027\u94f6\u884c"},"36":{"code":"UT002","change":6.46,"date":"2014-06-10","count":17,"name":"\u590d\u5408\u578b\u516c\u7528\u4e8b\u4e1a"},"37":{"code":"HA007","change":6.34,"date":"2014-06-10","count":30,"name":"\u6d88\u8d39\u7535\u5b50\u4ea7\u54c1"},"38":{"code":"CC005","change":6.21,"date":"2014-06-10","count":18,"name":"\u7279\u79cd\u5316\u5b66\u5236\u54c1"},"39":{"code":"FA008","change":6.19,"date":"2014-06-10","count":91,"name":"\u8d38\u6613\u516c\u53f8\u4e0e\u7ecf\u9500\u5546"},"40":{"code":"FN011","change":6.05,"date":"2014-06-10","count":5,"name":"\u533a\u57df\u6027\u94f6\u884c"},"41":{"code":"LP001","change":5.96,"date":"2014-06-10","count":19,"name":"\u6d88\u95f2\u7528\u54c1"},"42":{"code":"FN005","change":5.92,"date":"2014-06-10","count":9,"name":"\u7279\u6b8a\u91d1\u878d\u670d\u52a1"},"43":{"code":"CS005","change":5.91,"date":"2014-06-10","count":27,"name":"\u8d4c\u573a\u4e0e\u8d4c\u535a"},"44":{"code":"0x0x","change":5.82,"date":"2014-06-10","count":426,"name":"\u5176\u4ed6"},"45":{"code":"FA006","change":5.77,"date":"2014-06-10","count":35,"name":"\u5efa\u7b51\u3001\u519c\u7528\u673a\u68b0\u4e0e\u91cd\u578b\u5361\u8f66"},"46":{"code":"HC002","change":5.7,"date":"2014-06-10","count":10,"name":"\u533b\u7597\u4fdd\u5065\u7528\u54c1"},"47":{"code":"CR008","change":5.7,"date":"2014-06-10","count":19,"name":"\u670d\u88c5\u96f6\u552e"},"48":{"code":"TR002","change":5.63,"date":"2014-06-10","count":10,"name":"\u9646\u8fd0"},"49":{"code":"TR007","change":5.4,"date":"2014-06-10","count":4,"name":"\u822a\u7a7a\u516c\u53f8"},"time":"2014-11-10 15:53"}};
+    </script>
+</head>
+<body>
+
+<div id="wraper">
+
+    <header id="header">
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
+    <![endif]-->
+
+    <div id="logo-box" class="hr">
+
+        <div class="inline fl">
+            <a href="#"><i class="icon icon-logo"></i></a>&nbsp;&nbsp;
+            <a href="#" class="btn btn-2">数据库</a>
+        </div>
+
+        <div class="inline search">
+            <div class="lgp-2" style="line-height: 1.5;">
+                <i class="btn icon icon-search"></i>
+                <input type="text" placeholder="公司/新闻搜索" class="input-text">
+                <!--<span class="hint t-6"><span class="vm">回车搜索</span> <i class="icon icon-enter"></i></span>-->
+            </div>
+        </div>
+
+        <div class="inline lg-60 vm">
+            <a href="javascript:toLogin();" class="btn btn-0-2 t-14-1-y1" style="margin:0 15px;">{#text key='newwebsite.sign_in'#}</a>
+            <b class="inline" style="border-left:solid 1px #ced1d6; height: 36px; vertical-align: middle; "></b>
+            <a href="{#$homepage#}/user/sign_up" class="btn btn-0-1 t-14-1-k1" style="margin:0 15px;">{#text key='newwebsite.sign_up'#}</a>
+        </div>
+
+        <div class="inline none" ic-dropdown="user">
+
+            <a href="#" class="inline t-14-1-y1"
+               style="padding: 0 1em; line-height:60px; height:60px; overflow: hidden; border:solid 1px #ccd1d9; border-top:none; border-bottom: none;" ic-role-dropdown-toggle>
+                <b class="vm">DaXiangA</b>&nbsp;&nbsp;
+                <i class="icon icon-triangle-01"></i>
+            </a>
+            <ul class="menu-3-1 fz-12" ic-role-dropdown-menu>
+                <li><a href="#">帐号信息</a></li>
+                <li><a href="#">更改密码</a></li>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">登出帐号</a></li>
+            </ul>
+
+        </div>
+
+        <div class="inline lg-60 vm" style="margin:0 15px;">
+        {#if $language eq 'szh'#}
+
+            <a href="{#$homepage#}?lang=en" class="btn btn-0-1 t-14-1-k1">EN</a>
+
+        {#elseif  $language eq 'en'#}
+            <a href="{#$homepage#}?lang=szh" class="btn btn-0-1 t-14-1-k1">中文</a>
+
+        {#/if#}
+        </div>
+
+    </div>
+
+    <nav id="nav-box">
+        <div id="nav-wrap">
+            <ul class="inline-list v-top fl">
+                <li><a class="active" href="#">{#text key='newwebsite.home'#}</a></li>
+                <li><a href="/stock/profile/">{#text key='newwebsite.stocks'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.rankings'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.shhk'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.otc'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.information'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.personal'#}</a></li>
+            </ul>
+            <div class="inline v-top fr">
+                <a href="/download/plug">{#text key='newwebsite.plug'#}</a>
+                <a href="/download/app"><i class="icon icon-phone"></i> &nbsp;{#text key='newwebsite.app'#}</a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+    <div id="mainbody" ic-ctrl="mainCtrl">
+
+        <div class="wrap-1000 mh-400">
+
+            <section style="position: relative; padding:20px 0 0 0;">
+
+                <div id="section" class="hc">
+                    <ul class="inline-list pagination-1" ic-tabs="section" ic-tab-select="li">
+                        <li class="num">1-10</li>
+                        <li class="num">11-20</li>
+                        <li class="num">21-30</li>
+                    </ul>
+                </div>
+
+                <div id="market" class="t-18-1-k1">
+                    <ul class="inline" ic-tabs="market" ic-tab-select="li">
+                        <li data-market="a">内地市场</li>
+                        <!--<li data-market="h">香港市场</li>-->
+                    </ul>
+                </div>
+
+                <ul id="date" ic-tabs="date" ic-tab-select="i">
+                    <li><i class="icon icon-day" data-date="1"></i></li>
+                    <li><i class="icon icon-week" data-date="7"></i></li>
+                    <li><i class="icon icon-month" data-date="30"></i></li>
+                </ul>
+
+                <div class="hc bg-t1 operation" role="operation" ic-tpl="operation">
+                    <a href="javascript:void (0);"
+                       class="fc-y1"
+                       ic-if="!model.added&&!model.limit"
+                       ic-submit-action="{{model.url}}"
+                       ic-ajax="a"
+                       ic-submit-on-failed="failed"
+                       ic-submit-on-done="done"
+                       ic-submit-before="before">加入对比</a>
+                    <span class="fc-w" ic-if="model.added">已加入对比</span>
+                    <i class="inline vm"></i>
+                    <a href="javascript:void (0);" class="fc-y1">查看成分股</a>
+                </div>
+
+                <div ic-tpl="list">
+
+                <div class="inline" style="width:460px; padding:20px 40px 70px 0; border-right:4px solid #e6e9ed;">
+                    <h3 class="hc"><b>涨幅排名</b></h3>
+                    <table class="table-3 line" ic-init="asc=model.asc">
+                        <tr ic-for="i,v in asc" ic-data-index="asc-{{i}}" ic-data-code="{{v.code}}">
+                            <td class="t-24-1-y1" ic-class="t-24-1-{{i<3?'y1':'a1'}}" ic-bind="++i">1</td>
+                            <td class="t-16-1-k1" ic-bind="v.name">航空公司</td>
+                            <td class="hr">
+                                <i class="icon icon-md-up"></i>
+                                <span class="vm t-16-1-up">+<b ic-bind="v.change">1.95</b>%</span>
+
+                            </td>
+                            <td class="t-16-1-a3" ic-bind="v.count">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-y1">2</td>
+                            <td class="t-16-1-k1">航空公司</td>
+                            <td class="hr">
+                                <i class="icon icon-md-up"></i>
+                                <span class="vm t-16-1-up">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-y1">3</td>
+                            <td class="t-16-1-k1">石油与天然气的勘探与生产</td>
+                            <td class="hr">
+                                <i class="icon icon-md-up"></i>
+                                <span class="vm t-16-1-up">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">石油与天然气的勘探与生产</td>
+                            <td class="hr">
+                                <i class="icon icon-md-up"></i>
+                                <span class="vm t-16-1-up">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">石油与天然气的勘探与生产</td>
+                            <td class="hr">
+                                <i class="icon icon-md-up"></i>
+                                <span class="vm t-16-1-up">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">石油与天然气的勘探与生产</td>
+                            <td class="hr">
+                                <i class="icon icon-md-up"></i>
+                                <span class="vm t-16-1-up">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="inline" style="width:460px; padding:20px 0 70px 30px; ">
+                    <h3 class="hc"><b>跌幅排名</b></h3>
+                    <table class="table-3 line" ic-init="desc=model.desc;">
+                        <tr ic-for="i,v in desc" ic-data-index="desc-{{i}}" ic-data-code="{{v.code}}">
+                            <td class="t-24-1-k1" style="width:2em;" ic-class="t-24-1-{{i<3?'k1':'a1'}}" ic-bind="++i">1</td>
+                            <td class="t-16-1-k1" ic-bind="v.name">航空公司</td>
+                            <td class="hr" style="width:160px;">
+                                <i class="icon icon-md-down"></i>
+                                <span class="vm t-16-1-down">+<b ic-bind="v.change">1.95</b>%</span>
+                            </td>
+                            <td class="t-16-1-a3" style="width:30px;" ic-bind="v.count">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-k1">2</td>
+                            <td class="t-16-1-k1">保健护理产品经销商</td>
+                            <td class="hr">
+                                <i class="icon icon-md-down"></i>
+                                <span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-k1">3</td>
+                            <td class="t-16-1-k1">航空公司</td>
+                            <td class="hr">
+                                <i class="icon icon-md-down"></i>
+                                <span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">保健护理产品经销商</td>
+                            <td class="hr">
+                                <i class="icon icon-md-down"></i>
+                                <span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">保健护理产品经销商</td>
+                            <td class="hr">
+                                <i class="icon icon-md-down"></i>
+                                <span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                        <tr ic-skip>
+                            <td class="t-24-1-a1">4</td>
+                            <td class="t-16-0-k1">保健护理产品经销商</td>
+                            <td class="hr">
+                                <i class="icon icon-md-down"></i>
+                                <span class="vm t-16-1-down">+1.95%</span>
+                            </td>
+                            <td class="t-16-1-a3">5</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+
+        <!-- 比较图表 -->
+        <section ic-ctrl="compareCtrl" style="background: #f5f7fa; border-top:solid 2px #f1f4f8;">
+
+            <div class="wrap-1000">
+                <div>
+                    <h2 class="hc"><span>行业对比</span></h2>
+
+                    <div class="fz-16"
+                         style="border-bottom: solid 2px #e6e9ed; padding: 10px 0 5px 1em; position: relative;">
+                        <strong class="vm">所选行业：</strong>
+
+                        <div class="inline vm" ic-tpl="label">
+
+                            <ul class="inline-list" ic-init="list=model" ic-if="list.length">
+
+                                <li ic-for="i,v in list">
+                                     <b class="vm fc-y1" ic-class="vm fc-{{i==0?'y1':'b1'}}" ic-bind="v.name">保健护理服务</b>
+                                     <i class="btn icon icon-clear" ic-data-index="{{i}}" ic-click="remove"></i>&nbsp;&nbsp;
+                                </li>
+                                <li ic-skip>
+                                        <b class="vm fc-b1" ic-bind="name">航空航天与国防</b>
+                                        <i class="icon icon-clear"></i>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <button class="btn btn-label btn-1-1 fz-16" style="position: absolute; right: 0; bottom: -2px;" ic-click="clearAll">
+                            清空
+                        </button>
+                    </div>
+                </div>
+
+                <div id="chart" style="width:860px; height: 300px; margin:30px auto;">
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="reg-prompt-box" class="h-center fc-1">
+    <div class="fz-16">还没有数库账号？想获得更多数据？</div>
+    <div class="fz-20 m-10-0">立即注册，拥有前所未有</div>
+    <div><a href="#" target="_blank"  class="btn btn-1-1">免费注册</a></div>
+
+    <!-- 登录弹出框 -->
+    <div class="dialog" ic-dialog="login">
+        <button class="btn btn-close icon icon-x-black" ic-rold-dialog-close></button>
+        
+<div class="w-480 p-20-0" ic-ctrl="loginCtrl">
+
+
+    <h1 class="hc lg-42 t-18-1-a1">登录我的数库</h1>
+
+    <div class="hc form" ic-form="login">
+
+        <div class="tip error" role="status"></div>
+
+        <div class="inline hl">
+            <div class="mt-15">
+                <input type="text"
+                       class="input-text-md"
+                       placeholder="用户名/手机号码/电子邮箱"
+                       ic-role-field="id"
+                       ic-field-rule="id||phone||email"
+                       ic-field-err-tip="请输入有效的用户名/手机号码/电子邮箱"
+                       role="" />
+                <p class="tip error" ic-role-field-err-tip="id"></p>
+            </div>
+
+            <div class="mt-15">
+                <input type="text"
+                       class="input-text-md"
+                       placeholder="密码"
+                       ic-role-field="password"
+                       ic-field-rule="password"
+                       ic-field-err-tip="请输入正确的密码"
+                       role="">
+                <p class="tip error" ic-role-field-err-tip="password"></p>
+            </div>
+
+            <div class="hr mt-10">
+                <label class="fl"><input type="checkbox"
+                                         value="1"
+                                         onclick="this.value=this.checked?1:0;"
+                                         ic-role-field="remember"
+                                         checked> 记住我</label>
+                <a href="#" class="fc-y1">忘记密码？</a>
+            </div>
+
+            <div class="mt-10">
+                <button class="btn btn-1-1 btn-md-1-1"
+                        ic-role-submit="login"
+                        ic-submit-action="/user/dologin"
+                        ic-submit-method="post"
+                        ic-submit-before="before"
+                        ic-submit-on-done="done"
+                        ic-submit-on-failed="failed">登 录</button>
+            </div>
+
+            <div class="hr mt-10">
+                <span class="fl fc-a0">还没有帐号？ </span>
+                <a href="#" class="fc-y1">立即注册</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<footer id="footer" class="fy-1">
+
+    <div class="wrap-1000">
+        <div id="csf" class="inline v-top br-1 hc" style="width: 160px;">
+                <i class="icon icon-logo"></i>
+                <br/>
+                <br/>
+                <br/>
+                <h4 class="">金融大数据专家</h4>
+        </div>
+
+        <div id="site" class="inline v-top br-1 hc" style="width:120px;">
+            <ul>
+                <li><a href="#" target="_blank" >关于数库</a> </li>
+                <li><a href="#" target="_blank" >产品介绍</a> </li>
+                <li><a href="#" target="_blank" >加入我们</a> </li>
+                <li><a href="#" target="_blank" >版权声明</a> </li>
+            </ul>
+        </div>
+
+        <div id="interface" class="inline v-top br-1">
+            <h4>关注我们</h4>
+            <ul class="inline-list">
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-wx"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-wb"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-g"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-tt"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-f"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-i"></i></a> </li>
+            </ul>
+        </div>
+
+        <div id="sky" class="inline v-top br-1 hc" style="width: 200px;">
+            <h4 class="">数据云</h4>
+            <br/>
+            <i class="icon icon-sky"></i>
+        </div>
+
+        <div id="et" class="inline v-top hc" style="width:110px;">
+            <h4>企业时间</h4>
+            <a href="#" target="_blank"  class="inline"><i class="icon icon-et"></i></a>
+        </div>
+
+
+        <div id="partner" class="">
+            <h4>合作伙伴</h4>
+            <ul class="inline-list">
+                <li><a href="#" target="_blank"><i class="icon icon-xlcj"></i></a> </li>
+                <li><a href="#" target="_blank"><i class="icon icon-jjgcb"></i></a> </li>
+                <li><a href="#" target="_blank"><i class="icon icon-pfyh"></i></a> </li>
+            </ul>
+        </div>
+
+        <p class="mt-15 hc t-4">© 2014 ChinaScope Financial All Rights Reserved</p>
+    </div>
+
+</footer>
+
+
+</div>
+
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/underscore-1.6.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/plugins.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/highstock.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/brick/brick.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/lang.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/common.js"></script>
+<script>/**
+ * Created by julien.zhang on 2014/10/16.
+ */
+
+/**
+ * 涨跌幅列表数据模型
+ */
+brick.services.add('dataModel', function () {
+
+    var o = window.data;
+    var option = {
+        type: 'industry',
+        s_date: '1',
+        market: 'a'
+    };
+
+    return {
+
+        get: function (p1, p2) {
+            var p = p1 && p2 ? o[p1][p2] : o;
+            return $.extend(true, {}, p);
+        },
+        getOption: function () {
+            return $.extend(true, {}, option);
+        },
+        setOption: function (i, v) {
+            option[i] = v;
+            //this.getData();
+            brick.eventManager.fire('dataModel.change', o);
+        },
+        getData: function () {
+            var that = this;
+            $.ajax({
+                url: '',
+                type: 'post',
+                data: option
+            }).done(function (data) {
+                that.updateData(data);
+            })
+        },
+        getSection: function (start, end) {
+            var data = o;
+            start = start || 0;
+            end = end || 9;
+            var arr = [];
+            var arr2 = [];
+            var asc = data.asc;
+            var desc = data.desc;
+            for (var i = start; i <= end; i++) {
+                arr[i] = asc[i];
+                arr2[i] = desc[i];
+            }
+
+            return {asc: arr, desc: arr2};
+        },
+        updateData: function (data) {
+            o = data;
+            brick.eventManager.fire('dataModel.change', o);
+        }
+
+    };
+
+});
+
+/**
+ * 涨跌幅列表控制器
+ * 相关dom, model 交互部分都在这里
+ */
+brick.controllers.reg('mainCtrl', function (scope, dataModel, compareListModel) {
+
+    var $doc = $('html, body');
+    var $compareBox = $('[ic-ctrl="compareCtrl"]');
+    var $operation = $('[role=operation]');
+
+    var $elm = scope.$elm = $('[ic-ctrl=mainCtrl]');
+
+    scope.updateList = function (start, end) {
+        scope.render('list', dataModel.getSection(start, end));
+    }
+
+    scope.updateList();
+
+/////////////////////////////////////////
+    //event
+    ///////////////////////////////////////
+
+    scope.watch('dataModel.change', function (e, msg) {
+        $('[ic-tabs="section"] li:first').click();
+    });
+
+    //分页
+    $('[ic-tabs="section"]').on('ic-tabs.change', function (e, msg) {
+        var tab = msg.activeTab;
+        var param = tab.text().split('-');
+        scope.updateList(param[0] - 1, param[1] - 1);
+    });
+
+    //时间改变
+    $('[ic-tabs=date]').on('ic-tabs.change', function (e, msg) {
+        var tab = msg.activeTab;
+        var date = tab.data('date');
+        dataModel.setOption('date', date);
+    });
+
+    //市场改变
+    $('[ic-tabs=market]').on('ic-tabs.change', function (e, msg) {
+        var tab = msg.activeTab;
+        var market = tab.data('market');
+        dataModel.setOption('market', market);
+    });
+
+    //加入对比
+    scope.goCompare = function () {
+        /*        var tr = $(this).closest('tr');
+         var index = tr.data('index').split('-');
+         var item = dataModel.get(index[0], index[1]);
+         compareListModel.add(item);*/
+    };
+
+    //加入对比前调用，如果比较列表已经符合长度，则返回false，取消ajax请求图表数据
+    scope.before = function () {
+        if (compareListModel.get().length >= 2) return false;
+        var th = $(this);
+        var tr = th.closest('tr');
+        var index = tr.data('index').split('-');
+        var item = dataModel.get(index[0], index[1]);
+        compareListModel.add(item);
+        var option = dataModel.getOption();
+        var data = $.extend(item, option);
+        data.rank = index[0];
+        th.data('ic-submit-data', data);
+    };
+
+    //加入对比，ajax图表数据请求完成,滚动页面到比较图表位置;
+    scope.done = function (data) {
+
+        $operation.hide();
+
+        $doc.animate({scrollTop: $compareBox.offset().top - 40}, 400);
+
+        var _dates = [];
+        for (i = 0; i < data.dates.length; i++) {
+            _dates.push([
+                data.dates[i][1],
+                data.dates[i][0]
+            ]);
+        }
+
+        var index = compareListModel.get().length;
+        $('#chart').highcharts().series[--index].setData(_dates);
+
+    };
+
+    scope.failed = scope.done;
+
+
+    //浮动层滑入滑出交互部分
+    (function () {
+        var w;
+        var h;
+        var tr;
+        var elm;
+        var fn = _.debounce(function (e) {
+
+            if (tr && tr === this) return;
+            tr = this;
+            var th = $(this);
+            var $td = th.find('td:first');
+            var code = th.data('code');
+            var added = compareListModel.isAdded(code);
+            var index = th.data('index').split('-');
+            var item = dataModel.get(index[0], index[1]);
+
+            w = w || th.width();
+            h = h || th.height();
+
+            var limit = compareListModel.get().length >= 2;
+
+            if ((compareListModel.get().length) % 2) {
+                scope.render('operation', {url: '/assets/js/templates/newwebsite/sam/ranking/test/a.js', added: added, limit: limit});
+            } else {
+                scope.render('operation', {url: '/assets/js/templates/newwebsite/sam/ranking/test/b.js', added: added});
+            }
+
+            elm = elm ? elm.appendTo($td).show().animate({width: w}) :
+                $('[role="operation"]').appendTo($td).css({top: 0, left: 0, width: w, height: h, lineHeight: h + 'px'}).show();
+
+        }, 140);
+
+
+        $doc
+            .on('mouseenter', 'tr', fn)
+            .on('mouseleave', 'tr', function (e) {
+                //elm && elm.hide().css({width: 0});
+            })
+
+    })();
+
+}, {depend: ['dataModel', 'compareListModel']});
+
+
+/**
+ * 比较列表数据模型
+ */
+brick.services.add('compareListModel', function () {
+    var compareList = [];
+    var codes = {};
+    return {
+        isAdded: function (code) {
+            console.log(codes);
+            return codes[code];
+        },
+        add: function (item, code) {
+            if (code && codes[code]) return false;
+            if (compareList.length >= 2) return console.log('只能添加两项');
+            compareList.push(item);
+            codes[item.code] = 1;
+            brick.eventManager.fire('compareListModel.add', item);
+        },
+        remove: function (index) {
+            var code = compareList[index].code;
+            delete codes[code];
+            compareList.splice(index, 1);
+            brick.eventManager.fire('compareListModel.remove', index);
+        },
+        clear: function () {
+            compareList = [];
+            codes = {};
+            brick.eventManager.fire('compareListModel.clear');
+        },
+        get: function () {
+            return compareList;
+        }
+    }
+});
+
+
+/**
+ * 对比
+ */
+brick.controllers.reg('compareCtrl', function (scope, compareListModel) {
+
+    $chart = $('#chart');
+
+    scope.render('label', compareListModel.get());
+
+    scope.watch('compareListModel.*', function () {
+        var list = compareListModel.get();
+        scope.render('label', list);
+    });
+
+    scope.watch('compareListModel.remove', function (e, msg) {
+        console.log(msg)
+        $('#chart').highcharts().series[msg].setData(null);
+    });
+
+    scope.watch('compareListModel.clear', function (e, msg) {
+        $('#chart').highcharts().series[0].setData(null);
+        $('#chart').highcharts().series[1].setData(null);
+    });
+
+    scope.clearAll = function (e) {
+        compareListModel.clear();
+    }
+
+    scope.remove = function (e) {
+        var th = $(this);
+        var index = th.data('index');
+        compareListModel.remove(index);
+    }
+
+}, {depend: ['compareListModel']});
+
+
+/**
+ * 图表控件设置
+ */
+
+//初始对比chart
+Highcharts.setOptions({
+    lang: {
+        weekdays: [www_lang.dayname_ri, www_lang.dayname_yi, www_lang.dayname_er, www_lang.dayname_san, www_lang.dayname_si, www_lang.dayname_wu, www_lang.dayname_liu],
+        months: [www_lang.monthname_1, www_lang.monthname_2, www_lang.monthname_3, www_lang.monthname_4, www_lang.monthname_5, www_lang.monthname_6, www_lang.monthname_7, www_lang.monthname_8, www_lang.monthname_9, www_lang.monthname_10, www_lang.monthname_11, www_lang.monthname_12],
+        shortMonths: [www_lang.monthname_1, www_lang.monthname_2, www_lang.monthname_3, www_lang.monthname_4, www_lang.monthname_5, www_lang.monthname_6, www_lang.monthname_7, www_lang.monthname_8, www_lang.monthname_9, www_lang.monthname_10, www_lang.monthname_11, www_lang.monthname_12]
+    },
+    chart: {
+        style: {
+            fontFamily: 'Microsoft Yahei'
+        }
+    }
+});
+
+
+$('#chart').highcharts('StockChart', {
+    chart: {
+        marginTop: 20,
+        marginBottom: 30,
+        height: 300,
+        width: 860
+    },
+    yAxis: [
+        {
+            height: 240,
+            opposite: true,
+            labels: {
+                align: 'left',
+                x: 6,
+                formatter: function () {
+                    return this.value + ' %';
+                }
+            },
+            title: {text: ''},
+            lineWidth: 0
+        }
+    ],
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+            week: '%Y-%m'
+
+        }
+    },
+    title: {text: ''},
+    legend: {enabled: false},
+    plotOptions: {
+        series: {
+            marker: {
+                radius: 1.5
+            }
+        }
+    },
+    rangeSelector: {enabled: false},
+    scrollbar: {enabled: false},
+    navigator: {enabled: false},
+    series: [
+        {
+            name: www_lang.chart_chg,
+            data: '',
+            color: '#e99a21',
+            tooltip: {
+                valueDecimals: 2,
+                pointFormat: '<span style="color:#e99a21">{series.name}</span>: {point.y} %<br>'
+            }
+        },
+        {
+            name: www_lang.chart_chg,
+            data: '',
+            color: '#4763b2',
+            tooltip: {
+                valueDecimals: 2,
+                pointFormat: '<span style="color:#4763b2">{series.name}</span>: {point.y} %'
+            }
+        }
+    ]
+});
+
+
+/* $.getJSON(__uri('../test/a.json'), function (_data) {
+
+ var _dates = [];
+ for (i = 0; i < _data.dates.length; i++) {
+ _dates.push([
+ _data.dates[i][1],
+ _data.dates[i][0]
+ ]);
+ }
+
+
+ $('#chart').highcharts().series[0].setData(_dates);
+ });
+
+
+ $.getJSON(__uri('../test/b.json'), function (_data) {
+
+ var _dates = [];
+ for (i = 0; i < _data.dates.length; i++) {
+ _dates.push([
+ _data.dates[i][1],
+ _data.dates[i][0]
+ ]);
+ }
+
+
+ $('#chart').highcharts().series[1].setData(_dates);
+ });*/
+
+
+</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.0.178:8132/livereload.js"></script></body>
+</html>

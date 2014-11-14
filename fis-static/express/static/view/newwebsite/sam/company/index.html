@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vendor/main.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/common/common.css">
+<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/common/ie-hack.css">
+    <![endif]-->
+    <style></style>
+    <!-- 如果是英文版本，则输出英文版本css补丁 -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/common/common-en.css">
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="wraper">
+
+    <header id="header">
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
+    <![endif]-->
+
+    <div id="logo-box" class="hr">
+
+        <div class="inline fl">
+            <a href="#"><i class="icon icon-logo"></i></a>&nbsp;&nbsp;
+            <a href="#" class="btn btn-2">数据库</a>
+        </div>
+
+        <div class="inline search">
+            <div class="lgp-2" style="line-height: 1.5;">
+                <i class="btn icon icon-search"></i>
+                <input type="text" placeholder="公司/新闻搜索" class="input-text">
+                <!--<span class="hint t-6"><span class="vm">回车搜索</span> <i class="icon icon-enter"></i></span>-->
+            </div>
+        </div>
+
+        <div class="inline lg-60 vm">
+            <a href="javascript:toLogin();" class="btn btn-0-2 t-14-1-y1" style="margin:0 15px;">{#text key='newwebsite.sign_in'#}</a>
+            <b class="inline" style="border-left:solid 1px #ced1d6; height: 36px; vertical-align: middle; "></b>
+            <a href="{#$homepage#}/user/sign_up" class="btn btn-0-1 t-14-1-k1" style="margin:0 15px;">{#text key='newwebsite.sign_up'#}</a>
+        </div>
+
+        <div class="inline none" ic-dropdown="user">
+
+            <a href="#" class="inline t-14-1-y1"
+               style="padding: 0 1em; line-height:60px; height:60px; overflow: hidden; border:solid 1px #ccd1d9; border-top:none; border-bottom: none;" ic-role-dropdown-toggle>
+                <b class="vm">DaXiangA</b>&nbsp;&nbsp;
+                <i class="icon icon-triangle-01"></i>
+            </a>
+            <ul class="menu-3-1 fz-12" ic-role-dropdown-menu>
+                <li><a href="#">帐号信息</a></li>
+                <li><a href="#">更改密码</a></li>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">登出帐号</a></li>
+            </ul>
+
+        </div>
+
+        <div class="inline lg-60 vm" style="margin:0 15px;">
+        {#if $language eq 'szh'#}
+
+            <a href="{#$homepage#}?lang=en" class="btn btn-0-1 t-14-1-k1">EN</a>
+
+        {#elseif  $language eq 'en'#}
+            <a href="{#$homepage#}?lang=szh" class="btn btn-0-1 t-14-1-k1">中文</a>
+
+        {#/if#}
+        </div>
+
+    </div>
+
+    <nav id="nav-box">
+        <div id="nav-wrap">
+            <ul class="inline-list v-top fl">
+                <li><a class="active" href="#">{#text key='newwebsite.home'#}</a></li>
+                <li><a href="/stock/profile/">{#text key='newwebsite.stocks'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.rankings'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.shhk'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.otc'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.information'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.personal'#}</a></li>
+            </ul>
+            <div class="inline v-top fr">
+                <a href="/download/plug">{#text key='newwebsite.plug'#}</a>
+                <a href="/download/app"><i class="icon icon-phone"></i> &nbsp;{#text key='newwebsite.app'#}</a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+    <div id="mainbody">
+
+        <header class="panel-1">
+
+            <hgroup class="wrap-1000 hr">
+                <h1 class="inline fl">
+                    <span class="t-14 vm">压缩机及其零部件 指数</span>
+                </h1>
+                <div class="inline search-1">
+                    <input type="text" placeholder="输入产品/行业，搜索指数；" class="text input">
+                    <i class="icon icon-search-1 enter"></i>
+                </div>
+            </hgroup>
+
+        </header>
+
+        <div class="wrap-1000 mh-400">
+
+            <section id="chart-box" class="inline w-480 mr-35">
+                <div id="chart" style="width: 480px; height: 284px;"></div>
+
+                <div class="panel-3">
+
+                    <div class="inline one">
+                        <div class="fz-24"><span class="fc-3">EUR </span><span class="fc-2">51.33</span></div>
+                        <div class="lg-36 fz-18 fc-3">EUR 0.12</div>
+                        <div class="mb-15 lg-36 fz-18 fc-up">+0.2%</div>
+                        <div style="position: absolute; bottom: 14px; right: 10px;">
+                            <i class="icon icon-up-2"></i>
+                        </div>
+                    </div>
+
+                    <div class="inline two fz-12 lg-32" >
+                        <ul class="hr">
+                            <li><span class="fl">开盘价：</span><span>EUR <strong class="fc-up">4.67</strong></span></li>
+                            <li><span class="fl">收盘价：</span><span>EUR <em class="fc-down">4.43</em></span></li>
+                            <li><span class="fl">成交量（股）：</span><span class="fc-b1">4,344,587</span></li>
+                            <li><span class="fl">成交额（百万）：</span><span class="fc-b1">EUR 1,000,000</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="rel-box" class="inline w-480 mt-10 panel-2">
+
+                <div class="item">
+                    <h2 class="t-10 title"><span class="fc-r1">行业</span>资讯</h2>
+
+                    <ul class="list-1 lg-36">
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[新股发行]</span>
+                            <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[新股发行]</span>
+                            <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="item">
+                    <h2 class="t-10 title"><span class="fc-r1">重要股票</span>资讯</h2>
+
+                    <ul class="list-1 lg-36">
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[新股发行]</span>
+                            <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[新股发行]</span>
+                            <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
+                            <time>2014.09.24</time>
+                        </li>
+                        <li>
+                            <span>[资产重组]</span>
+                            <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
+                            <time>2014.09.24</time>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+
+
+
+            <section class="inline w-680 mt-30">
+
+                <header class="hr bb-3-k1 lg-32">
+                    <h2 class="fl t-18-1-k1">公司列表</h2>
+                    <span class="crumbs">机械制造<i class="split">&gt;</i>机械制造<i class="split">&gt;</i>机械制造<i class="split">&gt;</i>压缩机及其零部件</span>
+                </header>
+
+                <table>
+                    <thead class="lg-36">
+                    <tr class="t-12-0-a1">
+                        <th>公司名称</th>
+                        <th class="hc">公司代码</th>
+                        <th class="hc">最新股价</th>
+                        <th class="hc">最新涨跌额</th>
+                        <th class="hc">最新涨跌幅</th>
+                        <th class="hc">七天涨跌幅</th>
+                        <th class="hc">同业排名</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="lg-42">
+                    <tr>
+                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
+                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td class="hc fc-y1">37.40</td>
+                        <td class="hc fc-down">-1.0</td>
+                        <td class="hc fc-down">-2.60%</td>
+                        <td class="hc fc-up">+0.01%</td>
+                        <td class="hc fc-a3">4</td>
+                    </tr>
+                    <tr>
+                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
+                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td class="hc fc-y1">37.40</td>
+                        <td class="hc fc-down">-1.0</td>
+                        <td class="hc fc-down">-2.60%</td>
+                        <td class="hc fc-up">+0.01%</td>
+                        <td class="hc fc-a3">4</td>
+                    </tr>
+                    <tr>
+                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
+                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td class="hc fc-y1">37.40</td>
+                        <td class="hc fc-down">-1.0</td>
+                        <td class="hc fc-down">-2.60%</td>
+                        <td class="hc fc-up">+0.01%</td>
+                        <td class="hc fc-a3">4</td>
+                    </tr>
+                    <tr>
+                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
+                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td class="hc fc-y1">37.40</td>
+                        <td class="hc fc-down">-1.0</td>
+                        <td class="hc fc-down">-2.60%</td>
+                        <td class="hc fc-up">+0.01%</td>
+                        <td class="hc fc-a3">4</td>
+                    </tr>
+                    <tr>
+                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
+                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td class="hc fc-y1">37.40</td>
+                        <td class="hc fc-down">-1.0</td>
+                        <td class="hc fc-down">-2.60%</td>
+                        <td class="hc fc-up">+0.01%</td>
+                        <td class="hc fc-a3">4</td>
+                    </tr>
+                    <tr>
+                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
+                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td class="hc fc-y1">37.40</td>
+                        <td class="hc fc-down">-1.0</td>
+                        <td class="hc fc-down">-2.60%</td>
+                        <td class="hc fc-up">+0.01%</td>
+                        <td class="hc fc-a3">4</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="pagination" ic-pagination="a" ic-pagination-total="32" ic-pagination-step="5" >
+                    <span class="prev" ic-role-pagination-prev>&lt;</span>
+                    <span class="ellipsis" ic-role-pagination-ellipsis>...</span>
+                    <span class="num" ic-role-pagination-num="{{}}">{{}}</span>
+                    <span class="next" ic-role-pagination-next>&gt;</span>
+                </div>
+
+            </section>
+
+
+
+            <section class="inline w-300 ml-15 mt-30">
+                <header class="bb-3-k1 lg-32" ic-tabs="a" ic-tab-select="span" ic-con-select="table" >
+                    <h3 style="position: relative; top:2px;">
+                        <span class="btn btn-0-3 btn-label">最近访问</span> <span class="btn btn-0-3 btn-label">自选股</span>
+                    </h3>
+                </header>
+                <div ic-role-tabc="a">
+                    <table class="table-3-1">
+                        <thead class="lg-32">
+                        <tr class="t-12-0-a1">
+                            <th>公司名称</th>
+                            <th class="hc">涨跌幅</th>
+                            <th>主营产品</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="lg-24">
+                        <tr>
+                            <td><a href="#" target="_blank">开山股份</a></td>
+                            <td class="hc fc-up">+0.02%</td>
+                            <td>机械制造及加工</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">开山股份</a></td>
+                            <td class="hc fc-up">+0.02%</td>
+                            <td>机械制造及加工</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">开山股份</a></td>
+                            <td class="hc fc-up">+0.02%</td>
+                            <td>机械制造及加工</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table>
+                        <thead></thead>
+                        <tbody>
+                        <tr>
+                            <td>----------</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+
+
+        </div>
+
+
+    </div>
+
+    <div id="reg-prompt-box" class="h-center fc-1">
+    <div class="fz-16">还没有数库账号？想获得更多数据？</div>
+    <div class="fz-20 m-10-0">立即注册，拥有前所未有</div>
+    <div><a href="#" target="_blank"  class="btn btn-1-1">免费注册</a></div>
+
+    <!-- 登录弹出框 -->
+    <div class="dialog" ic-dialog="login">
+        <button class="btn btn-close icon icon-x-black" ic-rold-dialog-close></button>
+        
+<div class="w-480 p-20-0" ic-ctrl="loginCtrl">
+
+
+    <h1 class="hc lg-42 t-18-1-a1">登录我的数库</h1>
+
+    <div class="hc form" ic-form="login">
+
+        <div class="tip error" role="status"></div>
+
+        <div class="inline hl">
+            <div class="mt-15">
+                <input type="text"
+                       class="input-text-md"
+                       placeholder="用户名/手机号码/电子邮箱"
+                       ic-role-field="id"
+                       ic-field-rule="id||phone||email"
+                       ic-field-err-tip="请输入有效的用户名/手机号码/电子邮箱"
+                       role="" />
+                <p class="tip error" ic-role-field-err-tip="id"></p>
+            </div>
+
+            <div class="mt-15">
+                <input type="text"
+                       class="input-text-md"
+                       placeholder="密码"
+                       ic-role-field="password"
+                       ic-field-rule="password"
+                       ic-field-err-tip="请输入正确的密码"
+                       role="">
+                <p class="tip error" ic-role-field-err-tip="password"></p>
+            </div>
+
+            <div class="hr mt-10">
+                <label class="fl"><input type="checkbox"
+                                         value="1"
+                                         onclick="this.value=this.checked?1:0;"
+                                         ic-role-field="remember"
+                                         checked> 记住我</label>
+                <a href="#" class="fc-y1">忘记密码？</a>
+            </div>
+
+            <div class="mt-10">
+                <button class="btn btn-1-1 btn-md-1-1"
+                        ic-role-submit="login"
+                        ic-submit-action="/user/dologin"
+                        ic-submit-method="post"
+                        ic-submit-before="before"
+                        ic-submit-on-done="done"
+                        ic-submit-on-failed="failed">登 录</button>
+            </div>
+
+            <div class="hr mt-10">
+                <span class="fl fc-a0">还没有帐号？ </span>
+                <a href="#" class="fc-y1">立即注册</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<footer id="footer" class="fy-1">
+
+    <div class="wrap-1000">
+        <div id="csf" class="inline v-top br-1 hc" style="width: 160px;">
+                <i class="icon icon-logo"></i>
+                <br/>
+                <br/>
+                <br/>
+                <h4 class="">金融大数据专家</h4>
+        </div>
+
+        <div id="site" class="inline v-top br-1 hc" style="width:120px;">
+            <ul>
+                <li><a href="#" target="_blank" >关于数库</a> </li>
+                <li><a href="#" target="_blank" >产品介绍</a> </li>
+                <li><a href="#" target="_blank" >加入我们</a> </li>
+                <li><a href="#" target="_blank" >版权声明</a> </li>
+            </ul>
+        </div>
+
+        <div id="interface" class="inline v-top br-1">
+            <h4>关注我们</h4>
+            <ul class="inline-list">
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-wx"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-wb"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-g"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-tt"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-f"></i></a> </li>
+                <li><a href="#" target="_blank"  class="inline"><i class="icon icon-i"></i></a> </li>
+            </ul>
+        </div>
+
+        <div id="sky" class="inline v-top br-1 hc" style="width: 200px;">
+            <h4 class="">数据云</h4>
+            <br/>
+            <i class="icon icon-sky"></i>
+        </div>
+
+        <div id="et" class="inline v-top hc" style="width:110px;">
+            <h4>企业时间</h4>
+            <a href="#" target="_blank"  class="inline"><i class="icon icon-et"></i></a>
+        </div>
+
+
+        <div id="partner" class="">
+            <h4>合作伙伴</h4>
+            <ul class="inline-list">
+                <li><a href="#" target="_blank"><i class="icon icon-xlcj"></i></a> </li>
+                <li><a href="#" target="_blank"><i class="icon icon-jjgcb"></i></a> </li>
+                <li><a href="#" target="_blank"><i class="icon icon-pfyh"></i></a> </li>
+            </ul>
+        </div>
+
+        <p class="mt-15 hc t-4">© 2014 ChinaScope Financial All Rights Reserved</p>
+    </div>
+
+</footer>
+
+
+</div>
+
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/underscore-1.6.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/plugins.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/highstock.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/brick/brick.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/lang.js"></script>
+<script>/**
+ * Created by julien.zhang on 2014/10/16.
+ */
+
+$(function(){
+
+
+    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+        // Create the chart
+        $('#chart').highcharts('StockChart', {
+
+            rangeSelector: {
+                selected: 1,
+                inputEnabled: $('#chart').width() >= 480
+            },
+
+            title: {
+                text: ''
+            },
+
+            series: [
+                {
+                    name: '',
+                    data: data,
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                }
+            ]
+        });
+    });
+
+
+
+
+
+})</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.0.178:8132/livereload.js"></script></body>
+</html>

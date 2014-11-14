@@ -1,0 +1,71 @@
+<header id="header">
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">浏览器版本太低，为了更好的浏览体验，请更换或升级浏览器!</p>
+    <![endif]-->
+
+    <div id="logo-box" class="hr">
+
+        <div class="inline fl">
+            <a href="#"><i class="icon icon-logo"></i></a>&nbsp;&nbsp;
+            <a href="#" class="btn btn-2">数据库</a>
+        </div>
+
+        <div class="inline search">
+            <div class="lgp-2" style="line-height: 1.5;">
+                <i class="btn icon icon-search"></i>
+                <input type="text" placeholder="公司/新闻搜索" class="input-text">
+                <!--<span class="hint t-6"><span class="vm">回车搜索</span> <i class="icon icon-enter"></i></span>-->
+            </div>
+        </div>
+
+        <div class="inline lg-60 vm" style="">
+            <a href="{#$www_url#}/user/sign_in" class="btn btn-0-2 t-14-1-y1" style="margin:0 15px;">{#text key='newwebsite.sign_in'#}</a>
+            <b class="inline" style="border-left:solid 1px #ced1d6; height: 36px; vertical-align: middle; "></b>
+            <a href="{#$www_url#}/user/sign_up" class="btn btn-0-1 t-14-1-k1" style="margin:0 15px;">{#text key='newwebsite.sign_up'#}</a>
+        </div>
+
+       <!--  <div class="inline" ic-dropdown="user">
+
+            <a href="#" class="inline t-14-1-y1"
+               style="padding: 0 1em; line-height:60px; height:60px; overflow: hidden; border:solid 1px #ccd1d9; border-top:none; border-bottom: none;" ic-role-dropdown-toggle>
+                <b class="vm">DaXiangA</b>&nbsp;&nbsp;
+                <i class="icon icon-triangle-01"></i>
+            </a>
+            <ul class="menu-3-1 fz-12" ic-role-dropdown-menu>
+                <li><a href="#">帐号信息</a></li>
+                <li><a href="#">更改密码</a></li>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">登出帐号</a></li>
+            </ul>
+
+        </div> -->
+        <div class="inline lg-60 vm" style="margin:0 15px;">
+            {#if $language eq 'szh'#}
+                <a href="{#$homepage#}?lang=en" class="btn btn-0-1 t-14-1-k1">EN</a>
+            {#elseif  $language eq 'en'#}
+                <a href="{#$homepage#}?lang=szh" class="btn btn-0-1 t-14-1-k1">中文</a>
+            {#/if#}
+        </div>
+
+    </div>
+
+    <nav id="nav-box">
+        <div id="nav-wrap">
+            <ul class="inline-list v-top fl">
+                <li><a class="active" href="#">{#text key='newwebsite.home'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.stocks'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.rankings'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.shhk'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.otc'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.information'#}</a></li>
+                <li><a href="#">{#text key='newwebsite.personal'#}</a></li>
+            </ul>
+            <div class="inline v-top fr">
+                <a href="#">{#text key='newwebsite.plug'#}</a>
+                <a href="#"><i class="icon icon-phone"></i> &nbsp;{#text key='newwebsite.app'#}</a>
+            </div>
+        </div>
+    </nav>
+
+</header>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vendor/main.css">
+    <link rel="stylesheet" href="../../../../css/common/common.css">
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
+    <![endif]-->
+    <link rel="stylesheet" href="../include/sign.css?__inline">
+    <link rel="stylesheet" href="include/style.css?__inline">
+    <!-- 如果是英文版本，则输出英文版本css补丁 -->
+    <link rel="stylesheet" href="../../../../css/common/common-en.css">
+    <script src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body class="sign">
+
+<div id="wraper">
+
+    <header class="wrap-1000 hr">
+        <a href="#" class="fl"><i class="icon icon-logo"></i> </a>
+        <div class="inline lg-60">
+            <a href="#" class="btn btn-0-1 t-14-1-k1">EN</a>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+
+    <div id="mainbody">
+
+        <div class="wrap-1000">
+
+            <h1 class="hc t-24-1-w">{#$email#}</h1>
+            <div class="form _panel fc-a3" style="padding: 30px;" ic-ctrl="mainCtrl" ic-form="active">
+
+                <h2 class="hc t-18-0-a1 lg-60">输入并确认密码即可创建数库帐号</h2>
+
+                <table class="table-fixed-1">
+                    <tr>
+                        <td class="hr">
+                            <label><b>*</b>密码:</label>
+                        </td>
+                        <td>
+                            <input type="password"
+                                   class="input-text-md"
+                                   ic-role-field="password"
+                                   ic-field-rule="password"
+                                   ic-field-err-tip="请输入正确的密码"
+                                   role="password" />
+
+                            <p class="tip" ic-role-field-err-tip="password" role="msg">长度不得少于8位，可使用数字/字母/符号</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="hr">
+                            <label><b>*</b>确认密码:</label>
+                        </td>
+                        <td>
+                            <input type="password"
+                                   class="input-text-md"
+                                   ic-role-field="confirmPassword"
+                                   ic-field-rule="password&&equal()"
+                                   ic-field-err-tip="请确认密码"
+                                   role="confirmPassword" />
+
+                            <p class="tip" ic-role-field-err-tip="confirmPassword" role="msg">请再次输入密码</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" checked="true" disabled>
+                            <span>同意并愿意遵守数库的<a href="#" target="_blank" class="fc-y1">《隐私保护政策》</a></span>
+                        </td>
+                    </tr>
+                        <input type="hidden" name="email" value="{#$email#}"  ic-role-field="registerEmail"/>
+                    <tr>
+                        <td></td>
+                        <td>
+                         <input type="hidden" name="type" value="email"  ic-role-field="registtype"/>
+                            <button class="btn btn-1-1"
+                                    ic-role-submit="active"
+                                    ic-submit-action="/user/register"
+                                    ic-submit-method="post"
+                                    ic-submit-before="before"
+                                    ic-submit-on-done="done"
+                                    role="signUp">完成注册</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <link rel="import" href="../../include/footer/footer.html?__inline">
+
+</div>
+
+<script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
+<script src="../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/plugins.js"></script>
+<script src="../../../../js/brick/brick.js"></script>
+<script src="../../../../js/common/lang.js"></script>
+<script src="../../../../js/common/common.js"></script>
+<script>
+    brick.controllers.reg('mainCtrl', function(scope){
+        
+
+        scope.equal = function (val ) {
+            return val === $('[ic-role-field="password"]').val();
+        }
+        
+
+    });
+</script>
+</body>
+</html>

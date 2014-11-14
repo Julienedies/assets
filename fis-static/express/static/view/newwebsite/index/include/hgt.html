@@ -1,0 +1,50 @@
+<section>
+    <h2 class="title-1"><strong class="inline text t-1">{#text key="newwebsite.shhk_stocks"#}</strong></h2>
+
+    <div id="hgt-box" class="v-top inline br-1">
+        <table class="fz-12 table-1">
+            <thead>
+            <tr class="t-6">
+                <th class="w-32">{#text key="newwebsite.no"#}</th>
+                <th class="w-72">{#text key="newwebsite.a_share"#}</th>
+                <th class="w-36">{#text key="newwebsite.add"#}</th>
+                <th class="w-64">{#text key="newwebsite.abbr"#}</th>
+                <th class="w-42">{#text key="newwebsite.price"#}</th>
+                <th class="w-72">{#text key="newwebsite.h_share"#}</th>
+                <th class="w-32">{#text key="newwebsite.add"#}</th>
+            <!--     <th class="w-64">{#text key="newwebsite.hbbr"#}</th> -->
+                <th class="w-56">{#text key="newwebsite.price"#}</th>
+                <th class="w-56">{#text key="newwebsite.premium"#}%</th>
+            </tr>
+            </thead>
+            <tbody>
+            {#foreach from=$shnhkstocks key=shnhkindex item=shnhkstock#}
+            <tr>
+                <td class="level-up-{#$shnhkindex+1#} level-32">{#$shnhkindex+1#}</td>
+                <td><a href="#">{#$shnhkstock->sh->secu#}</a></td>
+                <td><i class="icon icon-add"></i></td>
+                <td><a href="#">{#$shnhkstock->sh->name#}</a></td>
+                <td class="fc-2 br-1">{#$shnhkstock->sh->price#}</td>
+                <td class="fc-11">{#$shnhkstock->hk->secu#}</td>
+                <td><i class="icon icon-add"></i></td>
+<!--                 <td><span class="fc-2">{#$shnhkstock->hk->name#}</span></td> -->
+                <td class="fc-6">HKD{#$shnhkstock->hk->price#}</td>
+                 <td class="fc-6">{#$shnhkstock->premium#}%</td>
+            </tr>
+            {#/foreach#}
+            </tbody>
+
+        </table>
+    </div>
+    <div id="hgt-rel-info-box" class="v-top inline fc-a-inherit">
+        <ul class="list-1 lg-32">
+        {#foreach from=$shnhkinfos item=infoindex item=info#}
+            <li>
+                <span class="fc-5">[{#text key="newwebsite.shhk_tag"#}]</span>
+                <a href="{#$info->lnk#}" title="{#$info->tit#}" target="_blank">{#$info->tit|truncate:20:"":true#}</a>
+                <time>{#$info->dt#}</time>
+            </li>
+        {#/foreach#}
+        </ul>
+    </div>
+</section>

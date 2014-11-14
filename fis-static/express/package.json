@@ -1,0 +1,9 @@
+{
+    "name": "dev",
+    "description": "辅助前端开发，帮助调试后端API",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "4.x"
+    }
+}

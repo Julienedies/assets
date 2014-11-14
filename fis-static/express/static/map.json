@@ -1,0 +1,443 @@
+{
+    "res": {
+        "css/common/common-en.css": {
+            "uri": "/assets/css/common/common-en.css",
+            "type": "css"
+        },
+        "css/common/common.css": {
+            "uri": "/assets/css/common/common.css",
+            "type": "css"
+        },
+        "css/common/ie-hack.css": {
+            "uri": "/assets/css/common/ie-hack.css",
+            "type": "css"
+        },
+        "css/common/include/base.css": {
+            "uri": "/assets/css/common/include/base.css",
+            "type": "css"
+        },
+        "css/common/include/components.css": {
+            "uri": "/assets/css/common/include/components.css",
+            "type": "css"
+        },
+        "css/common/include/font.css": {
+            "uri": "/assets/css/common/include/font.css",
+            "type": "css"
+        },
+        "css/common/include/icons.css": {
+            "uri": "/assets/css/common/include/icons.css",
+            "type": "css"
+        },
+        "css/common/include/layout.css": {
+            "uri": "/assets/css/common/include/layout.css",
+            "type": "css"
+        },
+        "css/common/include/reset.css": {
+            "uri": "/assets/css/common/include/reset.css",
+            "type": "css"
+        },
+        "css/vendor/animations.css": {
+            "uri": "/assets/css/vendor/animations.css",
+            "type": "css"
+        },
+        "css/vendor/main.css": {
+            "uri": "/assets/css/vendor/main.css",
+            "type": "css"
+        },
+        "css/vendor/normalize.css": {
+            "uri": "/assets/css/vendor/normalize.css",
+            "type": "css"
+        },
+        "css/vendor/pure-min.css": {
+            "uri": "/assets/css/vendor/pure-min.css",
+            "type": "css"
+        },
+        "js/brick/brick.css": {
+            "uri": "/assets/css/brick.css",
+            "type": "css"
+        },
+        "js/brick/brick.js": {
+            "uri": "/assets/js/brick/brick.js",
+            "type": "js",
+            "deps": [
+                "js/brick/brick.css"
+            ]
+        },
+        "js/brick/src/config.js": {
+            "uri": "/assets/js/brick/src/config.js",
+            "type": "js"
+        },
+        "js/brick/src/controllers.js": {
+            "uri": "/assets/js/brick/src/controllers.js",
+            "type": "js"
+        },
+        "js/brick/src/createRender.js": {
+            "uri": "/assets/js/brick/src/createRender.js",
+            "type": "js"
+        },
+        "js/brick/src/directives.js": {
+            "uri": "/assets/js/brick/src/directives.js",
+            "type": "js"
+        },
+        "js/brick/src/directives/event.js": {
+            "uri": "/assets/js/brick/src/directives/event.js",
+            "type": "js"
+        },
+        "js/brick/src/eventManager.js": {
+            "uri": "/assets/js/brick/src/eventManager.js",
+            "type": "js"
+        },
+        "js/brick/src/init.js": {
+            "uri": "/assets/js/brick/src/init.js",
+            "type": "js"
+        },
+        "js/brick/src/parser.js": {
+            "uri": "/assets/js/brick/src/parser.js",
+            "type": "js"
+        },
+        "js/brick/src/recordManager.js": {
+            "uri": "/assets/js/brick/src/recordManager.js",
+            "type": "js"
+        },
+        "js/brick/src/scope.js": {
+            "uri": "/assets/js/brick/src/scope.js",
+            "type": "js"
+        },
+        "js/brick/src/services.js": {
+            "uri": "/assets/js/brick/src/services.js",
+            "type": "js"
+        },
+        "js/brick/src/str2dom.js": {
+            "uri": "/assets/js/brick/src/str2dom.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/$extension.js": {
+            "uri": "/assets/js/brick/src/widget/$extension.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/ajax.js": {
+            "uri": "/assets/js/brick/src/widget/ajax.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/dialog.js": {
+            "uri": "/assets/js/brick/src/widget/dialog.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/drag.js": {
+            "uri": "/assets/js/brick/src/widget/drag.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/dropdown.js": {
+            "uri": "/assets/js/brick/src/widget/dropdown.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/form.js": {
+            "uri": "/assets/js/brick/src/widget/form.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/pagination.js": {
+            "uri": "/assets/js/brick/src/widget/pagination.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/placeholder.js": {
+            "uri": "/assets/js/brick/src/widget/placeholder.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/scene.js": {
+            "uri": "/assets/js/brick/src/widget/scene.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/slider.js": {
+            "uri": "/assets/js/brick/src/widget/slider.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/tabs.js": {
+            "uri": "/assets/js/brick/src/widget/tabs.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/timer.js": {
+            "uri": "/assets/js/brick/src/widget/timer.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/tpl.js": {
+            "uri": "/assets/js/brick/src/widget/tpl.js",
+            "type": "js"
+        },
+        "js/brick/src/widget/typeAhead.js": {
+            "uri": "/assets/js/brick/src/widget/typeAhead.js",
+            "type": "js"
+        },
+        "js/common/common.js": {
+            "uri": "/assets/js/common/common.js",
+            "type": "js"
+        },
+        "js/common/lang.js": {
+            "uri": "/assets/js/common/lang.js",
+            "type": "js"
+        },
+        "js/data/stockData.js": {
+            "uri": "/assets/js/data/stockData.js",
+            "type": "js"
+        },
+        "js/vendor/echarts-plain.js": {
+            "uri": "/assets/js/vendor/echarts-plain.js",
+            "type": "js"
+        },
+        "js/vendor/firebug-lite-beta.js": {
+            "uri": "/assets/js/vendor/firebug-lite-beta.js",
+            "type": "js"
+        },
+        "js/vendor/highstock.js": {
+            "uri": "/assets/js/vendor/highstock.js",
+            "type": "js"
+        },
+        "js/vendor/html5shiv.js": {
+            "uri": "/assets/js/vendor/html5shiv.js",
+            "type": "js"
+        },
+        "js/vendor/jquery/jquery-1.10.2.min.js": {
+            "uri": "/assets/js/vendor/jquery/jquery-1.10.2.min.js",
+            "type": "js"
+        },
+        "js/vendor/jquery/jquery-ui-1.10.4.custom.min.css": {
+            "uri": "/assets/css/jquery-ui-1.10.4.custom.min.css",
+            "type": "css"
+        },
+        "js/vendor/jquery/jquery-ui-1.10.4.custom.min.js": {
+            "uri": "/assets/js/vendor/jquery/jquery-ui-1.10.4.custom.min.js",
+            "type": "js",
+            "deps": [
+                "js/vendor/jquery/jquery-ui-1.10.4.custom.min.css"
+            ]
+        },
+        "js/vendor/jquery/jquery-ui-datepicker.js": {
+            "uri": "/assets/js/vendor/jquery/jquery-ui-datepicker.js",
+            "type": "js"
+        },
+        "js/vendor/modernizr-2.6.2.min.js": {
+            "uri": "/assets/js/vendor/modernizr-2.6.2.min.js",
+            "type": "js"
+        },
+        "js/vendor/plugins.js": {
+            "uri": "/assets/js/vendor/plugins.js",
+            "type": "js"
+        },
+        "js/vendor/underscore-1.6.0.min.js": {
+            "uri": "/assets/js/vendor/underscore-1.6.0.min.js",
+            "type": "js"
+        },
+        "templates/include/footer/footer.css": {
+            "uri": "/assets/css/templates/include/footer/footer.css",
+            "type": "css"
+        },
+        "templates/include/header/header.css": {
+            "uri": "/assets/css/templates/include/header/header.css",
+            "type": "css"
+        },
+        "templates/newwebsite/company/finance/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/company/finance/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/company/finance/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/company/finance/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/company/info/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/company/info/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/company/info/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/company/info/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/company/profile/include/lang.js": {
+            "uri": "/assets/js/templates/newwebsite/company/profile/include/lang.js",
+            "type": "js"
+        },
+        "templates/newwebsite/company/profile/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/company/profile/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/company/profile/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/company/profile/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/company/profile/test/data.js": {
+            "uri": "/assets/js/templates/newwebsite/company/profile/test/data.js",
+            "type": "js"
+        },
+        "templates/newwebsite/company/report/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/company/report/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/company/report/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/company/report/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/download/app/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/download/app/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/download/app/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/download/app/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/download/plug/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/download/plug/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/download/plug/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/download/plug/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/hgt/index/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/hgt/index/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/hgt/index/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/hgt/index/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/hgt/index/test/compare.js": {
+            "uri": "/assets/js/templates/newwebsite/hgt/index/test/compare.js",
+            "type": "js"
+        },
+        "templates/newwebsite/hgt/index/test/data.js": {
+            "uri": "/assets/js/templates/newwebsite/hgt/index/test/data.js",
+            "type": "js"
+        },
+        "templates/newwebsite/include/footer/footer.css": {
+            "uri": "/assets/css/templates/newwebsite/include/footer/footer.css",
+            "type": "css"
+        },
+        "templates/newwebsite/include/header/header.css": {
+            "uri": "/assets/css/templates/newwebsite/include/header/header.css",
+            "type": "css"
+        },
+        "templates/newwebsite/index/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/index/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/index/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/index/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/otc/index/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/otc/index/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/otc/index/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/otc/index/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/sam/company/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/sam/company/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/sam/company/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/sam/company/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/sam/ranking/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/sam/ranking/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/sam/ranking/include/style-en.css": {
+            "uri": "/assets/css/templates/newwebsite/sam/ranking/include/style-en.css",
+            "type": "css"
+        },
+        "templates/newwebsite/sam/ranking/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/sam/ranking/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/sam/ranking/test/a.js": {
+            "uri": "/assets/js/templates/newwebsite/sam/ranking/test/a.js",
+            "type": "js"
+        },
+        "templates/newwebsite/sam/ranking/test/b.js": {
+            "uri": "/assets/js/templates/newwebsite/sam/ranking/test/b.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/include/sign.css": {
+            "uri": "/assets/css/templates/newwebsite/user/include/sign.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/account/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/user/my/account/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/my/account/include/style-en.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/account/include/style-en.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/account/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/account/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/focuses/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/user/my/focuses/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/my/focuses/include/style-en.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/focuses/include/style-en.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/focuses/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/focuses/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/include/my.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/include/my.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/stocks/include/js/indicatorsModel.js": {
+            "uri": "/assets/js/templates/newwebsite/user/my/stocks/include/js/indicatorsModel.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/my/stocks/include/js/stocksCtrl.js": {
+            "uri": "/assets/js/templates/newwebsite/user/my/stocks/include/js/stocksCtrl.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/my/stocks/include/js/stocksModel.js": {
+            "uri": "/assets/js/templates/newwebsite/user/my/stocks/include/js/stocksModel.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/my/stocks/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/user/my/stocks/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/my/stocks/include/style-en.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/stocks/include/style-en.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/my/stocks/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/user/my/stocks/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/reset_password/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/user/reset_password/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/reset_password/include/style-en.css": {
+            "uri": "/assets/css/templates/newwebsite/user/reset_password/include/style-en.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/reset_password/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/user/reset_password/include/style.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/sign_up/include/main.js": {
+            "uri": "/assets/js/templates/newwebsite/user/sign_up/include/main.js",
+            "type": "js"
+        },
+        "templates/newwebsite/user/sign_up/include/style-en.css": {
+            "uri": "/assets/css/templates/newwebsite/user/sign_up/include/style-en.css",
+            "type": "css"
+        },
+        "templates/newwebsite/user/sign_up/include/style.css": {
+            "uri": "/assets/css/templates/newwebsite/user/sign_up/include/style.css",
+            "type": "css"
+        }
+    },
+    "pkg": {}
+}

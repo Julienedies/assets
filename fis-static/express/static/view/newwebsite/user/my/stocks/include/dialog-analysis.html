@@ -1,0 +1,86 @@
+<!-- 盈亏分析弹出框 -->
+
+<div class="dialog dialog-s1 w-680" ic-dialog="analysis">
+
+    <header class="header">
+        <span>盈亏分析</span>
+        <b class="btn btn-close" ic-rold-dialog-close><i class="icon icon-x-white"></i> </b>
+    </header>
+
+
+    <div class="content">
+
+        <div style="padding: 15px 20px 30px 20px; border-bottom: solid 2px #ccd1d9;">
+
+            <h4><span class="t-18-1-b1">工商银行</span> &nbsp; <span>601890_SH</span></h4>
+
+            <div class="lg-42 fc-k1">当前股价: <span class="fc-y1">11.33</span></div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="hl">摊薄成本</th>
+                        <th class="hc">持有股数</th>
+                        <th class="hc">持有市值</th>
+                        <th class="hc">每股盈亏</th>
+                        <th class="hc">当日盈亏</th>
+                        <th class="hc">累计盈亏</th>
+                        <th class="hr">盈亏比例</th>
+                    </tr>
+                </thead>
+                <tbody class="hc">
+                    <tr>
+                        <td ic-for="i in list">-.-</td>
+                        <td ic-skip>-.-</td>
+                        <td ic-skip>-.-</td>
+                        <td ic-skip>-.-</td>
+                        <td ic-skip>-.-</td>
+                        <td ic-skip>-.-</td>
+                        <td ic-skip>-.-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div style="padding: 0 0 30px 0; min-height: 200px; border-bottom: solid 2px #ccd1d9;">
+            <table class="table-4">
+                <thead class="t-12-0-a0">
+                <tr style="border-bottom: solid 1px #e6e9ed;">
+                    <th class="pl-15">序号</th>
+                    <th>类型</th>
+                    <th>日期</th>
+                    <th>股数(股)</th>
+                    <th>价格</th>
+                    <th>交易费率（‰）</th>
+                    <th class="pr-15">删除</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="pl-15">1</td>
+                    <td>
+                        <select>
+                            <option value="">买入</option>
+                            <option value="">卖出</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="dealDate" class="datepicker"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td class="pr-15"><i class="btn icon icon-x-red"></i> </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <footer class="hr">
+        <button class="fl btn btn-tab-1"><i class="icon icon-add"></i> 添加交易</button>
+        <button class="btn btn-1">&nbsp;&nbsp;&nbsp;确定&nbsp;&nbsp;&nbsp;</button>
+    </footer>
+
+</div>

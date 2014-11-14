@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link type="text/css" rel="stylesheet" href="/assets/css/vendor/normalize.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/vendor/main.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/common/common.css">
+<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/common/ie-hack.css">
+    <![endif]-->
+    <!-- 如果是英文版本，则输出英文版本css补丁 -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/common/common-en.css">
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body class="sign">
+
+<div id="wraper">
+
+        <div class="w-480">
+
+            <h1 class="hc lg-42 t-18-1-a1">登录我的数库</h1>
+
+            <div class="hc form" ic-ctrl="loginCtrl" ic-form="login">
+
+                <div class="inline hl">
+                    <div class="mt-15">
+                        <input type="text"
+                               class="input-text-md"
+                               placeholder="用户名/手机号码/电子邮箱"
+                               ic-role-field="id"
+                               ic-field-rule="id||phone||email"
+                               ic-field-err-tip="请输入有效的用户名/手机号码/电子邮箱"
+                               role="" />
+                        <p class="tip error" ic-role-field-err-tip="id"></p>
+                    </div>
+
+                    <div class="mt-15">
+                        <input type="text"
+                               class="input-text-md"
+                               placeholder="密码"
+                               ic-role-field="password"
+                               ic-field-rule="password"
+                               ic-field-err-tip="请输入正确的密码"
+                               role="">
+                        <p class="tip error" ic-role-field-err-tip="password"></p>
+                    </div>
+
+                    <div class="hr mt-10">
+                        <label class="fl"><input type="checkbox"
+                                                 value="1"
+                                                 onclick="this.value=this.checked?1:0;"
+                                                 ic-role-field="remember"
+                                                 checked> 记住我</label>
+                        <a href="#" class="fc-y1">忘记密码？</a>
+                    </div>
+
+                    <div class="mt-10">
+                        <button class="btn btn-1-1 btn-md-1-1"
+                                ic-role-submit="login"
+                                ic-submit-action="/post"
+                                ic-submit-method="post"
+                                ic-submit-before="before"
+                                ic-submit-on-done="done"
+                                ic-submit-on-failed="failed">登 录</button>
+                    </div>
+
+                    <div class="hr mt-10">
+                         <span class="fl fc-a0">还没有帐号？ </span>
+                         <a href="#" class="fc-y1">立即注册</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+</div>
+
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/underscore-1.6.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/vendor/plugins.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/brick/brick.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/lang.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common/common.js"></script>
+<script>
+
+    var $submit = $('[ic-role-submit="login"]');
+
+    $submit.on('click', function(e){
+
+        console.log($submit.icVerify() ? 'ok' : 'error');
+
+    });
+</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.0.178:8132/livereload.js"></script></body>
+</html>

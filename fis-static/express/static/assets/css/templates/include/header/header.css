@@ -1,0 +1,47 @@
+#header{
+}
+
+#logo-box{
+}
+#logo-box .search{
+    position: relative;
+    margin:0 30px 0 0px;
+    top:14px;
+}
+#logo-box  .search .icon-search{
+    position: absolute;
+    top: 6px;
+    left: 5px;
+}
+#logo-box .search .hint{
+    position: absolute;
+    top:6px;
+    right: 5px;
+}
+#logo-box .search input{
+    width: 16em;
+    padding:0 30px 0 30px;
+}
+#nav-box{
+    height: 50px;
+    line-height: 48px;
+    background: #1a1c39;
+}
+#nav-box a{
+    color:#fff;
+    padding:0 16px;
+}
+#nav-box li a{
+    display: inline-block;
+    color:#fff;
+    border-bottom:solid 2px #1a1c39;
+}
+#nav-box li a:hover, #nav-box li a.active{
+    background: #ff9915;
+    border-color:#dc8412;
+}
+
+#msg-box{
+    line-height: 40px;
+    background: #e7edf7;
+}
