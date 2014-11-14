@@ -7,190 +7,60 @@
         <div class="hc" ic-tabs="b">
 
             <span class="btn-group">
-                <i class="first btn btn-3 a" ic-role-tab="1">涨幅排名</i>
-                <i class="last btn btn-3 b" ic-role-tab="2">跌幅排名</i>
+                <i class="first btn btn-3 a" ic-role-tab="1">{#text key='newwebsite.rising'#}</i>
+                <i class="last btn btn-3 b" ic-role-tab="2">{#text key='newwebsite.dropping'#}</i>
             </span>
 
-            <a href="javascript:void(0)" class="fr btn btn-1">刷新</a>
+            <a href="javascript:void(0)" class="fr btn btn-1">{#text key='newwebsite.reload'#}</a>
 
         </div>
 
         <table ic-role-con="1">
-            <tr>
-                <td class="level-up-1 level-52">1</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">10家</td>
-            </tr>
-            <tr>
-                <td class="level-up-2 level-52">2</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">10家</td>
-            </tr>
-            <tr>
-                <td class="level-up-3 level-52">3</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">110家</td>
-            </tr>
-            <tr>
-                <td class="level-up-4 level-52">4</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">10家</td>
-            </tr>
-            <tr>
-                <td class="level-up-5 level-52">5</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-up" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">3家</td>
-            </tr>
+            {#foreach from=$topstocksup key=upindex item=up#}
+                <tr>
+                    <td class="level-up-{#$upindex+1#} level-52">{#$upindex+1#}</td>
+                    <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">{#$up->name#}</a></td>
+                    <td class="w-140 fc-up" style="width: 120px;">+{#$up->ratio#}%</td>
+                    <td class="t-6 h-right">{#$up->total#}家</td>
+                </tr>
+            {#/foreach#}
         </table>
-
+       
         <table ic-role-con="2">
+          {#foreach from=$topstocksdown key=downindex item=down#}
             <tr>
-                <td class="level-down-1 level-52">1</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">10家</td>
+                <td class="level-down-{#$downindex+1#} level-52">{#$downindex+1#}</td>
+                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">{#$down->name#}</a></td>
+                <td class="w-140 fc-down" style="width: 120px;">{#$down->ratio#}%</td>
+                <td class="t-6 h-right">{#$down->total#}家</td>
             </tr>
-            <tr>
-                <td class="level-down-2 level-52">2</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">10家</td>
-            </tr>
-            <tr>
-                <td class="level-down-3 level-52">3</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">110家</td>
-            </tr>
-            <tr>
-                <td class="level-down-4 level-52">4</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">10家</td>
-            </tr>
-            <tr>
-                <td class="level-down-5 level-52">5</td>
-                <td style="width: 240px;padding-left: 20px;"><a class="t-10" href="#">石油与天然气存储</a></td>
-                <td class="w-140 fc-down" style="width: 120px;">+2.3%</td>
-                <td class="t-6 h-right">3家</td>
-            </tr>
+              {#/foreach#}
         </table>        
 
-        <div class="h-center"><a href="#" class="btn btn-1">查看更多排名</a></div>
+        <div class="h-center"><a href="#" class="btn btn-1">{#text key='newwebsite.more'#}</a></div>
 
     </div>
 
     
     <div id="industry-change-rel-info-box" class="inline vt fc-a-inherit">
         <ul class="list-1 lg-32" ic-role-con="1">
+        {#foreach from=$topstockupinfos item=upinfo#}
             <li>
                 <i class="icon icon-up"></i>
-                <a href="#">1通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
+                <a href="{#$upinfo->lnk#}">{#$upinfo->tit#}</a>
+                <time>{#$upinfo->dt#}</time> 
             </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-up"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
+        {#/foreach#}
         </ul>
 
         <ul class="list-1 lg-32" ic-role-con="2">
+         {#foreach from=$topstockdowninfos  item=downinfo#}
             <li>
                 <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
+                <a href="{#$downinfo->lnk#}">{#$downinfo->tit#}</a>
+                <time>{#$downinfo->dt#}</time>
             </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
-            <li>
-                <i class="icon icon-down"></i>
-                <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                <time>2014.09.24</time>
-            </li>
+             {#/foreach#}
         </ul>
 
     </div>

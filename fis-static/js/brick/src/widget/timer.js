@@ -4,6 +4,7 @@
 
 directives.add('ic-timer', function () {
 
+    return;
     $('[ic-timer]').each(function (i) {
 
         var th = $(this);
@@ -17,8 +18,6 @@ directives.add('ic-timer', function () {
                 th.trigger('ic-timer.' + 'end');
             }
         }, 1000);
-
-
 
 
     });

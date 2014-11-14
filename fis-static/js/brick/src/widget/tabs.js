@@ -6,22 +6,32 @@ directives.add('ic-tabs', function () {
 
     $('[ic-tabs]').each(function (i) {
 
+        try{
+
         var th = $(this);
+        var $elm = th;
         var name = th.attr('ic-tabs');
+        var disabled = th.attr('ic-tab-disabled');
         var tabSelect = th.attr('ic-tab-select');
         var conSelect = th.attr('ic-con-select');
-        var activeTab = th.attr('ic-tab-active')
+        var activeTab = th.attr('ic-tab-active');
+        var activeCon;
+        var $tabSelect;
 
         if (tabSelect) {
-            th.find(tabSelect).each(function (i) {
-                $(this).attr('ic-role-tab', i);
+            $tabSelect = th.find(tabSelect).each(function (i) {
+                var th = $(this);
+                th.attr('ic-role-tab', i);
             });
+        }else{
+            $tabSelect = $elm.find('[ic-role-tab]');
         }
 
         var tabc = $('[ic-role-tabc=' + name + ']');
 
         if (tabc && conSelect) {
             tabc.find(conSelect).each(function (i) {
+                i = $tabSelect.eq(i).attr('ic-role-tab');
                 $(this).attr('ic-role-con', i);
             });
         }
@@ -33,17 +43,7 @@ directives.add('ic-tabs', function () {
 
         }
 
-        if(activeTab){
-            activeTab = th.find('[ic-role-tab=' + activeTab + ']');
-        }else{
-            activeTab = th.find('[ic-role-tab]').first();
-        }
-
-        var activeCon = activeTab.addClass('active').attr('ic-role-tab');
-
-        activeCon = tabc.length && tabc.find('[ic-role-con]').hide().filter('[ic-role-con=' + activeCon + ']').show();
-
-        th.delegate('[ic-role-tab]', 'click', tabc.length ? call_1 : call_2);
+        th.on('click', '[ic-role-tab]:not([ic-tab-disabled=1])', tabc.length ? call_1 : call_2);
 
 
         function call_1(e) {
@@ -57,11 +57,26 @@ directives.add('ic-tabs', function () {
         function call_2(e, that) {
             activeTab && activeTab.removeClass('active');
             activeTab = $(that || this).addClass('active');
-            th.trigger('ic-tabs.' + name + '.change', {activeTab: activeTab});
-            _cc('ic-tabs.' + name + '.change', {activeTab: activeTab});
+            th.trigger('ic-tabs.change', {activeTab: activeTab});
         }
 
 
+        //fire
+        if (activeTab) {
+            activeTab = th.find('[ic-role-tab=?]'.replace('?', activeTab));
+        } else {
+            activeTab = th.find('[ic-role-tab]:not([ic-tab-disabled=1])').first();
+        }
+
+        activeTab.trigger('click');
+
+        //var activeCon = activeTab.addClass('active').attr('ic-role-tab');
+
+        //activeCon = tabc.length && tabc.find('[ic-role-con]').hide().filter('[ic-role-con=' + activeCon + ']').show();
+
+        }catch(e){
+            alert('ic-tabs =>' + e);
+        }
     });
 
 

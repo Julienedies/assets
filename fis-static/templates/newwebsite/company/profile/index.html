@@ -8,23 +8,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
-    <link rel="stylesheet" href="../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vendor/main.css">
     <link rel="stylesheet" href="../../../../css/common/common.css">
-    <link rel="stylesheet" href="../../../../css/common/en.css">
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
     <![endif]-->
     <link rel="stylesheet" href="include/style.css?__inline">
     <!-- 如果是英文版本，则输出英文版本css补丁 -->
     <link rel="stylesheet" href="../../../../css/common/common-en.css">
-    <script src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+    <script data-position='head' src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
 <div id="wraper" class="company">
 
-    <link rel="import" href="../../../include/header/header.html?__inline">
+    <link rel="import" href="../../include/header/header.html?__inline">
 
     <div id="mainbody">
 
@@ -32,29 +31,37 @@
 
         <div class="wrap-1000">
 
-        <section id="chart-box" class="inline w-480 mr-30">
-            <div id="container" style="width: 480px; height: 290px;"></div>
+        <section id="chart-box" class="inline w-500 mr-10">
+            <div id="chart" style="height: 290px;"></div>
 
             <div id="summary">
 
                 <div class="inline one">
-                    <div class="fz-24"><span class="fc-3">EUR </span><span class="fc-2">51.33</span></div>
-                    <div class="lg-36 fz-18 fc-3">EUR 0.12</div>
-                    <div class="mb-15 lg-36 fz-18 fc-up">+0.2%</div>
+                    <div class="fz-24"><span class="fc-3">EUR </span><span class="fc-2">{#$companyinfo['price']#} </span></div>
+                    <div class="lg-36 fz-18 fc-3">EUR {#$companyinfo['chg']#}</div>
+                    {#if $companyinfo['ratio'] >= 0 #}
+                    <div class="mb-15 lg-36 fz-18 fc-up">+{#$companyinfo['ratio']#}%</div>
                     <div style="position: absolute; bottom: 64px; right: 10px;">
                         <i class="icon icon-up-2"></i>
                     </div>
-                    <div class="hc lg-56 fc-3 fz-12" style="border-top:1px solid #e6e9ed;">2014/10/13 15:03:05</div>
+                    {#else#}
+                    <div class="mb-15 lg-36 fz-18 fc-down">{#$companyinfo['ratio']#}%</div>
+                    <div style="position: absolute; bottom: 64px; right: 10px;">
+                        <i class="icon icon-down-2"></i>
+                    </div>
+                    {#/if#}
+                    
+                    <div class="hc lg-56 fc-3 fz-12" style="border-top:1px solid #e6e9ed;">{#$companyinfo['dt']#} {#$companyinfo['tm']#}</div>
 
                 </div>
 
                 <div class="inline fz-12 lg-26 two">
                     <ul class="hr">
-                        <li><span class="fl">最高价：</span><span>EUR <strong class="fc-up">4.67</strong></span></li>
-                        <li><span class="fl">最低价：</span><span>EUR <em class="fc-down">4.43</em></span></li>
-                        <li><span class="fl">最高价：</span><span>EUR <em class="fc-b1">4.43</em></span></li>
-                        <li><span class="fl">成交量（股）：</span><span class="fc-b1">4,344,587</span></li>
-                        <li><span class="fl">成交额（百万）：</span><span class="fc-b1">EUR 1,000,000</span></li>
+                        <li><span class="fl">最高价：</span><span>EUR <strong class="fc-up">{#$companyinfo['maxPri']#}</strong></span></li>
+                        <li><span class="fl">最低价：</span><span>EUR <em class="fc-down">{#$companyinfo['minPri']#}</em></span></li>
+                        <li><span class="fl">收盘价：</span><span>EUR <em class="fc-b1">{#$companyinfo['closePri']#}</em></span></li>
+                        <li><span class="fl">成交量（股）：</span><span class="fc-b1">{#$companyinfo['volume']|number_format#}</span></li>
+                        <li><span class="fl">成交额（百万）：</span><span class="fc-b1">EUR {#$companyinfo['tradeValue']/100|number_format#}</span></li>
                         <li><span class="fl">最后交易日：</span><span>2014/10/10</span></li>
                     </ul>
                 </div>
@@ -78,41 +85,22 @@
 
                 <div class="bg-4" style="width: 100%;height: 156px;padding-bottom:24px;" ic-role-dropdown-con>
                     <ul class="list-1 lg-36">
+                        {#foreach item = mostPopular from = $companymostpopular#}
                         <li>
-                            <i class="icon icon-circle-1-up"></i>
-                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                            <time>2014.09.24</time>
+                            <i 
+                            {#if $mostPopular['rating'] eq 1#}
+                            class="icon icon-circle-1-up"
+                            {#elseif $mostPopular['rating'] eq 0#}
+                            class="icon icon-circle-1-md"
+                            {#elseif $mostPopular['rating'] eq -1#}
+                            class="icon icon-circle-1-down"
+                            {#/if#}
+                            ></i>
+                            <a href="{#$mostPopular['lnk']#}" target="_blank">{#$mostPopular['tit']#}</a>
+                            <time>{#$mostPopular['dt']#}</time>
                         </li>
-                        <li>
-                            <i class="icon icon-circle-1-md"></i>
-                            <a href="#" target="_blank">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                            <time>2014.09.24</time>
-                        </li>
-                        <li>
-                            <i class="icon icon-circle-1-down"></i>
-                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查</a>
-                            <time>2014.09.24</time>
-                        </li>
-                        <li>
-                            <i class="icon icon-circle-1-down"></i>
-                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查</a>
-                            <time>2014.09.24</time>
-                        </li>
-                        <li>
-                            <i class="icon icon-circle-1-up"></i>
-                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                            <time>2014.09.24</time>
-                        </li>
-                        <li>
-                            <i class="icon icon-circle-1-md"></i>
-                            <a href="#" target="_blank">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                            <time>2014.09.24</time>
-                        </li>
-                        <li>
-                            <i class="icon icon-circle-1-down"></i>
-                            <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查</a>
-                            <time>2014.09.24</time>
-                        </li>
+                        {#/foreach#}
+
                     </ul>
 
                     <div class="hc"
@@ -133,12 +121,13 @@
 
 
                 <ul class="list-1 lg-36">
+                {#foreach from=$intrasectorfocus item=focus#}
                     <li>
-                        <span>[资产重组]</span>
-                        <a href="#" target="_blank">通源石油并购重组申请停审 有关方面被稽查</a>
-                        <time>2014.09.24</time>
+                        <span>[{#$focus['abbr']#}]</span>
+                        <a href="{#$focus['lnk']#}" target="_blank">{#$focus['tit']#}</a>
+                        <time>{#$focus['dt']#}</time>
                     </li>
-                    <li>
+                   <!--  <li>
                         <span>[新股发行]</span>
                         <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
                         <time>2014.09.24</time>
@@ -157,7 +146,8 @@
                         <span>[资产重组]</span>
                         <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
                         <time>2014.09.24</time>
-                    </li>
+                    </li> -->
+                    {#/foreach#}
                 </ul>
             </div>
 
@@ -170,44 +160,19 @@
 
             <hgroup class="title-2">
                 <h2 class="t-10">公司热点新闻</h2>
-                <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                <a href="/stock/info/{#$companyinfo['code']#}#0" class="btn btn-1 btn-small more">查看更多</a>
             </hgroup>
 
             <ul class="list-2">
-                <li class="bl-1-1">
-                    <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
+                {#foreach from=$topstories key=index item=tops#}
+                <li class="bl-1-{#$index+1#}">
+                    <h3 class="t-16-0-b4">{#$tops['tit']#}</h3>
 
-                    <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
-                        有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2">[查看详细]</a></p>
+                    <p class="digest t-6">{#$tops['sum']|truncate:60:'...'#}<a href="{#$tops['lnk']#}" target="_blank" class="fc-2">[查看详细]</a></p>
                 </li>
 
-                <li class="bl-1-2">
-                    <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
-
-                    <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
-                        有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2">[查看详细]</a></p>
-                </li>
-
-                <li class="bl-1-3">
-                    <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
-
-                    <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
-                        有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2">[查看详细]</a></p>
-                </li>
-
-                <li class="bl-1-4">
-                    <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
-
-                    <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
-                        有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2">[查看详细]</a></p>
-                </li>
-
-                <li class="bl-1-5">
-                    <h3 class="t-101">农行已执行首套房新政 利率暂未变化</h3>
-
-                    <p class="digest t-6">法制晚报讯(记者 易朵 仝璇 刘靖宜)针对央行[微博]“认贷不认房”的新政策，上午
-                        有消息称工行、农行已经出台相关细则。《法制晚报》记者上午从农行...<a href="#" target="_blank" class="fc-2">[查看详细]</a></p>
-                </li>
+             
+                {#/foreach#}
             </ul>
 
         </div>
@@ -216,70 +181,18 @@
 
             <hgroup class="title-2">
                 <h2 class="t-10">公司热点公告</h2>
-                <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                <a href="/stock/info/{#$companyinfo['code']#}#1" class="btn btn-1 btn-small more">查看更多</a>
             </hgroup>
 
             <ul class="list-1 lg-36">
+                {#foreach from=$companynotices item=notices#}
                 <li>
-                    <span>[资产重组]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
-                    <time>2014.09.24</time>
+                    <span>[{#$notices['typ']#}]</span>
+                    <a href="{#$notices['lnk']#}">{#$notices['tit']#}</a>
+                    <time>{#$notices['dt']#}</time>
                 </li>
-                <li>
-                    <span>[新股发行]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[资产重组]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[新股发行]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[资产重组]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[新股发行]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[资产重组]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[新股发行]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[资产重组]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[新股发行]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[资产重组]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查</a>
-                    <time>2014.09.24</time>
-                </li>
-                <li>
-                    <span>[新股发行]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股...</a>
-                    <time>2014.09.24</time>
-                </li>
+
+                {#/foreach#}
             </ul>
 
         </div>
@@ -287,112 +200,54 @@
         <div id="analysts" class="inline v-top w-480 mr-30">
             <hgroup class="title-2">
                 <h2 class="t-10">研报推荐</h2>
-                <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                <a href="/stock/info/{#$companyinfo['code']#}#2" class="btn btn-1 btn-small more">查看更多</a>
             </hgroup>
 
             <table>
                 <tbody>
+                {#foreach from=$analystspicks item=analystspick#}
                 <tr>
                     <td>
                         <div class="line bl-1-6 t-18-0-a1">
-                            安晓杰
+                            {#$analystspick['name']#}
                         </div>
                     </td>
                     <td style="width:6em;">
-                        <div><h6>准确率</h6><span>60%</span></div>
+                        <div><h6>准确率</h6><span>{#$analystspick['accu']#}%</span></div>
                     </td>
                     <td>
                         <div>
-                            <div>2014/09/24</div>
-                            <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
-                                彰显对未来成长强大信心
-                            </div>
-                        </div>
-                    </td>
-                    <td><span class="line t-14-1-up">增持</span></td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="line bl-1-6 t-18-0-a1">
-                            安晓杰
-                        </div>
-                    </td>
-                    <td style="width:6em;">
-                        <div><h6>准确率</h6><span>60%</span></div>
-                    </td>
-                    <td>
-                        <div>
-                            <div>2014/09/24</div>
-                            <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
-                                彰显对未来成长强大信心
-                            </div>
-                        </div>
-                    </td>
-                    <td><span class="line t-14-1-md">中性</span></td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="line bl-1-6 t-18-0-a1">
-                            安晓杰
-                        </div>
-                    </td>
-                    <td style="width:6em;">
-                        <div><h6>准确率</h6><span>60%</span></div>
-                    </td>
-                    <td>
-                        <div>
-                            <div>2014/09/24</div>
-                            <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
-                                彰显对未来成长强大信心
-                            </div>
-                        </div>
-                    </td>
-                    <td><span class="line t-14-1-down">减持</span></td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="line bl-1-6 t-18-0-a1">
-                            安晓杰
-                        </div>
-                    </td>
-                    <td style="width:6em;">
-                        <div><h6>准确率</h6><span>60%</span></div>
-                    </td>
-                    <td>
-                        <div>
-                            <div>2014/09/24</div>
-                            <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
-                                彰显对未来成长强大信心
-                            </div>
-                        </div>
-                    </td>
-                    <td><span class="line t-14-1-md">中性</span></td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="line bl-1-6 t-18-0-a1">
-                            安晓杰
-                        </div>
-                    </td>
-                    <td style="width:6em;">
-                        <div><h6>准确率</h6><span>60%</span></div>
-                    </td>
-                    <td>
-                        <div>
-                            <div>2014/09/24</div>
-                            <div class="t-14-0-b1">大股东、管理层、战投增发锁三年，
-                                彰显对未来成长强大信心
+                            <div>{#$analystspick['dt']#}</div>
+                            <div class="t-14-0-b1"><a href="{#$analystspick['lnk']#}">{#$analystspick['tit']#}</a>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <div class="line t-14-1-down">减持</div>
+                    {#if $analystspick['csrf'] eq 1#}
+                    <span class="line t-14-1-up">
+                        买入
+                    </span>
+                    {#else if $analystspick['csrf'] eq 2#}
+                    <span class="line t-14-1-up">
+                        增持
+                    </span>
+                     {#else if $analystspick['csrf'] eq 3#}
+                    <span class="line t-14-1-md">
+                        中性
+                    </span>
+                     {#else if $analystspick['csrf'] eq 4#}
+                    <span class="line t-14-1-down">
+                        减持
+                    </span>
+                     {#else if $analystspick['csrf'] eq 5#}
+                    <span class="line t-14-1-down">
+                        卖出
+                    </span>
+                    {#/if#}
                     </td>
                 </tr>
+                {#/foreach#}
+        
                 </tbody>
             </table>
 
@@ -401,100 +256,44 @@
         <div id="sector" class="inline v-top w-480">
 
             <hgroup class="title-2"><h2 class="t-10">行业异动</h2>
-                <a href="#" class="btn btn-1 btn-small more">查看更多</a>
+                <a href="/stock/info/{#$companyinfo['code']#}#3" class="btn btn-1 btn-small more">查看更多</a>
             </hgroup>
 
             <ul class="list-3">
-
+                {#foreach from=$sectorupdates item=sectorupdate#}
                 <li>
-                    <h4 class="t-14-1-k1 hr">
-                        <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
-                        <time class="fc-7">2014/08</time>
+                    <h4 class="hr">
+                        <span class="fl t-14-1-k1">{#$sectorupdate['tit']#}</span>
+                        <time class="fc-7">{#$sectorupdate['dt']#}</time>
                     </h4>
 
                     <div class="mt-10 hr">
 
-                        <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
-                        <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
-                            <i class="icon icon-up-1"></i>
+                        <div class="inline fl">最新值：<span class="t-16-1"> {#$sectorupdate['v']#} </span>辆</div>
+                        <div class="inline mr-15">环比：
+                        {#if $sectorupdate['mom'] > 0#}
+                        <span class="fc-up">+{#$sectorupdate['mom']#}%</span>
+                        <i class="icon icon-up-1"></i>
+                        {#else#}
+                        <span class="fc-down">-{#$sectorupdate['mom']#}%</span>
+                        <i class="icon icon-down-1"></i>
+                        {#/if#}
+                            
+                        
                         </div>
-                        <div class="inline">同比：<span class="fc-down">-11.76%</span>
-                            <i class="icon icon-down-1"></i>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <h4 class="t-14-1-k1 hr">
-                        <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
-                        <time class="fc-7">2014/08</time>
-                    </h4>
-
-                    <div class="mt-10 hr">
-
-                        <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
-                        <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
-                            <i class="icon icon-up-1"></i>
-                        </div>
-                        <div class="inline">同比：<span class="fc-down">-11.76%</span>
-                            <i class="icon icon-down-1"></i>
+                        <div class="inline">同比：
+                        {#if $sectorupdate['yoy'] > 0#}
+                        <span class="fc-up">+{#$sectorupdate['yoy']#}%</span>
+                        <i class="icon icon-up-1"></i>
+                        {#else#}
+                        <span class="fc-down">-{#$sectorupdate['yoy']#}%</span>
+                        <i class="icon icon-down-1"></i>
+                        {#/if#}
                         </div>
                     </div>
                 </li>
-
-                <li>
-                    <h4 class="t-14-1-k1 hr">
-                        <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
-                        <time class="fc-7">2014/08</time>
-                    </h4>
-
-                    <div class="mt-10 hr">
-
-                        <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
-                        <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
-                            <i class="icon icon-up-1"></i>
-                        </div>
-                        <div class="inline">同比：<span class="fc-down">-11.76%</span>
-                            <i class="icon icon-down-1"></i>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <h4 class="t-14-1-k1 hr">
-                        <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
-                        <time class="fc-7">2014/08</time>
-                    </h4>
-
-                    <div class="mt-10 hr">
-
-                        <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
-                        <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
-                            <i class="icon icon-up-1"></i>
-                        </div>
-                        <div class="inline">同比：<span class="fc-down">-11.76%</span>
-                            <i class="icon icon-down-1"></i>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <h4 class="t-14-1-k1 hr">
-                        <span class="fl">主要产品_产量_铁路车辆_铁力机车</span>
-                        <time class="fc-7">2014/08</time>
-                    </h4>
-
-                    <div class="mt-10 hr">
-
-                        <div class="inline fl">最新值：<span class="t-16-1"> 105.00 </span>辆</div>
-                        <div class="inline mr-15">环比：<span class="fc-up">517.65%</span>
-                            <i class="icon icon-up-1"></i>
-                        </div>
-                        <div class="inline">同比：<span class="fc-down">-11.76%</span>
-                            <i class="icon icon-down-1"></i>
-                        </div>
-                    </div>
-                </li>
+                {#/foreach#}
+          
 
             </ul>
 
@@ -508,15 +307,15 @@
 
     </div>
 
-    <link rel="import" href="../../../include/footer/footer.html?__inline">
+    <link rel="import" href="../../include/footer/footer.html?__inline">
 
 </div>
 
 <script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
-<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
-<script src="../../../../js/vendor/highstock.js"></script>
-<script src="http://echarts.baidu.com/build/echarts-plain.js"></script>
+<script src="../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
 <script src="../../../../js/vendor/plugins.js"></script>
+<script src="../../../../js/vendor/highstock.js"></script>
+<script src="../../../../js/vendor/echarts-plain.js"></script>
 <script src="../../../../js/brick/brick.js"></script>
 <script src="../../../../js/common/lang.js"></script>
 <script src="../../../../js/common/common.js"></script>

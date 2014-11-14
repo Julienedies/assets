@@ -24,40 +24,15 @@
     <div id="news-box" class="inline v-top">
         <h2 class="t-1 mb-10">{#text key="newwebsite.top_stories"#}</h2>
         <ul class="list-1 lg-32">
+        {#foreach from = $hotnews item = hotnew key = index#}
             <li>
-                <span>[金融证券]</span>
-                <a href="#" target="_blank" class="t-3">商务部：各地勿轻易效仿自贸区负面清单</a>
-                <p class="lg-24">记着9月24日从商务部获悉，商务部昨日召开“简政放权深化行政审批制度
-                    改革”专题新闻发布会...<a class="fc-2" href="#" target="_blank">[查看详细]</a></p>
+                <span>[{#$hotnew->tag#}]</span>
+                <a href="{#$hotnew->lnk#}" target="_blank" {#if $index eq 0#}class="t-3"{#/if#} title="{#$hotnew->tit#}">{#$hotnew->tit#}</a>
+                {#if $index eq 0#}
+                <p class="lg-24">{#$hotnew->sum|truncate:53:"...":true#}<a class="fc-2" href="{#$hotnew->lnk#}" target="_blank">[查看详细]</a></p>
+                {#/if#}
             </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
-            <li>
-                <span>[金融政治]</span>
-                <a href="#" target="_blank">四中全会召开在即 3只个股围猎全攻略</a>
-            </li>
+        {#/foreach#}
         </ul>
     </div>
 

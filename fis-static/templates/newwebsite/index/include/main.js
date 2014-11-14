@@ -27,4 +27,3 @@ brick.controllers.add('recommend', function (scope) {
 });
 
 
-brick.init();

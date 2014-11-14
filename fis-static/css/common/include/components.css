@@ -2,12 +2,44 @@
 组件样式定义
 =========================================================
  */
+.chart, .loading{
+    background: url(../../../img/loading_.gif) no-repeat 50% 50%;
+}
+.loading{
+    display: inline-block;
+    width:16px;
+    height: 16px;
+}
+/* 提示框 */
+.tipsBox{
+    position:fixed;
+    top:-300px;
+    left:50%;
+    opacity:0;
+    z-index:100;
+}
+.tips{
+    position:absolute;
+    padding:1em;
+    background-color: #60B044;
+}
+.tips1{
+    pointer-events: none;
+    position:absolute;
+    padding:0.5em;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.2em;
+    background: #73c000;
+}
+/* 表单 */
 .form .tip{
     padding:10px 0;
 }
 .form .tip.error{
     color:#e57f7f;
 }
+/* 分割线 */
 .hr-1{
     clear: both;
     margin:1.4em 0 0 0;
@@ -15,6 +47,8 @@
     border: none;
     border-top: solid 1px #e6e9ed;
 }
+
+/* 搜索框 */
 .search-1 {
     position: relative;
 }
@@ -38,6 +72,7 @@
     border-radius: 0 2px 2px 0;
 }
 
+/*面包屑路径 */
 .crumbs {
     font-size: 12px;
 }
@@ -50,6 +85,7 @@
     color: #ff9915;
 }
 
+/* 各种面板 */
 .panel-1 {
     padding: 40px 0 20px 0;
     background: #f5f7fa;
@@ -101,6 +137,7 @@
     background: #3cbad7;
     box-shadow: 1px 1px 3px #444;
 }
+/* 分页按钮*/
 .pagination, .pagination-1 {
     text-align: center;
     margin: 1em 0;
@@ -156,10 +193,34 @@
 /* 对话框 */
 .dialog{
     position: absolute;
-    padding:2em;
     min-width: 320px;
     max-width: 800px;
     background: #fff;
+    box-shadow: 0px 2px 4px #666;
+}
+.dialog-s1{
+    background: #fff;
+}
+.dialog-s1 header, .dialog-s1 .header{
+    position: relative;
+    padding:0 20px;
+    background: #1a1c39;
+    color: #fff;
+    line-height: 42px;
+}
+.dialog-s1 header .btn-close, .dialog-s1 .header .btn-close{
+    position: absolute;
+    right:14px;
+    padding: 0px;
+    font-size:20px;
+}
+.dialog-s1 footer, .dialog-s1 .footer{
+    padding: 15px 20px;
+    border-top:solid 1px #e6e9ed;
+}
+
+.dialog-s2{
+    padding: 15px;
 }
 /*.dialog:after{
     content: '';
@@ -170,6 +231,8 @@
     left:0;
     right:0;
 }*/
+
+/* 文本输入框 */
 .input-text,.input-text-scale, .input-text-md, .input-text-sm {
     min-width: 22em;
     padding: 5px 0 5px 0.5em;
@@ -202,6 +265,7 @@
     background: url(../../../img/icons/icon-search.png) no-repeat 8px 50%;
 }
 
+/* 导航 */
 .nav-2 {
     position: relative;
     border-left: solid 1px #e6e9ed;
@@ -229,6 +293,7 @@
     border-bottom-color: #ff9915;
 }
 
+/* 标题 */
 .title-1 {
     position: relative;
     border-bottom: solid 3px #1a1c39;
@@ -264,6 +329,24 @@
     margin:0.5em 0;
     padding: 0 0 0 0.5em;
     border-left:solid 8px #ff9915;
+}
+
+/* 列表 */
+.select-list{
+    min-height: 1em;
+    background: #fff;
+    border:solid 1px #cfd0d5;
+    box-shadow:2px 3px 3px rgba(97, 97, 97, 0.45);
+    line-height: 2;
+    padding: 1px;
+}
+.select-list li{
+    padding: 0 15px;
+}
+.select-list li:hover{
+    color:#fff;
+    background: #0066e9;
+    background: #ff9915;
 }
 .list-1 li {
     position: relative;
@@ -312,6 +395,7 @@
     border-left:7px solid #ff717f;
 }
 
+/* 下拉菜单 */
 .menu-3, .menu-3-1 {
     display: block;
     min-width: 100%;
@@ -356,6 +440,7 @@
     color: #fff;
 }
 
+/* 表格 */
 .table-1 {
     width: 100%;
 }
@@ -382,7 +467,7 @@
 }
 
 .table-3 th, .table-3 td, .table-3-1 th, .table-3-1 td {
-    padding: 10px 6px 10px 20px;
+    padding: 7px 5px 7px 15px;
     border: solid 1px #e6e9ed;
 }
 
@@ -397,23 +482,28 @@
     margin-right:auto;
 }
 
-.table-4 thead th{
+.table-4 th, .table-4-1 th,  .table-4-2 th{
     border-top:solid 1px #e6e9ed;
     background: #f5f7fa;
 }
-.table-4 tbody td{
+.table-4 td, .table-4-2 td{
     border-bottom:solid 1px #e6e9ed;
 }
-.table-4 th, .table-4 td{
+.table-4 th, .table-4 td, .table-4-1 th, .table-4-1 td, .table-4-2 th, .table-4-2 td{
     text-align: center;
-    padding:10px 0;
+    padding-top:10px;
+    padding-bottom:10px;
 }
+
+.table-4-2 td{
+    padding-top:22px;
+    background: url(../../../img/bg/bg-td-line.png) repeat-x 0 5px;
+}
+
 /*
 按钮样式定义
 ============================================================
  */
-
-
 
 .btn {
     font-family: inherit;
@@ -425,6 +515,7 @@
     border: none;
     background: none;
     border-radius: 0.2em;
+    transition: all .4s;
 }
 
 .btn-0, .btn-0-2, .btn-0-3 {
@@ -445,7 +536,9 @@
     background: #ff9915;
 }
 .btn-0-3:hover, .btn-0-3.active{
+    color: #fff;
     border-bottom-color:  #ce954b;
+    background: #ff9915;
 }
 .btn-0-1:hover {
     color: #fff;
@@ -459,7 +552,6 @@
 }
 
 .btn-small {
-    font-family: sans-serif;
     font-size: 12px;
 }
 
@@ -694,3 +786,7 @@
     background: #f5f7f9;
 }
 
+.datepicker{
+    padding-right:32px;
+    background: url(../../../img/bg/calendar.gif) no-repeat 100% 50%;
+}

@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
-    <link rel="stylesheet" href="../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vendor/main.css">
     <link rel="stylesheet" href="../../../../css/common/common.css">
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
@@ -39,18 +39,42 @@
 
             <div class="_panel hc">
 
-                <div class="inline">
+                <div class="inline form" ic-ctrl="loginCtrl" ic-form="login">
                     <div class="mt-15">
-                        <input type="text" placeholder="用户名/手机号码/电子邮箱" class="input-text-md" role="name">
+                        <input type="text"
+                               class="input-text-md"
+                               placeholder="用户名/手机号码/电子邮箱"
+                               ic-role-field="id"
+                               ic-field-rule="id||phone||email"
+                               ic-field-err-tip="请输入有效的用户名/手机号码/电子邮箱"
+                               role="id">
+                        <p class="tip hl" ic-role-field-err-tip="id" role="tip"></p>
                     </div>
 
                     <div class="mt-15">
-                        <input type="text" placeholder="密码" class="input-text-md" role="name">
+                        <input type="password"
+                               placeholder="密码"
+                               class="input-text-md"
+                               ic-role-field="password"
+                               ic-field-rule="password"
+                               ic-field-err-tip="请输入正确的密码"
+                               role="password">
+                        <p class="tip hl" ic-role-field-err-tip="password" role="tip"></p>
                     </div>
 
                     <div class="hr mt-10">
-                        <label class="fl"><input type="checkbox" checked> 记住我</label>
-                        <button class="btn btn-1-1">登 录</button>
+                        <label class="fl"><input type="checkbox"
+                                                 value="1"
+                                                 onclick="this.value=this.checked?1:0;"
+                                                 ic-role-field="remember"
+                                                 checked> 记住我</label>
+                        <button class="btn btn-1-1"
+                                ic-role-submit="login"
+                                ic-submit-action="/user/dologin/"
+                                ic-submit-method="post"
+                                ic-submit-before="before"
+                                ic-submit-on-done="done"
+                                ic-submit-on-failed="failed">登 录</button>
                     </div>
 
                 </div>
@@ -60,12 +84,12 @@
 
     </div>
 
-    <link rel="import" href="../../../include/footer/footer.html?__inline">
+    <link rel="import" href="../../include/footer/footer.html?__inline">
 
 </div>
 
 <script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
-<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
 <script src="../../../../js/vendor/plugins.js"></script>
 <script src="../../../../js/brick/brick.js"></script>
 <script src="../../../../js/common/lang.js"></script>

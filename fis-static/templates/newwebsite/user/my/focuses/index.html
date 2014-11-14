@@ -8,21 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="../../../../../css/vender/normalize.css">
-    <link rel="stylesheet" href="../../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../../css/vendor/main.css">
     <link rel="stylesheet" href="../../../../../css/common/common.css">
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="../../../../../css/common/ie-hack.css">
     <![endif]-->
+    <link rel="stylesheet" href="../include/my.css?__inline">
     <link rel="stylesheet" href="include/style.css?__inline">
     <!-- 如果是英文版本，则输出英文版本css补丁 -->
     <link rel="stylesheet" href="../../../../../css/common/common-en.css">
-    <script src="../../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+    <script data-position='head' src="../../../../../js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
 <div id="wraper">
 
+    <link rel="import" href="../../../include/header/header.html?__inline">
     <link rel="import" href="../include/header.html?__inline">
 
     <div id="mainbody">
@@ -30,129 +32,168 @@
         <div class="wrap-1000">
 
             <section>
-                <h2 class="title-3 t-18-1-k1">全部股票</h2>
+                <h2 class="title-3 t-18-1-k1 mb-15">我的个股提醒</h2>
 
-                <div class="p-10-0 hr">
-                    <div class="inline fl">
-                        <button class="btn btn-tab-1 fz-12">删 除</button>
-                        <button class="btn btn-tab-1 fz-12">自定义指标</button>
-                    </div>
-                    <div class="inline">
-                        <input type="text" placeholder="搜索公司名称/代码/关键词等；" class="input-text-scale input-search">
-                        <button class="btn btn-1 fz-14">&nbsp;&nbsp;添加&nbsp;&nbsp;</button>
-                    </div>
-
-                </div>
-
-                <table class="table-4">
+                <table class="table-4-2">
                     <thead class="t-12-0-a1">
                         <tr>
-                            <th><input type="checkbox"></th>
-                            <th>代码</th>
-                            <th>公司名称</th>
-                            <th>报告期</th>
-                            <th>股价</th>
-                            <th>涨跌额</th>
-                            <th>变动率</th>
-                            <th>最新价</th>
-                            <th>收盘价</th>
-                            <th>资讯关注</th>
-                            <th>盈亏分析</th>
-                            <th>删除</th>
+                            <th>买卖类型</th>
+                            <th>公司代码</th>
+                            <th>公司简称</th>
+                            <th>浏览统计</th>
+                            <th>未读提醒</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="checkbox"></td>
+                            <td class="t-14-1-up">买入股票</td>
                             <td><a href="#" target="_blank">000010_SZ</a> </td>
-                            <td class="t-14-1-k1">深华新</td>
-                            <td class="t-12-0-a1">2014/09/30</td>
-                            <td class="fc-y1">7.99</td>
+                            <td class="t-14-1-k1">工商银行</td>
                             <td>
-                                <b class="t-14-1-up vm">+61.18%</b>
-                                <i class="icon icon-md-up"></i>
+                                <div>
+                                    <span class="fc-r2">新闻 :</span>
+                                    <div class="inline w-150 hl vm hf-1 bg-a0">
+                                        <b class="inline bg-r2 hf-1" style="width:10%;"></b>
+                                    </div>
+                                    <i>10%</i>
+                                </div>
+                                <div>
+                                    <span class="fc-b3">研报 :</span>
+                                    <div class="inline w-150 hl vm hf-1 bg-a0">
+                                        <b class="inline bg-b3 hf-1" style="width:30%;"></b>
+                                    </div>
+                                    <i>30%</i>
+                                </div>
                             </td>
                             <td>
-                                <i class="fc-up">USD</i>
-                                <b class="t-14-1-up vm"> +11.18%</b>
-                                <i class="icon icon-md-up"></i>
+                                <ul class="fz-12">
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-b3">[研报] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-b3">[研报] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                </ul>
                             </td>
-                            <td class="fc-y1">
-                                  <i class="fc-md">USD</i>  7.95
-                            </td>
-                            <td class="fc-y1">7.15</td>
-                            <td><i class="btn icon icon-view"></i></td>
-                            <td><i class="btn icon icon-parse"></i></td>
-                            <td><i class="btn icon icon-del"></i></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox"></td>
+                            <td class="t-14-1-md">未标记股票</td>
                             <td><a href="#" target="_blank">000010_SZ</a> </td>
-                            <td class="t-14-1-k1">深华新</td>
-                            <td class="t-12-0-a1">2014/09/30</td>
-                            <td class="fc-y1">7.99</td>
+                            <td class="t-14-1-k1">工商银行</td>
                             <td>
-                                <b class="t-14-1-up vm">+61.18%</b>
-                                <i class="icon icon-md-up"></i>
+                                <div>
+                                    <span class="fc-r2">新闻 :</span>
+                                    <div class="inline w-150 hl vm hf-1 bg-a0">
+                                        <b class="inline bg-r2 hf-1" style="width:60%;"></b>
+                                    </div>
+                                    <i>60%</i>
+                                </div>
+                                <div>
+                                    <span class="fc-b3">研报 :</span>
+                                    <div class="inline w-150 hl vm hf-1 bg-a0">
+                                        <b class="inline bg-b3 hf-1" style="width:30%;"></b>
+                                    </div>
+                                    <i>30%</i>
+                                </div>
                             </td>
                             <td>
-                                <i class="fc-up">USD</i>
-                                <b class="t-14-1-up vm"> +11.18%</b>
-                                <i class="icon icon-md-up"></i>
+                                <ul class="fz-12">
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-b3">[研报] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-b3">[研报] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                </ul>
                             </td>
-                            <td class="fc-y1">
-                                <i class="fc-md">USD</i>  7.95
-                            </td>
-                            <td class="fc-y1">7.15</td>
-                            <td><i class="btn icon icon-view"></i></td>
-                            <td><i class="btn icon icon-parse"></i></td>
-                            <td><i class="btn icon icon-del"></i></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox"></td>
+                            <td class="t-14-1-down">卖出股票</td>
                             <td><a href="#" target="_blank">000010_SZ</a> </td>
-                            <td class="t-14-1-k1">深华新</td>
-                            <td class="t-12-0-a1">2014/09/30</td>
-                            <td class="fc-y1">7.99</td>
+                            <td class="t-14-1-k1">工商银行</td>
                             <td>
-                                <b class="t-14-1-up vm">+61.18%</b>
-                                <i class="icon icon-md-up"></i>
-                            </td>
-                            <td>
-                                <i class="fc-up">USD</i>
-                                <b class="t-14-1-up vm"> +11.18%</b>
-                                <i class="icon icon-md-up"></i>
-                            </td>
-                            <td class="fc-y1">
-                                <i class="fc-md">USD</i>  7.95
-                            </td>
-                            <td class="fc-y1">7.15</td>
-                            <td><i class="btn icon icon-view"></i></td>
-                            <td><i class="btn icon icon-parse"></i></td>
-                            <td><i class="btn icon icon-del"></i></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td><a href="#" target="_blank">000010_SZ</a> </td>
-                            <td class="t-14-1-k1">深华新</td>
-                            <td class="t-12-0-a1">2014/09/30</td>
-                            <td class="fc-y1">7.99</td>
-                            <td>
-                                <b class="t-14-1-up vm">+61.18%</b>
-                                <i class="icon icon-md-up"></i>
+                                <div>
+                                    <span class="fc-r2">新闻 :</span>
+                                    <div class="inline w-150 hl vm hf-1 bg-a0">
+                                        <b class="inline bg-r2 hf-1" style="width:60%;"></b>
+                                    </div>
+                                    <i>60%</i>
+                                </div>
+                                <div>
+                                    <span class="fc-b3">研报 :</span>
+                                    <div class="inline w-150 hl vm hf-1 bg-a0">
+                                        <b class="inline bg-b3 hf-1" style="width:30%;"></b>
+                                    </div>
+                                    <i>30%</i>
+                                </div>
                             </td>
                             <td>
-                                <i class="fc-up">USD</i>
-                                <b class="t-14-1-up vm"> +11.18%</b>
-                                <i class="icon icon-md-up"></i>
+                                <ul class="fz-12">
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-b3">[研报] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-b3">[研报] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                    <li>
+                                        <span class="fc-r2">[新闻] </span>
+                                        <a href="#" target="_blank" class="fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</a>
+                                        <time class="fr fc-a0">2014/10/11</time>
+                                    </li>
+                                </ul>
                             </td>
-                            <td class="fc-y1">
-                                <i class="fc-md">USD</i>  7.95
-                            </td>
-                            <td class="fc-y1">7.15</td>
-                            <td><i class="btn icon icon-view"></i></td>
-                            <td><i class="btn icon icon-parse"></i></td>
-                            <td><i class="btn icon icon-del"></i></td>
                         </tr>
                     </tbody>
 
@@ -161,12 +202,65 @@
             </section>
 
 
+            <section>
+                <h2 class="title-3 t-18-1-k1 mb-15">我的个股关注</h2>
+
+                <table class="table-4-1">
+                    <thead class="t-12-0-a1">
+                        <tr>
+                            <th>公司代码</th>
+                            <th>公司名称</th>
+                            <th>资讯类型</th>
+                            <th>资讯标题</th>
+                            <th>发布时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#" target="_blank">000010_SZ</a></td>
+                            <td class="t-14-1-k1">深华新</td>
+                            <td class="fc-r2">[行业新闻]</td>
+                            <td class="hl fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</td>
+                            <td class="t-12-0-a0">2014/10/11</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">000010_SZ</a></td>
+                            <td class="t-14-1-k1">深华新</td>
+                            <td class="fc-b3">[研报]</td>
+                            <td class="hl fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</td>
+                            <td class="t-12-0-a0">2014/10/11</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">000010_SZ</a></td>
+                            <td class="t-14-1-k1">深华新</td>
+                            <td class="fc-r2">[行业指标]</td>
+                            <td class="hl fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</td>
+                            <td class="t-12-0-a0">2014/10/11</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td><a href="#" target="_blank">000010_SZ</a></td>
+                            <td class="t-14-1-k1">深华新</td>
+                            <td class="fc-y1">[财务指标]</td>
+                            <td class="hl fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</td>
+                            <td class="t-12-0-a0">2014/10/11</td>
+                        </tr>
+                            <td><a href="#" target="_blank">000010_SZ</a></td>
+                            <td class="t-14-1-k1">深华新</td>
+                            <td class="fc-r1">[公告]</td>
+                            <td class="hl fc-k1">中俄将深化高铁合作：制造商首随总理出访推销</td>
+                            <td class="t-12-0-a0">2014/10/11</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
         </div>
 
+
     </div>
 
-    <link rel="import" href="../../../../include/footer/footer.html?__inline">
+    <link rel="import" href="../../../include/footer/footer.html?__inline">
 
 </div>
 
@@ -178,8 +272,9 @@
 
 
 <script src="../../../../../js/vendor/underscore-1.6.0.min.js"></script>
-<script src="../../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
 <script src="../../../../../js/vendor/plugins.js"></script>
+<script src="http://echarts.baidu.com/build/echarts-plain.js"></script>
 <script src="../../../../../js/brick/brick.js"></script>
 <script src="../../../../../js/common/lang.js"></script>
 <script src="../../../../../js/common/common.js"></script>

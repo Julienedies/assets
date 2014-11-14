@@ -8,95 +8,21 @@
     <div id="recommend-box" class="inline v-top bg-1" ic-slider="b">
         <ul class="inline-list" ic-tabs="a" ic-tabs-interval="3000" ic-role-slider-view>
             <li ic-role-slider-item>
-                <div class="item inline" ic-role-tab="1">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
+                {#foreach from=$rcmdstocks key=stockindex item=rcmdstock#}
+                    {#if $stockindex eq 4#}
+                    </li>
+                    <li ic-role-slider-item>
+                    {#/if#}
+                <div class="item inline" ic-role-tab="{#$stockindex + 1#}">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top {#$stockindex + 1#}</div>
+                    <div class="t-10">{#$rcmdstock->secu#}</div>
+                    <div class="t-10">{#$rcmdstock->name#}</div>
+                    <div class="h-right fc-up">+{#$rcmdstock->status->chg#}(+{#$rcmdstock->status->ratio#}%)</div>
+                    <div class="h-right t-12">{#$rcmdstock->status->price#}</div>
                 </div>
-                <div class="item inline" ic-role-tab="2">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="3">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-down">-2.07(-0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="4">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
+                {#/foreach#}
             </li>
-            <li ic-role-slider-item>
-                <div class="item inline" ic-role-tab="1">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="2">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="3">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-down">-2.07(-0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="4">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-            </li>
-            <li ic-role-slider-item>
-                <div class="item inline" ic-role-tab="1">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="2">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="3">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-down">-2.07(-0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-                <div class="item inline" ic-role-tab="4">
-                    <div class="t-9"><i class="icon icon-fire"></i> Top 1</div>
-                    <div class="t-10">601398_SH</div>
-                    <div class="t-10">工商银行</div>
-                    <div class="h-right fc-up">+2.07(+0.5%)</div>
-                    <div class="h-right t-12">28.56</div>
-                </div>
-            </li>
+           
         </ul>
 
         <div class="hc wp-100" style="position: absolute; bottom:15px;">
@@ -109,271 +35,26 @@
     </div>
 
     <div id="recommend-rel-info-box" class="inline v-top" ic-role-tabc="a">
-
-        <div ic-role-con="1">
+    {#foreach from=$rcmdinfos key=infoindex item=rcmdinfo#}
+        <div ic-role-con="{#$infoindex+1#}">
             <h4 class="mb-15">
-                <strong class="t-5">工商银行1</strong>
-                <span class="mr-15"> ( 601398_SH )</span>
+                <strong class="t-5">{#$rcmdinfo['name']#}</strong>
+                <span class="mr-15"> ( {#$rcmdinfo['secu']#} )</span>
                 <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
             </h4>
-
             <ul class="lg-36 list-1">
+                {#foreach from=$rcmdinfo['news'] key=newsIndex item=rcmdnews#}
                 <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
+                    <span>[{#$rcmdnews->typ#}]</span>
+                    <a href="{#$rcmdnews->lnk#}" title="{#$rcmdnews->titl#}" target="_blank">{#$rcmdnews->titl|truncate:20:"":true#}</a>
+                    <time>{#$rcmdnews->time#}</time>
                 </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
+                {#/foreach#}
+            
             </ul>
         </div>
-
-        <div ic-role-con="2">
-            <h4 class="mb-15">
-                <strong class="t-5">工商银行2</strong>
-                <span class="mr-15"> ( 601398_SH )</span>
-                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
-            </h4>
-
-            <ul class="lg-36 list-1">
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-            </ul>
-        </div>
-
-        <div ic-role-con="3">
-            <h4 class="mb-15">
-                <strong class="t-5">工商银行3</strong>
-                <span class="mr-15"> ( 601398_SH )</span>
-                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
-            </h4>
-
-            <ul class="lg-36 list-1">
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-            </ul>
-        </div>
-
-        <div ic-role-con="4">
-            <h4 class="mb-15">
-                <strong class="t-5">工商银行4</strong>
-                <span class="mr-15"> ( 601398_SH )</span>
-                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
-            </h4>
-
-            <ul class="lg-36 list-1">
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[公告]</span>
-                    <a href="#">通源石油并购重组申请停审 有关方面被稽查立案</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-                <li>
-                    <span>[新闻]</span>
-                    <a href="#">广发证券投行部职员猝死 曾负责武钢股份配股融资</a>
-                    <time>10:56:23</time>
-                </li>
-            </ul>
-        </div>
-
+    {#/foreach#}
+    
     </div>
 
 </section>

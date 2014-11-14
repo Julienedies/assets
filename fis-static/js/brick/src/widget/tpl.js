@@ -4,28 +4,27 @@
 
 directives.add('ic-tpl', function (elm) {
 
-    $(elm || '[ic-tpl]').each(function(i){
+    $(elm || '[ic-tpl]').each(function (i) {
 
+        var that = this.cloneNode(true);
         var th = $(this);
 
-        var id = th.attr('ic-tpl');
+        var name = th.attr('ic-tpl');
 
-        var ctrl = th.parentsUntil('[ic-ctrl]').attr('ic-ctrl');
+//        var ctrl = th.closest('[ic-ctrl]').attr('ic-ctrl');
+//        var scope = brick.controllers.get(ctrl);
 
-        var tplf = createRender(this);
+        //console.log(ctrl, scope);
 
+        //ie7下模板渲染会报错，有时间fix;
+        //try {
+            var compiled = createRender(that);
+//        } catch (e) {
+//            console.log('+_+ :)', e);
+//        }
 
-
-
-
-
-
-
-
-
-
-
-
+        var tplfs = brick._tplfs = brick._tplfs || {};
+        tplfs[name] = compiled;
 
     });
 

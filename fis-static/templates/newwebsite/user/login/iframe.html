@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
-    <link rel="stylesheet" href="../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vendor/main.css">
     <link rel="stylesheet" href="../../../../css/common/common.css">
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
@@ -26,7 +26,7 @@
 
             <h1 class="hc lg-42 t-18-1-a1">登录我的数库</h1>
 
-            <div class="hc form" ic-form="login">
+            <div class="hc form" ic-ctrl="loginCtrl" ic-form="login">
 
                 <div class="inline hl">
                     <div class="mt-15">
@@ -52,12 +52,22 @@
                     </div>
 
                     <div class="hr mt-10">
-                        <label class="fl"><input type="checkbox" checked> 记住我</label>
+                        <label class="fl"><input type="checkbox"
+                                                 value="1"
+                                                 onclick="this.value=this.checked?1:0;"
+                                                 ic-role-field="remember"
+                                                 checked> 记住我</label>
                         <a href="#" class="fc-y1">忘记密码？</a>
                     </div>
 
                     <div class="mt-10">
-                        <button class="btn btn-1-1 btn-md-1-1" ic-role-submit="login">登 录</button>
+                        <button class="btn btn-1-1 btn-md-1-1"
+                                ic-role-submit="login"
+                                ic-submit-action="/post"
+                                ic-submit-method="post"
+                                ic-submit-before="before"
+                                ic-submit-on-done="done"
+                                ic-submit-on-failed="failed">登 录</button>
                     </div>
 
                     <div class="hr mt-10">
@@ -73,7 +83,7 @@
 </div>
 
 <script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
-<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
 <script src="../../../../js/vendor/plugins.js"></script>
 <script src="../../../../js/brick/brick.js"></script>
 <script src="../../../../js/common/lang.js"></script>

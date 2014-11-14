@@ -60,7 +60,6 @@ directives.add('ic-form', function () {
         rules = rules.replace(/(?:^|\|\||\&\&)(\w+?)\(\)(?=(?:\|\||\&\&|$))/g, function(m, $1){
             var fn = $field.icParseProperty($1);
             fns[$1] = fn;
-            console.log(m,$1)
             return m.replace($1, 'fns.'+$1).replace('()','("?")');
         });
 
@@ -69,7 +68,7 @@ directives.add('ic-form', function () {
                 return m.replace('?', val);
         });
 
-        console.log(script)
+        //console.log(script)
 
         try {
             if (eval(script)) {
@@ -86,12 +85,19 @@ directives.add('ic-form', function () {
     /**
      * 对外js调用接口
      */
-    $.fn.icVerify = function(field){
+    $.fn.icVerify = function(){
 
-        var namespace = this.attr('ic-role-submit');
+        var isSubmit = this.attr('ic-role-submit');
 
-        if(namespace){
-            this.trigger('ic-form.'+namespace, field);
+        if(isSubmit){
+            this.trigger('ic-form.'+isSubmit);
+            return this.attr('ic-verification');
+        }
+
+        var isField = this.attr('ic-role-field');
+
+        if(isField){
+            this.trigger('change');
             return this.attr('ic-verification');
         }
 
@@ -105,6 +111,7 @@ directives.add('ic-form', function () {
         var namespace = $elm.attr('ic-form');
         var $fields = $elm.find('[ic-role-field]');
         var $submit = $elm.find('[ic-role-submit]');
+        var $loading = $elm.find('[ic-role-loading]');
 
         var fields = {};
 
@@ -113,17 +120,25 @@ directives.add('ic-form', function () {
 
             fields = {};
 
-            $fields.filter(':visible').each(function(i){
+            $fields.filter(':not("[ic-field-rule]")').each(function(i){
+                var $th = $(this);
+                var name = $th.attr('ic-role-field');
+                var submitName = $th.attr('name') || name;
+                fields[submitName] = $th.val();
+            });
+
+            //显示并且有验证规则
+            $fields.filter(':visible').filter('[ic-field-rule]').each(function(i){
                 $(this).change();
             });
 
             for(var i in fields){
                 if(fields[i]===false) {
-                    return $submit.attr('ic-verification', '');
+                    $submit.removeAttr('ic-verification');
+                    return false;
                 }
             }
 
-            //$submit.data('fields', fields);
             return $submit.attr('ic-verification', true);
 
         });
@@ -133,31 +148,45 @@ directives.add('ic-form', function () {
         var method = $submit.attr('ic-submit-method');
         var url = $submit.attr('ic-submit-action');
         var done = $submit.attr('ic-submit-on-done');
+        var always = $submit.attr('ic-submit-on-always');
         var failed = $submit.attr('ic-submit-on-failed');
         var before = $submit.attr('ic-submit-before');
+        var dataType = $submit.attr('ic-submit-data-type') || 'json';
 
-        done = $submit.icParseProperty(done);
-        failed = $submit.icParseProperty(failed);
+        always = $submit.icParseProperty(always) || function(){};
+        done = $submit.icParseProperty(done) || function(){};
+        failed = $submit.icParseProperty(failed) || function(msg){console.log(msg)};
         before = $submit.icParseProperty(before) || function(){};
 
-        $submit.on('click', function(){
+        $submit.on('focus', function(){
 
             if(!$submit.icVerify()) return;
 
             var data = before(fields);
 
-            $submit.setLoading();
+            if( $loading.size()){
+                $submit.hide();
+                $loading.show();
+            }else{
+                $submit.setLoading();
+            }
 
             $.ajax({
                 url: url,
                 type: method,
+                dataType:dataType,
                 data: data || fields
             }).done(
                 function(data){
-                    $submit.clearLoading();
                     done(data);
                 }
-            );
+            ).fail(failed)
+                .always(function(){
+                    $submit.show();
+                    $loading.hide();
+                    $submit.clearLoading();
+                    always();
+                });
 
         });
 
@@ -167,10 +196,15 @@ directives.add('ic-form', function () {
             var $th = $(this);
             var name = $th.attr('ic-role-field');
             var submitName = $th.attr('name') || name;
-            var $errTip = $elm.find('[ic-role-field-err-tip="?"]'.replace('?', name));
             var rules = $th.attr('ic-field-rule');
+
+            if(!rules) return;
+            if($th.attr('type') === 'hidden') return;
+
             var errTips = $th.attr('ic-field-err-tip');
             var fire = $th.attr('ic-field-verify-fire');
+            var $errTip = $elm.find('[ic-role-field-err-tip="?"]'.replace('?', name));
+            var foucsTip = $errTip.text();
 
             rules = compileRule(rules, $elm);
 
@@ -179,39 +213,31 @@ directives.add('ic-form', function () {
                 var val = $th.val();
                 var tip;
 
-                //equal 临时处理
-//                _rules = rules.replace(/(^|\|\||\&\&)(equal\((\w+)\))/, function(m, $1,$2,$3,t){
-//
-//                    var val = $elm.find('[ic-role-field=?]'.replace('?', $3)).val();
-//                    return $1 + '/?/'.replace('?', val||'\w');
-//                }).replace(/\.test\("\?"\)/g, function(m){
-//
-//                    return m.replace('?', val);
-//                });
-
-//                console.error( _rules);
-
-
                 if(tip = _verify(val, rules, errTips, $th)){
                     //验证失败
-                    $errTip.show().addClass('error').text(tip);
+                    $errTip.css({'visibility':'visible'}).addClass('error').text(tip);
+                    $th.removeAttr('ic-verification');
                     fields[name] = false;
                     fire && $th.trigger('ic-form.' + namespace + '.' + name + '.verify', 0);
                 }else{
                     //验证通过
-                    $errTip.hide().removeClass('error');
+                    $errTip.css({'visibility':'hidden'}).removeClass('error');
+                    $th.attr('ic-verification', 1);
                     fields[submitName] = val;
                     fire && $th.trigger('ic-form.' + namespace + '.' + name + '.verify', 1);
 
                 }
 
-
-
             });
 
+
+            $th.on('focus', function(){
+                $errTip.text(foucsTip);
+            });
+
+
+
         });
-
-
 
 
     });

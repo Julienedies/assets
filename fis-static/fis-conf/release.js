@@ -1,3 +1,7 @@
+/**
+ * Created by julien.zhang on 2014/10/10.
+ */
+
 var _domains_ = '{#$assets_url#}';
 
 //开启simple插件，注意需要先进行插件安装 npm install -g fis-postpackager-simple
@@ -50,6 +54,11 @@ fis.config.set('roadmap.path', [
         isHtmlLike: true
     },
     {
+        reg: /^\/templates\/newwebsite\/(user\/.+\.html)/i,
+        release: '/newaccount/application/templates/vcn/$1',
+        isHtmlLike: true
+    },
+    {
         reg: /^\/templates\/(.+\.html)/i,
         release: '/newwww/application/templates/vcn/$1',
         isHtmlLike: true
@@ -82,6 +91,13 @@ fis.config.set('roadmap.path', [
         release: '/assets/vcn/csf/img/$1',
         url: '/vcn/csf/img/$1'
     },
+    //处理css目录里的sprite图片
+    {
+        reg: /^\/css\/(.+\.(?:jpg|png|gif))/i,
+        release: '/assets/vcn/csf/img/$1',
+        url:'/vcn/csf/img/$1',
+        useHash: true
+    },
     {
         reg: /\/templates\/(.+\.(?:jpg|png|gif))/i,
         release: '/assets/vcn/csf/img/$1',
@@ -106,6 +122,11 @@ fis.config.merge({
     deploy : {
         remote : {
             to : '../',
+            exclude : /(?:\/(?:include|src|demo|example|data|test)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
+        },
+
+        newaccount : {
+            to : '../newaccount/',
             exclude : /(?:\/(?:include|src|demo|example|data|test)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
         }
     }

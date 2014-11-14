@@ -13,6 +13,7 @@
                        ic-field-rule="phone"
                        ic-field-err-tip="请输入有效的手机号码"
                        ic-field-verify-fire="1"
+                       name="mobile"
                        role=""/>
 
                 <p class="tip" ic-role-field-err-tip="mobile-phone">目前仅支持中国大陆手机号</p>
@@ -28,14 +29,15 @@
                     <input type="text"
                            class="input-text-sm"
                            ic-role-field="captcha"
-                           ic-field-rule="/\w{4}/"
+                           ic-field-rule="/^\w{4}$/"
                            ic-field-err-tip="请输入正确的验证码"
+                           name="captcha"
                            role="captcha"/>
 
                     <p class="tip" style="width:10em;" ic-role-field-err-tip="captcha">请输入图中的验证码，不区分大小写</p>
                 </div>
                 <div class="inline">
-                    <img src="../../include/cap.png" height="44" class="vm" role="captchaImg">
+                    <img src="{#$account_url#}/user/captcha/v6" height="44" class="vm" role="captchaImg">
 
                     <div class="hc"><span class="btn" role="changeCaptcha">换一张</span></div>
                 </div>
@@ -51,16 +53,17 @@
                     <input type="text"
                            class="input-text-sm"
                            ic-role-field="mobileCaptcha"
-                           ic-field-rule="/\d{6}/"
+                           ic-field-rule="/^\d{6}$/"
                            ic-field-err-tip="请输入正确的手机验证码"
+                           name="mobilecaptcha"
                            role="mobileCaptcha"/>
-
+                    <input type="hidden" name="mobile_type" value="regist"  role="getMobileCaptcha"/>
                     <p class="tip" ic-role-field-err-tip="mobileCaptcha">输入手机收到的验证码</p>
                 </div>
                 <div class="inline" ic-ctrl="mobileCaptchaCtrl">
                     <button class="btn btn-md btn-b1 disabled"
                             ic-ajax="getMobileCaptcha"
-                            ic-submit-action="/post"
+                            ic-submit-action="/user/getMobileCaptcha/"
                             ic-submit-method="post"
                             ic-submit-data=""
                             ic-submit-before="before"
@@ -80,6 +83,7 @@
                        ic-role-field="password"
                        ic-field-rule="password"
                        ic-field-err-tip="请输入正确的密码"
+                       name="password"
                        role="password"/>
 
                 <p class="tip" ic-role-field-err-tip="password" role="msg">长度不得少于8位，可使用数字/字母/符号</p>
@@ -96,6 +100,7 @@
                        ic-role-field="school"
                        ic-field-rule="/.{4,}/"
                        ic-field-err-tip="请输入正确的学校名称"
+                       name="university"
                        role="school"/>
 
                 <p class="tip" ic-role-field-err-tip="school"></p>
@@ -108,11 +113,12 @@
             </td>
             <td>
                 <input type="text"
-                       placeholder="格式: 2013.04"
+                       placeholder="格式: 2013/04"
                        class="input-text-sm"
                        ic-role-field="admission-date"
-                       ic-field-rule="/.{4,}/"
+                       ic-field-rule="checkAdmissionDate()"
                        ic-field-err-tip="请输入正确的入学时间"
+                       name="entrancetime"
                        role=""/>
 
                 <p class="tip" ic-role-field-err-tip="admission-date"></p>
@@ -127,12 +133,15 @@
                 <select
                         class="input-text-sm"
                         style="width:12em;"
+                        name="education"
                         ic-role-field="position"
                         ic-field-rule="required"
                         ic-field-err-tip="请选择在读身份"
                         role="">
-                    <option>xx</option>
-                    <option>yy</option>
+                    <option value='1'>大专</option>
+                    <option value='2'>本科</option>
+                    <option value='4'>硕士学位</option>
+                    <option value='5'>博士学位</option>
                 </select>
 
                 <p class="tip" ic-role-field-err-tip="position" role="msg"></p>
@@ -142,6 +151,8 @@
         <tr>
             <td></td>
             <td>
+                <input type="hidden" name="" ic-role-field="userType" value="0"><!--定义用户类型-->
+                <input type="hidden" name="type" ic-role-field="type" value="mobile" /><!--定义注册类型-->
                 <input type="checkbox" checked="true" disabled>
                 <span>同意并愿意遵守数库的<a href="#" target="_blank" class="fc-y1">《隐私保护政策》</a></span>
             </td>
@@ -150,11 +161,12 @@
             <td></td>
             <td>
                 <button class="btn btn-1-1"
-                        ic-submit-action="/post"
+                        ic-submit-action="/user/register"
                         ic-submit-method="post"
                         ic-submit-before="before"
                         ic-submit-on-done="done"
                         ic-role-submit="mobile-phone-sign-up">立即注册</button>
+                        
             </td>
         </tr>
 

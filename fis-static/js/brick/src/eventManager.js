@@ -159,6 +159,10 @@ var eventManager = (function() {
 
             })(namespace, _events);
 
+        },
+
+        _look: function () {
+            console.log(_events);
         }
 
 

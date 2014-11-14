@@ -6,6 +6,7 @@
 #logo-box .search{
     position: relative;
     margin:0 30px 0 0px;
+    top:14px;
 }
 #logo-box  .search .icon-search{
     position: absolute;

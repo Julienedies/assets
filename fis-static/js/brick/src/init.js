@@ -5,6 +5,7 @@
 
 //内置服务
 services.add('recordManager', recordManager);
+services.fill('eventManager', eventManager);
 
 //对外接口
 root.brick = {
@@ -13,6 +14,7 @@ root.brick = {
     controllers: controllers,
     services: services,
     directives: directives,
+    _tplfs:{},
     _findProperty: function(name){
 
     },

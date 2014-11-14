@@ -8,21 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
-    <link rel="stylesheet" href="../../../../css/vender/main.css">
-    <link rel="stylesheet" href="../../../../css/vender/pure-min.css">
+    <link rel="stylesheet" href="../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vendor/main.css">
+    <link rel="stylesheet" href="../../../../css/vendor/pure-min.css">
     <link rel="stylesheet" href="../../../../css/common/common.css">
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
     <![endif]-->
     <link rel="stylesheet" href="include/style.css?__inline">
-    <script src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+    <script data-position="head" src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
 <div id="wraper" class="company">
 
-    <link rel="import" href="../../../include/header/header.html?__inline">
+    <link rel="import" href="../../include/header/header.html?__inline">
 
     <div id="mainbody">
 
@@ -42,12 +42,14 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {#foreach from=$topstories item=tops#}
                     <tr>
                         <td class="t-14-1-k1">公司新闻</td>
-                        <td><a href="#" target="_blank"><b>国巴黎银行可转债转股结果暨股份变动公告</b></a></td>
+                        <td><a href="{#$tops['lnk']#}" target="_blank"><b>{#$tops['tit']#}</b></a></td>
                         <td class="t-12-1-a2">摩根大通 &nbsp; &nbsp; 花旗银行</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
+                        <td class="t-12-0-a0 hr">{#$tops['dt']#}</td>
                     </tr>
+                    {#/foreach#}
                     </tbody>
                 </table>
             </section>
@@ -63,21 +65,15 @@
                     </tr>
                     </thead>
                     <tbody>
+                     {#foreach from=$companynotices item=notices#}
+                    
                     <tr>
-                        <td><a href="#" target="_blank"><b>国巴黎银行可转债转股结果暨股份变动公告</b></a></td>
-                        <td class="t-12-1-a2">关联资金占用及往来</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
+                        <td><a href="{#$notices['lnk']#}" target="_blank"><b>{#$notices['tit']#}</b></a></td>
+                        <td class="t-12-1-a2">{#$notices['typ']#}</td>
+                        <td class="t-12-0-a0 hr">{#$notices['dt']#}</td>
                     </tr>
-                    <tr>
-                        <td><a href="#" target="_blank"><b>华测检测：广东华商律师事务所关于公司以发行股份及现金方式购买资产之补充法律意见书（一）</b></a></td>
-                        <td class="t-12-1-a2">关联资金占用及往来</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" target="_blank"><b>国巴黎银行可转债转股结果暨股份变动公告</b></a></td>
-                        <td class="t-12-1-a2">关联资金占用及往来</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
-                    </tr>
+                       {#/foreach#}
+                  
                     </tbody>
                 </table>
 
@@ -106,15 +102,32 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {#foreach from=$sectorupdates item=updates#}
                     <tr>
-                        <td class="t-14-1-k1">主要产品_产量_天然大理石建筑板材</td>
-                        <td class="hr"><span class="t-14-1-b0">2,381.05 </span>万立方米</td>
-                        <td class="hr"><b class="t-14-1-up">+61.18%</b> <i class="icon icon-up-1"></i></td>
-                        <td class="hr"><b class="t-14-1-down">-1.18%</b> <i class="icon icon-down-1"></i></td>
+                        <td class="t-14-1-k1"><a href="{#$updates['lnk']#}" target="_blank">{#$updates['tit']#}</a></td>
+                        <td class="hr"><span class="t-14-1-b0">{#$updates['v']|number_format#} </span></td>
+                        <td class="hr">
+                            {#if $updates['yoy'] >= 0 #}
+                            <b class="t-14-1-up">+{#$updates['yoy']#}%</b> 
+                            <i class="icon icon-up-1"></i>
+                            {#else#}
+                            <b class="t-14-1-down">-{#$updates['yoy']#}%</b> 
+                            <i class="icon icon-down-1"></i>
+                            {#/if#}
+                        </td>
+                        <td class="hr">
+                            {#if $updates['mom'] >= 0 #}
+                            <b class="t-14-1-up">+{#$updates['mom']#}%</b> 
+                            <i class="icon icon-up-1"></i>
+                            {#else#}
+                            <b class="t-14-1-down">-{#$updates['mom']#}%</b> 
+                            <i class="icon icon-down-1"></i>
+                            {#/if#}
+                        </td>
                         <td class="hr t-14-1-a2">东北证券</td>
-                        <td class="hr t-12-0-a0 hr">2014/09/24</td>
+                        <td class="hr t-12-0-a0 hr">{#$updates['dt']#}</td>
                     </tr>
-
+                    {#/foreach#}
                     </tbody>
                 </table>
             </section>
@@ -134,30 +147,27 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {#foreach from=$analystspicks item=analystspick#}
                     <tr>
-                        <td class="t-14-1-a2">木法沙</td>
-                        <td><a href="#" target="_blank"><b>论马克思主义哲学在股市的正确运用之意义</b></a></td>
-                        <td class="t-14-1-up">增持</td>
-                        <td class="t-14-1-b0 hc">70%</td>
+                        <td class="t-14-1-a2">{#$analystspick['name']#}</td>
+                        <td><a href="{#$analystspick['lnk']#}" target="_blank"><b>{#$analystspick['tit']#}</b></a></td>
+                        {#if $analystspick['csrf'] eq 1#}
+                            <td class=" t-14-1-up">买入</td>
+                        {#else if $analystspick['csrf'] eq 2#}
+                            <td class=" t-14-1-up">增持</td>
+                        {#else if $analystspick['csrf'] eq 3#}
+                            <td class=" t-14-1-md">中性</td>
+                        {#else if $analystspick['csrf'] eq 4#}
+                            <td class=" t-14-1-down">减持</td>
+                        {#else if $analystspick['csrf'] eq 5#}
+                            <td class=" t-14-1-down">卖出</td>
+                        {#/if#}
+                        <td class="t-14-1-b0 hc">{#$analystspick['accu']#}%</td>
                         <td class="t-14-1-a2">东北证券</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
+                        <td class="t-12-0-a0 hr">{#$analystspick['dt']#}</td>
                     </tr>
-                    <tr>
-                        <td class="t-14-1-a2">木法沙</td>
-                        <td><a href="#" target="_blank"><b>论马克思主义哲学在股市的正确运用之意义</b></a></td>
-                        <td class="t-14-1-md">中性</td>
-                        <td class="t-14-1-b0 hc">70%</td>
-                        <td class="t-14-1-a2">东北证券</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
-                    </tr>
-                    <tr>
-                        <td class="t-14-1-a2">木法沙</td>
-                        <td><a href="#" target="_blank"><b>论马克思主义哲学在股市的正确运用之意义</b></a></td>
-                        <td class="t-14-1-down">减持</td>
-                        <td class="t-14-1-b0 hc">70%</td>
-                        <td class="t-14-1-a2">东北证券</td>
-                        <td class="t-12-0-a0 hr">2014/09/24</td>
-                    </tr>
+                    {#/foreach#}
+                    
                     </tbody>
                 </table>
             </section>
@@ -168,14 +178,15 @@
 
     </div>
 
-    <link rel="import" href="../../../include/footer/footer.html?__inline">
+    <link rel="import" href="../../include/footer/footer.html?__inline">
 
 </div>
 
 <script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
-<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
 <script src="../../../../js/vendor/plugins.js"></script>
 <script src="../../../../js/brick/brick.js"></script>
+<script src="../../../../js/common/lang.js"></script>
 <script src="../../../../js/common/common.js"></script>
 <script src="include/main.js?__inline"></script>
 </body>

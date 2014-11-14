@@ -3,44 +3,69 @@
 ======================================================
  */
 html, body {
-    color:#656d78;
+    color: #656d78;
     background: #fff;
     line-height: 1.6;
-    font-size:14px;
+    font-size: 14px;
     font-family: microsoft yahei, Simsun;
 }
-
-a{
-    color:#4a7cbc;
+body{
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none;  /*webkit浏览器*/
+    -ms-user-select: none;   /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+a {
+    color: #4a7cbc;
     text-decoration: none;
 }
-p{
+
+p {
     font-family: sans-serif;
     font-size: 12px;
 }
-article{
-    width:720px;
-    margin:2em auto;
+
+article {
+    width: 720px;
+    margin: 2em auto;
 }
-article p{
-    margin:1.8em 0;
+
+article p {
+    margin: 1.8em 0;
     text-indent: 2em;
     font-size: 16px;
 }
-table{
+
+table {
     width: 100%;
 }
-select{
-    font-size:inherit;
+
+select {
+    font-size: inherit;
     box-sizing: border-box;
-    padding:0 0.5em;
-    line-height: 3.2;;
-    height: 3.2em;
-    border-radius: 0.2em;;
-    border:solid 1px #ccd1d9;
+    padding: 0 0.5em;
+    line-height: 1.8;
+    height: 1.8em;
+    border-radius: 0.1em;;
+    border: solid 1px #ccd1d9;
 }
-i,b{
-    font-style:normal;
+
+[type="text"] {
+    width: 6em;
+    border: solid 1px #ccd1d9;
+    line-height: 2;
+}
+
+i, b {
+    font-style: normal;
+}
+
+thead.hc th{
+   text-align:center;
+}
+thead th.hl{
+    text-align:left;
 }
 /*
 交互样式定义
@@ -51,65 +76,78 @@ i,b{
 通用基本类定义
 =========================================================
  */
-.inline{
+.none {
+    display: none !important;
+}
+
+.inline {
     vertical-align: top;
 }
-.inline, .inline-list, .inline-list > li, .inline-list-1, .inline-list-1 > li{
+
+.inline, .inline-list, .inline-list > li, .inline-list-1, .inline-list-1 > li {
     display: inline-block;
 }
-.inline-list{
+
+.inline-list {
     vertical-align: top;
 }
-.inline-list li{
-    float:left;
+
+.inline-list li {
+    float: left;
 }
 
 /*垂直对齐，水平对齐 */
-.f-left, .fl{
+.f-left, .fl {
     float: left;
 }
-.f-right, .fr{
+
+.f-right, .fr {
     float: right;
 }
-.v-top, .vt{
+
+.v-top, .vt {
     vertical-align: top;
 }
-.v-middle, .vm{
+
+.v-middle, .vm {
     vertical-align: middle;
 }
-.vb{
+
+.vb {
     vertical-align: bottom;
 }
-.hl{
+
+.hl {
     text-align: left;
 }
-.h-center, .hc{
+
+.h-center, .hc {
     text-align: center;
 }
-.h-right, .hr{
+
+.h-right, .hr {
     text-align: right;
 }
 
 /* 强制一行显示 */
-.line{
-    white-space:nowrap;
+.line {
+    white-space: nowrap;
 }
 
 /*border background样式定义 */
-.br-1{
-    border-right:solid 1px #e6e9ed;
+.br-1 {
+    border-right: solid 1px #e6e9ed;
 }
 
-.bg-1{
+.bg-1 {
     background: #e7edf7;
 }
 
-
 /* 半透明黑色背景图片 */
-.bg-t1{
-   background: url(../../../img/bg/transparent-bg.png) repeat 0 0;
+.bg-t1 {
+    background: url(../../../img/bg/transparent-bg.png) repeat 0 0;
 }
 
-.disabled{
-    cursor: not-allowed!important;
+.disabled {
+    cursor: not-allowed !important;
 }

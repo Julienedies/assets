@@ -102,6 +102,9 @@
     height: 19px;
     background: url(../../../img/icons/icon-add.png?__sprite) no-repeat 0 0;
 }
+.btn.active .icon-add, .btn:hover .icon-add{
+    background: url(../../../img/icons/icon-add-white.png?__sprite) no-repeat 0 0;
+}
 .icon-add-2{
     width:23px;
     height: 22px;
@@ -177,7 +180,24 @@
     height: 43px;
     background: url(../../../img/icons/icon-pdf.png?__sprite) no-repeat 0 0;
 }
-
+.icon-x-white, .icon-x-red{
+    width:12px;
+    height: 12px;
+    background: url(../../../img/icons/icon-x-white.png?__sprite) no-repeat 0 0;
+}
+.icon-x-red{
+    background: url(../../../img/icons/icon-x-red.png?__sprite) no-repeat 0 0;
+}
+.icon-x-gray{
+    width:12px;
+    height: 12px;
+    background: url(../../../img/icons/icon-x-gray.png?__sprite) no-repeat 0 0;
+}
+.icon-x-black{
+    width:12px;
+    height: 12px;
+    background: url(../../../img/icons/icon-x-black.png?__sprite) no-repeat 0 0;
+}
 /* dialog 相关 */
 .icon-dialog-ok{
     width:73px;
@@ -233,8 +253,16 @@
     height: 25px;
     background: url(../../../img/icons/icon-return.png?__sprite) no-repeat 0 0;
 }
-
-
+.icon-lkey{
+    width:16px;
+    height: 15px;
+    background: url(../../../img/icons/icon-lkey.png?__sprite) no-repeat 0 0;
+}
+.icon-rkey{
+    width:16px;
+    height: 15px;
+    background: url(../../../img/icons/icon-rkey.png?__sprite) no-repeat 0 0;
+}
 /* footer part */
 .icon-wx{
     width:47px;
@@ -272,7 +300,11 @@
     height: 72px;
     background: url(../../../img/icons/icon-et.png?__sprite) no-repeat 0 0;
 }
-
+.icon-sky{
+    width:198px;
+    height: 59px;
+    background: url(../../../img/footer/icon-sky.png?__sprite) no-repeat 0 0;
+}
 .icon-xl{
     width: 71px;
     height: 67px;
@@ -287,4 +319,25 @@
     width: 103px;
     height: 67px;
     background: url(../../../img/icons/icon-m.png?__sprite) no-repeat 0 0;
+}
+
+.icon-xlcj{
+    width:133px;
+    height: 40px;
+    background: url(../../../img/footer/icon-xlcj.png?__sprite) no-repeat 0 0;
+}
+.icon-xlcj{
+    width:133px;
+    height: 40px;
+    background: url(../../../img/footer/icon-xlcj.png?__sprite) no-repeat 0 0;
+}
+.icon-pfyh{
+    width:124px;
+    height: 40px;
+    background: url(../../../img/footer/icon-pfyh.png?__sprite) no-repeat 0 0;
+}
+.icon-jjgcb{
+    width:102px;
+    height: 40px;
+    background: url(../../../img/footer/icon-jjgcb.png?__sprite) no-repeat 0 0;
 }

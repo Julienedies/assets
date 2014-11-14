@@ -60,13 +60,13 @@ directives.add('pagination', function (elm) {
             prev.siblings().not(next).remove();
 
             $(r.join('')).insertAfter(prev).filter('[ic-role-pagination-num=' + current +']').addClass('active');
-            onChangeCall ? window[onChangeCall] && window[onChangeCall]({}, current) :  th.trigger('ic-pagination'+'.'+name, current);
+            onChangeCall ? window[onChangeCall] && window[onChangeCall]({}, current) :  th.trigger('ic-pagination.change', current);
         }
 
 
         createNums();
 
-        th.delegate('[ic-role-pagination-num]', 'click', function(e){
+        th.on('click', '[ic-role-pagination-num]',  function(e){
 
             var num = $(this).attr('ic-role-pagination-num') * 1;
             if(current == num) return;

@@ -1,3 +1,7 @@
+/**
+ * Created by julien.zhang on 2014/10/10.
+ */
+
 var _domains_ = '{#$assets_url#}';
 
 //开启simple插件，注意需要先进行插件安装 npm install -g fis-postpackager-simple
@@ -5,18 +9,23 @@ fis.config.set('modules.postpackager', 'simple');
 
 
 //通过pack设置干预自动合并结果，将公用资源合并成一个文件，更加利于页面间的共用
-fis.config.set('pack', {
-    'pkg/lib.before.js': [
-        '/js/vender/modernizr-2.6.2.min.js'
-    ],
-    'pkg/lib.after.js': [
-        '/js/vender/underscore-1.6.0.min.js',
-        '/js/vender/jquery-1.10.2.min.js',
-        '/js/vender/plugins.js']
+fis.config.merge({
+    pack: {
+        '/js/pkg/lib.before.js': [
+            '/js/vendor/modernizr-2.6.2.min.js'
+        ],
+        '/js/pkg/lib.after.js': [
+            '/js/vendor/underscore-1.6.0.min.js',
+            '/js/vendor/jquery-1.10.2.min.js',
+            '/js/vendor/plugins.js'],
+        '/js/pkg/brick.js': ['/js/brick/brick.js'],
+        '/js/pkg/common.js' : ['/js/common/lang.js', '/js/common/common.js'],
+        '/css/pkg/lib.css': [
+            '/css/vendor/normalize.css',
+            '/css/vendor/main.css'
+        ]
+    }
 });
-
-//开启simple对零散资源的自动合并
-fis.config.set('settings.postpackager.simple.autoCombine', true);
 
 
 fis.config.set('project.include', /^\/(?:templates|js|css|img)\/.*$/i);
@@ -82,6 +91,13 @@ fis.config.set('roadmap.path', [
         reg: /^\/.*\/(_[-_\w]+\.(?:jpg|png|gif))/i,
         release: '/assets/vcn/csf/img/$1',
         url: '/vcn/csf/img/$1'
+    },
+    //处理css目录里的sprite图片
+    {
+        reg: /^\/css\/(.+\.(?:jpg|png|gif))/i,
+        release: '/assets/vcn/csf/img/$1',
+        url:'/vcn/csf/img/$1',
+        useHash: true
     },
     {
         reg: /\/templates\/(.+\.(?:jpg|png|gif))/i,

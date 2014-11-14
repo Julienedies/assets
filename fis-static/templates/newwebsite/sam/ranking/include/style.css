@@ -32,6 +32,7 @@
 .table-3 td{
     border:none;
     border-bottom:solid 1px #e6e9ed;
+    position: relative;
 }
 
 
@@ -57,10 +58,16 @@ h3 b{
 }
 #market ul{
     background: #fff;
-    padding:0.1em 1em;
     border-radius: 0.2em;
     border:solid 3px #ff9915;
 }
+#market ul li{
+    padding:0.1em 1em;
+}
+/*#market ul li.active, #market ul li:hover{
+    background: #ff9915;
+    color: #fff;
+}*/
 #date{
     position: absolute; left: 50%; top:100px; margin-left:-30px;
 }
@@ -82,3 +89,17 @@ h2 span{
     border-radius: 0.3em;
 }
 
+.operation{
+    display: none;
+    font-size:14px;
+    font-weight: normal;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 20;
+    width:0;
+}
+
+.operation i{
+    margin:0 20px;min-height:32px; border-right:solid 1px #878788;
+}

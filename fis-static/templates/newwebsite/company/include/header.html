@@ -2,7 +2,7 @@
 
     <hgroup class="wrap-1000 p-40-0-20-0">
         <h1>
-            <span class="t-14 vm">法国巴黎银行  (BNP_EU)</span>&nbsp;&nbsp;&nbsp;
+            <span class="t-14 vm">{#$companyinfo['name']#}  ({#$companyinfo['code']#})</span>&nbsp;&nbsp;&nbsp;
             <a href="javascript:void(0)">
                 <i class="icon icon-add-2"></i>&nbsp;
                 <b class="vm t-14-1-y1">添加到我的个人中心</b>
@@ -13,18 +13,18 @@
     <nav class="bor-1">
         <div class="wrap-1000">
             <ul class="nav-2 inline-list" style="top:2px;">
-                <li class="active"><a href="#">公司概述</a></li>
-                <li><a href="#">公司财务</a></li>
+                <li class="active"><a href="/stock/profile/{#$companyinfo['code']#}">公司概述</a></li>
+                <li><a href="/stock/fin/{#$companyinfo['code']#}">公司财务</a></li>
                 <li ic-dropdown="a">
                     <a href="javascript:void(0);" ic-role-dropdown-toggle>
                         个股资讯
                         <i class="icon icon-triangle-01"></i>
                     </a>
                     <ul class="menu-3 fz-12" style="left:-1px; margin-top:2px;" ic-role-dropdown-menu ic-tabs="company-info" ic-tab-select="a" ic-con-select="section">
-                        <li><a href="../info/index.html#0">新闻</a></li>
-                        <li><a href="../info/index.html#1">公告</a></li>
-                        <li><a href="../info/index.html#2">宏观指标</a></li>
-                        <li><a href="../info/index.html#3">公司研报</a></li>
+                        <li><a href="/stock/info/{#$companyinfo['code']#}#0">新闻</a></li>
+                        <li><a href="/stock/info/{#$companyinfo['code']#}#1">公告</a></li>
+                        <li><a href="/stock/info/{#$companyinfo['code']#}#2">宏观指标</a></li>
+                        <li><a href="/stock/info/{#$companyinfo['code']#}#3">公司研报</a></li>
                     </ul>
                 </li>
             </ul>

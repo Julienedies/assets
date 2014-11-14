@@ -15,8 +15,8 @@ directives.add('ic-scene', function () {
 
         var th = $(this);
 
-        th.on('click', '[ic-scene-next]', function(e){
-            var next = $(this).attr('ic-scene-next');
+        th.on('click', '[ic-role-scene-next]', function(e){
+            var next = $(this).attr('ic-role-scene-next');
             active && active.hide();
             active = $('[ic-scene=' + next + ']').show();
 

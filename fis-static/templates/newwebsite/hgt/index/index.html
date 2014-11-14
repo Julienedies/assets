@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="../../../../css/vender/normalize.css">
-    <link rel="stylesheet" href="../../../../css/vender/main.css">
+    <link rel="stylesheet" href="../../../../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vendor/main.css">
     <link rel="stylesheet" href="../../../../css/common/common.css">
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="../../../../css/common/ie-hack.css">
@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="include/style.css?__inline">
     <!-- 如果是英文版本，则输出英文版本css补丁 -->
     <link rel="stylesheet" href="../../../../css/common/common-en.css">
-    <script src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
+    <script data-position="head" src="../../../../js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
 <div id="wraper">
 
-    <link rel="import" href="../../../include/header/header.html?__inline">
+    <link rel="import" href="../../include/header/header.html?__inline">
 
     <div id="mainbody">
 
@@ -39,7 +39,7 @@
 
         <div class="wrap-1000 mh-400">
 
-            <section id="chart-box" class="inline w-480 mr-35 mt-10">
+            <section id="chart-box" class="inline w-500 mr-15 mt-10">
 
                 <table>
                     <tr>
@@ -51,13 +51,13 @@
                             </select>
                         </td>
                         <td class="hr">
-                            <span class="btn btn-1 btn-small"> 加入对比 </span>
+                            <button class="btn btn-1 btn-small" ic-click="compare"> 加入对比 </button>
                         </td>
                     </tr>
                 </table>
 
 
-                <div id="chart" style="width: 480px; height: 284px;"></div>
+                <div id="chart" class="chart" style="height: 284px;"></div>
 
                 <div class="panel-3">
 
@@ -88,9 +88,8 @@
 
                     <header class="hr">
                         <h2 class="t-10 fl">今日资讯</h2>
-                        <span class="btn btn-1 btn-small"> 换一批 </span>
+                        <span class="btn btn-1 btn-small" ic-click="changeInfo"> 换一批 </span>
                     </header>
-
 
                     <ul class="list-1 lg-36">
                         <li>
@@ -171,15 +170,16 @@
                 </header>
 
                 <table>
-                    <thead class="lg-36">
+                    <thead class="lg-36 hc">
                     <tr class="t-12-0-a1">
-                        <th>公司名称</th>
-                        <th class="hc">公司代码</th>
-                        <th class="hc">最新股价</th>
-                        <th class="hc">最新涨跌额</th>
-                        <th class="hc">最新涨跌幅</th>
-                        <th class="hc">七天涨跌幅</th>
-                        <th class="hc">同业排名</th>
+                        <th class="hl">公司名称</th>
+                        <th>公司代码</th>
+                        <th>SAM产品</th>
+                        <th>最新股价</th>
+                        <th>最新涨跌幅</th>
+                        <th>七天涨跌幅</th>
+                        <th>总市值</th>
+                        <th>同业排名</th>
                     </tr>
                     </thead>
 
@@ -187,100 +187,23 @@
                     <tr>
                         <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
                         <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
+                        <td>压缩机及其附属...</td>
                         <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
                         <td class="hc fc-down">-2.60%</td>
                         <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
-                        <td class="hc fc-a3">4</td>
-                    </tr>
-                    <tr>
-                        <td class="fy-1"><a href="#" target="_blank">开山股份</a></td>
-                        <td class="hc"><a href="#" target="_blank">098234_SH</a></td>
-                        <td class="hc fc-y1">37.40</td>
-                        <td class="hc fc-down">-1.0</td>
-                        <td class="hc fc-down">-2.60%</td>
-                        <td class="hc fc-up">+0.01%</td>
+                        <td>2,349,345M</td>
                         <td class="hc fc-a3">4</td>
                     </tr>
                     </tbody>
                 </table>
 
-                <div class="pagination" ic-pagination="a" ic-pagination-total="32" ic-pagination-step="5" >
+                <div class="pagination"
+                     ic-pagination="a"
+                     ic-pagination-total="32"
+                     ic-pagination-step="5" >
                     <span class="prev" ic-role-pagination-prev>&lt;</span>
                     <span class="ellipsis" ic-role-pagination-ellipsis>...</span>
-                    <span class="num" ic-role-pagination-num="{{}}">{{}}</span>
+                    <a href="/link/{{}}" class="num" ic-role-pagination-num="{{}}">{{}}</a>
                     <span class="next" ic-role-pagination-next>&gt;</span>
                 </div>
 
@@ -342,17 +265,17 @@
 
     </div>
 
-    <link rel="import" href="../../../include/footer/footer.html?__inline">
+    <link rel="import" href="../../include/footer/footer.html?__inline">
 
 </div>
 
 <script src="../../../../js/vendor/underscore-1.6.0.min.js"></script>
-<script src="../../../../js/vendor/jquery-1.10.2.min.js"></script>
+<script src="../../../../js/vendor/jquery/jquery-1.10.2.min.js"></script>
 <script src="../../../../js/vendor/plugins.js"></script>
 <script src="../../../../js/vendor/highstock.js"></script>
 <script src="../../../../js/brick/brick.js"></script>
-<script src="../../../../js/common/common.js"></script>
 <script src="../../../../js/common/lang.js"></script>
+<script src="../../../../js/common/common.js"></script>
 <script src="include/main.js?__inline"></script>
 </body>
 </html>
