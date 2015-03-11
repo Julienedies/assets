@@ -1,0 +1,12 @@
+{
+    "js/user/login.js": ["src/user/login.js"],
+    "js/user/register.js": ["src/user/register.js"],
+    "js/user/profile.js": ["src/user/profile.js"],
+    "js/user/home.js": ["src/user/home.js"],
+    "js/common/etApp.js": ["src/common/etApp.js", "src/common/controllers/*.js", "src/common/services/*.js", "src/common/filters/*.js", "src/common/directives/*.js", "src/common/part/end.js"],
+    "js/common/config.js":["src/common/config.js"],
+    "js/index/index.js": ["src/index/index.js"],
+    "js/store/store.js": ["src/store/store.js"],
+    "js/topic/topic.js": ["src/common/part/start.js", "src/topic/topicCtrl.js","src/topic/repliesCtrl.js","src/topic/replyCtrl.js","src/topic/commentsCtrl.js","src/topic/commentCtrl.js","src/topic/editTopicCtrl.js","src/topic/editReplyCtrl.js","src/topic/editCommentCtrl.js", "src/topic/topic.js", "src/common/part/end.js"],
+    "js/topics/topics.js": ["src/topics/topics.js"]
+}

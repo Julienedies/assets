@@ -1,1 +1,1 @@
-@fis release --file fis-conf/release.js --dest remote --pack --watch --live %*
+fis release --file fis-conf/release.js --dest remote -D --clean --watch

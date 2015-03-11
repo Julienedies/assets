@@ -1,0 +1,191 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'grunt-include-replace',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 warn package.json et@0.1.1 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'grunt-include-replace', null ]
+7 verbose cache add name=undefined spec="grunt-include-replace" args=["grunt-include-replace",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'grunt-include-replace',
+8 verbose parsed url   path: 'grunt-include-replace',
+8 verbose parsed url   href: 'grunt-include-replace' }
+9 silly lockFile 1fb5ed8b-grunt-include-replace grunt-include-replace
+10 verbose lock grunt-include-replace C:\Users\julien.zhang\AppData\Roaming\npm-cache\1fb5ed8b-grunt-include-replace.lock
+11 silly lockFile 1fb5ed8b-grunt-include-replace grunt-include-replace
+12 silly lockFile 1fb5ed8b-grunt-include-replace grunt-include-replace
+13 verbose addNamed [ 'grunt-include-replace', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile eadb4e43-grunt-include-replace grunt-include-replace@
+16 verbose lock grunt-include-replace@ C:\Users\julien.zhang\AppData\Roaming\npm-cache\eadb4e43-grunt-include-replace.lock
+17 silly addNameRange { name: 'grunt-include-replace', range: '*', hasData: false }
+18 verbose url raw grunt-include-replace
+19 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-include-replace' ]
+20 verbose url resolved https://registry.npmjs.org/grunt-include-replace
+21 info trying registry request attempt 1 at 15:24:45
+22 http GET https://registry.npmjs.org/grunt-include-replace
+23 http 200 https://registry.npmjs.org/grunt-include-replace
+24 silly registry.get cb [ 200,
+24 silly registry.get   { date: 'Mon, 07 Jul 2014 07:24:47 GMT',
+24 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly registry.get     etag: '"1HOTJIL9F0RBHCET1HCTUG3TB"',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'cache-control': 'max-age=30',
+24 silly registry.get     'content-length': '29792',
+24 silly registry.get     'accept-ranges': 'bytes',
+24 silly registry.get     via: '1.1 varnish',
+24 silly registry.get     age: '1',
+24 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+24 silly registry.get     'x-cache': 'MISS',
+24 silly registry.get     'x-cache-hits': '0',
+24 silly registry.get     'x-timer': 'S1404717886.365351,VS0,VE665',
+24 silly registry.get     vary: 'Accept',
+24 silly registry.get     'keep-alive': 'timeout=10, max=50',
+24 silly registry.get     connection: 'Keep-Alive' } ]
+25 silly addNameRange number 2 { name: 'grunt-include-replace', range: '*', hasData: true }
+26 silly addNameRange versions [ 'grunt-include-replace',
+26 silly addNameRange   [ '0.0.0-beta',
+26 silly addNameRange     '0.1.0',
+26 silly addNameRange     '0.1.1',
+26 silly addNameRange     '0.1.2',
+26 silly addNameRange     '0.2.0',
+26 silly addNameRange     '0.3.0',
+26 silly addNameRange     '0.3.1',
+26 silly addNameRange     '0.4.0',
+26 silly addNameRange     '0.4.1',
+26 silly addNameRange     '1.0.0',
+26 silly addNameRange     '1.1.0',
+26 silly addNameRange     '1.1.1',
+26 silly addNameRange     '1.1.2',
+26 silly addNameRange     '1.1.3',
+26 silly addNameRange     '0.1.0-rc0',
+26 silly addNameRange     '1.2.0',
+26 silly addNameRange     '2.0.0' ] ]
+27 verbose addNamed [ 'grunt-include-replace', '2.0.0' ]
+28 verbose addNamed [ '2.0.0', '2.0.0' ]
+29 silly lockFile 29bfa1a4-grunt-include-replace-2-0-0 grunt-include-replace@2.0.0
+30 verbose lock grunt-include-replace@2.0.0 C:\Users\julien.zhang\AppData\Roaming\npm-cache\29bfa1a4-grunt-include-replace-2-0-0.lock
+31 silly lockFile feb818ad--grunt-include-replace-2-0-0-tgz https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz
+32 verbose lock https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz C:\Users\julien.zhang\AppData\Roaming\npm-cache\feb818ad--grunt-include-replace-2-0-0-tgz.lock
+33 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz',
+33 verbose addRemoteTarball   '45d9d54f235d9ef16c2a5d5569b4050c1824a784' ]
+34 info retry fetch attempt 1 at 15:24:49
+35 verbose fetch to= C:\Users\JULIEN~1.ZHA\AppData\Local\Temp\npm-6364-856N_lJ2\1404717889238-0.4977038875222206\tmp.tgz
+36 http GET https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz
+37 http 200 https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz
+38 verbose tar unpack C:\Users\JULIEN~1.ZHA\AppData\Local\Temp\npm-6364-856N_lJ2\1404717889238-0.4977038875222206\tmp.tgz
+39 silly lockFile d90438d4-nt-include-replace-2-0-0-package tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package
+40 verbose lock tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package C:\Users\julien.zhang\AppData\Roaming\npm-cache\d90438d4-nt-include-replace-2-0-0-package.lock
+41 silly lockFile 78ab1d04-89238-0-4977038875222206-tmp-tgz tar://C:\Users\JULIEN~1.ZHA\AppData\Local\Temp\npm-6364-856N_lJ2\1404717889238-0.4977038875222206\tmp.tgz
+42 verbose lock tar://C:\Users\JULIEN~1.ZHA\AppData\Local\Temp\npm-6364-856N_lJ2\1404717889238-0.4977038875222206\tmp.tgz C:\Users\julien.zhang\AppData\Roaming\npm-cache\78ab1d04-89238-0-4977038875222206-tmp-tgz.lock
+43 silly gunzTarPerm modes [ '755', '644' ]
+44 silly gunzTarPerm extractEntry package.json
+45 silly gunzTarPerm extractEntry README.md
+46 silly gunzTarPerm extractEntry LICENCE-MIT
+47 silly gunzTarPerm extractEntry tasks/includereplace.js
+48 silly lockFile d90438d4-nt-include-replace-2-0-0-package tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package
+49 silly lockFile d90438d4-nt-include-replace-2-0-0-package tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package
+50 silly lockFile 78ab1d04-89238-0-4977038875222206-tmp-tgz tar://C:\Users\JULIEN~1.ZHA\AppData\Local\Temp\npm-6364-856N_lJ2\1404717889238-0.4977038875222206\tmp.tgz
+51 silly lockFile 78ab1d04-89238-0-4977038875222206-tmp-tgz tar://C:\Users\JULIEN~1.ZHA\AppData\Local\Temp\npm-6364-856N_lJ2\1404717889238-0.4977038875222206\tmp.tgz
+52 silly lockFile feb818ad--grunt-include-replace-2-0-0-tgz https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz
+53 silly lockFile feb818ad--grunt-include-replace-2-0-0-tgz https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz
+54 silly lockFile 29bfa1a4-grunt-include-replace-2-0-0 grunt-include-replace@2.0.0
+55 silly lockFile 29bfa1a4-grunt-include-replace-2-0-0 grunt-include-replace@2.0.0
+56 silly lockFile eadb4e43-grunt-include-replace grunt-include-replace@
+57 silly lockFile eadb4e43-grunt-include-replace grunt-include-replace@
+58 silly resolved [ { name: 'grunt-include-replace',
+58 silly resolved     version: '2.0.0',
+58 silly resolved     description: 'Grunt task to include files and replace variables. Allows for parameterised includes.',
+58 silly resolved     author: { name: 'Alan Shaw', email: 'alan138@gmail.com' },
+58 silly resolved     license: 'MIT',
+58 silly resolved     homepage: 'https://github.com/alanshaw/grunt-include-replace',
+58 silly resolved     repository:
+58 silly resolved      { type: 'git',
+58 silly resolved        url: 'https://github.com/alanshaw/grunt-include-replace.git' },
+58 silly resolved     bugs: { url: 'https://github.com/alanshaw/grunt-include-replace/issues' },
+58 silly resolved     files: [ 'tasks', 'LICENCE-MIT' ],
+58 silly resolved     scripts: { test: 'grunt' },
+58 silly resolved     keywords:
+58 silly resolved      [ 'gruntplugin',
+58 silly resolved        'include',
+58 silly resolved        'require',
+58 silly resolved        'replace',
+58 silly resolved        'variable',
+58 silly resolved        'parameter',
+58 silly resolved        'import',
+58 silly resolved        'template' ],
+58 silly resolved     devDependencies:
+58 silly resolved      { grunt: '~0.4.4',
+58 silly resolved        'grunt-contrib-clean': '~0.5.0',
+58 silly resolved        'grunt-contrib-jshint': '~0.10.0',
+58 silly resolved        'grunt-contrib-nodeunit': '~0.3.3' },
+58 silly resolved     peerDependencies: { grunt: '~0.4.4' },
+58 silly resolved     engines: { node: '>=0.8.0' },
+58 silly resolved     readme: '# grunt-include-replace [![Build Status](https://travis-ci.org/alanshaw/grunt-include-replace.png)](https://travis-ci.org/alanshaw/grunt-include-replace) [![devDependency Status](https://david-dm.org/alanshaw/grunt-include-replace/dev-status.png?theme=shields.io)](https://david-dm.org/alanshaw/grunt-include-replace#info=devDependencies)\n\n> Grunt task to include files and replace variables.\n\nAllows for parameterised file includes:\n\nhello.html\n\n```html\n<!DOCTYPE html>\n<h1>Hello World!</h1>\n@@include(\'/path/to/include/message.html\', {"name": "Joe Bloggs"})\n```\n\nmessage.html\n\n```html\n<p>Hello @@name!</p>\n```\n\nResult:\n\n```html\n<!DOCTYPE html>\n<h1>Hello World!</h1>\n<p>Hello Joe Bloggs!</p>\n```\n\n## Getting Started\n\nThis plugin requires Grunt `~0.4.1`\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-include-replace --save-dev\n```\n\nOne the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks(\'grunt-include-replace\');\n```\n\n## The "includereplace" task\n\n\n### Overview\n\nThe task allows you to preprocess your project file contents by replacing placeholder "variables" and including content from other files. In addition to "global" variables that are replaced in all files you specify, the task introduces the concept of "local" variables, which are passed as parameters to included files.\n\nWARNING: The task _does not_ check for recursive includes.\n\nIn your project\'s Gruntfile, add a section named `includereplace` to the data object passed into `grunt.initConfig()`.\n\n```js\ngrunt.initConfig({\n  includereplace: {\n    your_target: {\n      options: {\n        // Task-specific options go here.\n      },\n      // Files to perform replacements and includes with\n      src: \'*.html\',\n      // Destination directory to copy files to\n      dest: \'dist/\'\n    }\n  }\n})\n```\n\n### Options\n\n#### options.globals\nType: `Object`\nDefault value: `{}`\n\nGlobal variables availabe for replacement in all files.\n\n#### options.prefix\nType: `String`\nDefault value: `@@`\n\nVariable/include directive prefix. Careful when changing as it is added to the regular expression used for finding variables to be replaced.\n\n#### options.suffix\nType: `String`\nDefault value: ``\n\nVariable/include directive suffix. Careful when changing as it is added to the regular expression used for finding variables to be replaced.\n\n#### options.includesDir\nType: `String`\nDefault value: Relative to including file\n\nDirectory where includes will be resolved.\n\n#### options.docroot\nType: `String`\nDefault value: `.`\n\n`@@docroot` is a magic local variable that contains the relative path from the file that uses it to the path specified.\n\n#### options.processIncludeContents\nType: `Function`\nDefault value: undefined\n\nA function called for every included file prior to processing by `grunt-include-replace`. It is passed the include file contents and local variables as parameters and should return the (possibly altered) file contents.\n\n### Usage Examples\n\n#### Default Options\n\n```js\nincludereplace: {\n  dist: {\n    options: {\n      globals: {\n        var1: \'one\',\n        var2: \'two\',\n        var3: \'three\'\n      },\n    },\n    src: \'*.html\',\n    dest: \'dist/\'\n  }\n}\n```\n\n##### Files array format\n\n```js\nincludereplace: {\n  dist: {\n    options: {\n      globals: {\n        var1: \'one\',\n        var2: \'two\',\n        var3: \'three\'\n      },\n    },\n    files: [\n      {src: \'js/**/*.js\', dest: \'dist/\', expand: true, cwd: \'src/\'},\n      {src: \'*.css\', dest: \'dist/css/\', expand: true, cwd: \'src/css\'}\n    ]\n  }\n}\n```\n\n##### Files object format\n\n```js\nincludereplace: {\n  dist: {\n    options: {\n      globals: {\n        var1: \'one\',\n        var2: \'two\',\n        var3: \'three\'\n      },\n    },\n    files: {\n      \'dist/js/\': [\'**/*.js\', \'!dist/**/*.js\'],\n      \'dist/css/\': [\'**/*.css\', \'!dist/**/*.css\']\n    }\n  }\n}\n```\n\n#### Custom Options\n\nThe following example allows include statements to appear as comments in HTML files by altering the prefix and suffix. Also all includes are resolved relative to the directory `inc/` (relative to your Gruntfile) rather than relative to including file.\n\n```js\nincludereplace: {\n  dist: {\n    options: {\n      prefix: \'<!-- @@\',\n      suffix: \' -->\',\n      includesDir: \'inc/\'\n    },\n    src: \'*.html\',\n    dest: \'dist/\'\n  }\n}\n```\n\n## Contributing\n\nIn lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).\n\n## Release History\n\n * 2014-05-05   v2.0.0   Adds globbing on include paths\n * 2013-12-30   v1.2.0   Rename like `grunt-contrib-copy` by specifying dest filename (for single files)\n * 2013-06-19   v1.1.0   Added magic local variable `@@docroot`: relative path from the file that uses it to the path specified\n * 2013-06-19   v1.0.0   Refactored files processing code to use Grunt files API properly\n * 2013-05-03   v0.4.0   Support for cwd directive\n * 2013-04-26   v0.3.0   Added new option includesDir - if set all includes resolved relative to that directory\n * 2013-04-19   v0.2.0   Added option processIncludeContents - a function that allows you to alter included file contents\n * 2013-02-18   v0.1.0   Grunt 0.4.x support\n',
+58 silly resolved     readmeFilename: 'README.md',
+58 silly resolved     _id: 'grunt-include-replace@2.0.0',
+58 silly resolved     _shasum: '45d9d54f235d9ef16c2a5d5569b4050c1824a784',
+58 silly resolved     _from: 'grunt-include-replace@',
+58 silly resolved     _resolved: 'https://registry.npmjs.org/grunt-include-replace/-/grunt-include-replace-2.0.0.tgz' } ]
+59 info install grunt-include-replace@2.0.0 into d:\a\et\assets\vcn
+60 info installOne grunt-include-replace@2.0.0
+61 info d:\a\et\assets\vcn\node_modules\grunt-include-replace unbuild
+62 verbose tar unpack C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package.tgz
+63 silly lockFile 06d54f85-de-modules-grunt-include-replace tar://d:\a\et\assets\vcn\node_modules\grunt-include-replace
+64 verbose lock tar://d:\a\et\assets\vcn\node_modules\grunt-include-replace C:\Users\julien.zhang\AppData\Roaming\npm-cache\06d54f85-de-modules-grunt-include-replace.lock
+65 silly lockFile c4ea59cf-nclude-replace-2-0-0-package-tgz tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package.tgz
+66 verbose lock tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package.tgz C:\Users\julien.zhang\AppData\Roaming\npm-cache\c4ea59cf-nclude-replace-2-0-0-package-tgz.lock
+67 silly gunzTarPerm modes [ '755', '644' ]
+68 silly gunzTarPerm extractEntry package.json
+69 silly gunzTarPerm extractEntry README.md
+70 silly gunzTarPerm extractEntry LICENCE-MIT
+71 silly gunzTarPerm extractEntry tasks/includereplace.js
+72 silly lockFile 06d54f85-de-modules-grunt-include-replace tar://d:\a\et\assets\vcn\node_modules\grunt-include-replace
+73 silly lockFile 06d54f85-de-modules-grunt-include-replace tar://d:\a\et\assets\vcn\node_modules\grunt-include-replace
+74 silly lockFile c4ea59cf-nclude-replace-2-0-0-package-tgz tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package.tgz
+75 silly lockFile c4ea59cf-nclude-replace-2-0-0-package-tgz tar://C:\Users\julien.zhang\AppData\Roaming\npm-cache\grunt-include-replace\2.0.0\package.tgz
+76 info preinstall grunt-include-replace@2.0.0
+77 verbose readDependencies using package.json deps
+78 verbose readDependencies using package.json deps
+79 silly resolved []
+80 verbose about to build d:\a\et\assets\vcn\node_modules\grunt-include-replace
+81 info build d:\a\et\assets\vcn\node_modules\grunt-include-replace
+82 verbose linkStuff [ false, false, false, 'd:\\a\\et\\assets\\vcn\\node_modules' ]
+83 info linkStuff grunt-include-replace@2.0.0
+84 verbose linkBins grunt-include-replace@2.0.0
+85 verbose linkMans grunt-include-replace@2.0.0
+86 verbose rebuildBundles grunt-include-replace@2.0.0
+87 info install grunt-include-replace@2.0.0
+88 info postinstall grunt-include-replace@2.0.0
+89 verbose readDependencies using package.json deps
+90 verbose already installed skipping grunt@~0.4.4 d:\a\et\assets\vcn
+91 silly resolved []
+92 error peerinvalid The package grunt does not satisfy its siblings' peerDependencies requirements!
+92 error peerinvalid Peer grunt-contrib-copy@0.5.0 wants grunt@~0.4.0
+92 error peerinvalid Peer grunt-include-replace@2.0.0 wants grunt@~0.4.4
+92 error peerinvalid Peer grunt-contrib-requirejs@0.4.4 wants grunt@~0.4.0
+92 error peerinvalid Peer grunt-contrib-concat@0.4.0 wants grunt@~0.4.0
+92 error peerinvalid Peer grunt-sprite@0.0.5 wants grunt@~0.4.1
+92 error peerinvalid Peer grunt-contrib-jshint@0.10.0 wants grunt@~0.4.0
+92 error peerinvalid Peer grunt-contrib-uglify@0.4.0 wants grunt@^0.4.0
+92 error peerinvalid Peer grunt-contrib-watch@0.4.4 wants grunt@~0.4.0
+92 error peerinvalid Peer grunt-css-sprite@0.1.3 wants grunt@~0.4.5
+93 error System Windows_NT 6.1.7601
+94 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grunt-include-replace" "--save-dev"
+95 error cwd d:\a\et\assets\vcn
+96 error node -v v0.10.28
+97 error npm -v 1.4.9
+98 error code EPEERINVALID
+99 verbose exit [ 1, true ]

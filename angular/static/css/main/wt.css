@@ -1,0 +1,23 @@
+﻿#main_box{width:71%;margin:0 auto;}
+.tbox{padding:40px;color:#333;font-size:0.9em;background:#fff;}
+.thead{padding:0 0 16px 0;}
+.user_p{margin-bottom:10px;width:100%;}
+.user_p img{border: 4px solid #fff;border-radius: 12px;}
+.user_head{padding-left:4px;}
+.mleft{position:absolute;width:7%;}
+.mright{margin-left:120px;}
+.dtt{line-height:22px;background:url('../../images/dd.jpg') no-repeat 0 0;padding-top:24px;}
+.dtt p{text-indent:2em;}
+.dtt p:first-child {text-indent:70px;}
+#flow_box{width:100%;}
+.wback{float:right;margin-top:-32px;background:#001846;font-size:1em;color:#fff;text-align:center;line-height:1.4em;padding:4px 10px;text-decoration:none;}
+
+
+@media screen and (max-width: 800px) {
+	.mleft{position:static;width:100%}
+	.mright{margin-left:0;clear:both;}
+	.user_p{float:left;width:26%}
+	.user_head{padding:22px 0 30px 15px;width:auto;float:left;}
+	.wico{width:25%;}
+	#main_box{width:92%}
+}

@@ -13,7 +13,7 @@ fis.config.set('pack', {
     ],
     '/js/pkg/lib.after.js': [
         '/js/vendor/underscore-1.6.0.min.js',
-        '/js/vendor/jquery-1.10.2.min.js',
+        '/js/vendor/jquery/jquery-1.10.2.min.js',
         '/js/vendor/plugins.js'],
     '/js/pkg/brick.js': ['/js/brick/brick.js'],
     '/js/pkg/common.js': ['/js/common/lang.js', '/js/common/common.js'],
@@ -111,7 +111,8 @@ fis.config.set('settings.spriter.csssprites.layout', 'matrix');
 fis.config.merge({
     deploy : {
         local : {
-            to : './_publish'
+            to : './express/static',
+            exclude : /(?:\/(?:include|src|demo|example|data|test)\/.+\.(?:html|js|css))|(?:\/_[-_\w\d]+\.html)/i
         }
     }
 });

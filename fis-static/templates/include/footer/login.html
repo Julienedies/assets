@@ -1,0 +1,64 @@
+
+<div class="w-480 p-20-0" ic-ctrl="alertLoginCtrl">
+
+    <h1 class="hc lg-42 t-18-1-a1">登录我的数库</h1>
+
+    <form action="/user/dologin" method="post" target="_top" class="hc form"  ic-form="alertLogin">
+
+        <div class="tip error" role="status"></div>
+
+        <div class="inline hl">
+            <div class="mt-15">
+                <input type="text"
+                       name="id"
+                       class="input-text-md"
+                       placeholder="用户名/手机号码/电子邮箱"
+                       ic-role-field="id"
+                       ic-field-rule="id||phone||email"
+                       ic-field-err-tip="请输入有效的用户名/手机号码/电子邮箱"
+                       role="" />
+                <p class="tip error" ic-role-field-err-tip="id"></p>
+            </div>
+
+            <div class="mt-15">
+                <input type="password"
+                       name="password"
+                       class="input-text-md"
+                       placeholder="密码"
+                       ic-role-field="password"
+                       ic-field-rule="password"
+                       ic-field-err-tip="请输入正确的密码"
+                       role="">
+                <p class="tip error" ic-role-field-err-tip="password"></p>
+            </div>
+
+            <div class="hr mt-10">
+                <label class="fl"><input type="checkbox"
+                                         name="remember"
+                                         value="1"
+                                         onclick="this.value=this.checked?1:0;"
+                                         ic-role-field="remember"
+                                         checked> 记住我</label>
+                <a href="#" class="fc-y1">忘记密码？</a>
+            </div>
+
+            <div class="mt-10">
+                <button type="button"
+                        class="btn btn-1-1 btn-md-1-1"
+                        ic-role-submit="alertLogin"
+                        ic-submit-action="action()"
+                        ic-submit-method="post"
+                        ic-submit-before="before"
+                        ic-submit-on-done="done"
+                        ic-submit-on-failed="failed">登 录</button>
+            </div>
+
+            <div class="hr mt-10">
+                <span class="fl fc-a0">还没有帐号？ </span>
+                <a href="#" class="fc-y1">立即注册</a>
+            </div>
+
+        </div>
+    </form>
+
+</div>

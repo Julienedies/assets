@@ -13,7 +13,3 @@
 2：php联调，双击执行fis-release.cmd命令; (停止监听，命令窗口执行ctrl+c; )
 2：上线部署前，双击执行fis-deploy.cmd命令;
 
-#技术选项
-=====================================
-##HTML5 Boilerplate
-http://html5boilerplate.com/

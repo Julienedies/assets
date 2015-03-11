@@ -1,0 +1,42 @@
+﻿body{overflow-x:hidden;}
+#main_box{width:71%;margin:20px auto 50px auto;}
+.elm{
+	width:234px;
+	background:#fff;
+	margin:0 18px 12px 0;
+	float:left;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-webkit-transition: top 1s ease, left 1s ease;
+	-moz-transition: top 1s ease, left 1s ease;
+	-o-transition: top 1s ease, left 1s ease;
+	-ms-transition: top 1s ease, left 1s ease;
+}
+.tbox{padding:5px 12px 16px 12px;color:#333;font-size:14px;}
+.thead{padding:16px 0;line-height:24px;}
+.thead a{color:#000;text-decoration:none;}
+.thead a:hover{text-decoration:underline;}
+.user_p{width: 78px;height: 78px;position: absolute;margin-top: -40px;}
+.user_p img{border: 4px solid #fff;border-radius: 12px;}
+.user_head{margin-left:90px;}
+.wback{position:static;margin:-40px 15px 0 0;margin:-40px 16px 0 0\9;float:right;background:#001846;font-size:16px;color:#fff;text-align:center;line-height:24px;padding:4px 10px;text-decoration:none;}
+
+#flow_box{width:100%;position:relative;margin:0 auto;}
+
+@media screen and (max-width: 1240px) {
+	body{
+		overflow:auto;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.wico{width:25%;}
+	#main_box{width:92%}
+}
+
+@media screen and (max-width: 650px) {
+	.wico{width:20%;}
+	#main_box{width:92%}
+	.elm{margin:0 0 12px 0;}
+}

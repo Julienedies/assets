@@ -1,0 +1,159 @@
+
+
+#topics {
+    margin: 0 5px;
+    padding: 20px 0 20px 40px;
+    border-left: solid 2px #fff;
+}
+
+#topics li {
+    list-style: none;
+    margin: 10px 0;
+    word-break: break-all;
+}
+
+#topics li .title {
+    padding: 0 0 0 60px;
+    margin: 15px 0 10px -42px;
+    border-left: solid 6px #6cbe42;
+}
+#topics li .title a{
+    color:inherit;
+}
+
+#topics li .dtails {
+    padding-left: 30px;
+    background: #fff;
+}
+
+#topics .dtails .nicknm {
+    color: #669c22;
+    font-weight: bold;
+    display: block;
+}
+
+#topics .portrait img {
+    max-width: 5em;
+    max-height: 5em;
+    min-width:3em;
+    min-height:3em;
+    border-radius: 0.4em;
+    border: solid 0.2em #fff;
+}
+
+#topics li:nth-child(1n+0) title {
+    border-left-color: #ffb21e;
+}
+
+#topics li:nth-child(2n+0) title {
+    border-left-color: #3d88ff;
+}
+
+#topics li:nth-child(3n+0) title {
+    border-left-color: #eb5e4c;
+}
+
+#topics li:nth-child(4n+0) title {
+    border-left-color: #6cbe42;
+}
+
+#cats {
+    padding: 5px 15px;
+    color: #fff;
+}
+
+header {
+}
+
+@media (min-width: 48em) {
+
+    .sidebar {
+        position: fixed;
+        right: 0;
+        top: 110px;
+        bottom: 0;
+    }
+
+    .content {
+        margin-right: 25%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    #classify{
+        
+    }
+
+    #user-info {
+        text-align: right;
+    }
+
+    #topics .avatar {
+        position: relative;
+        top: -0.5em;
+        right: -0.8em;
+        float: right;
+    }
+
+
+    #cats{
+        width:300px;
+        height:300px;
+        border:solid 1px #fff;
+    }
+
+    #cats .tag{
+        position: relative;
+        display: inline-block;
+        padding:1em;
+        border-radius:1em;
+    }
+
+
+  .tag-0,.tag-1,.tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7{
+      position: absolute;
+      display:inline-block;
+  }
+
+
+    .tag-0{
+        background:#fff;
+    }
+
+    .tag-1{
+        background:#eb5e4c;
+    }
+
+    .tag-2{
+        background:#06cfa3;
+    }
+
+    .tag-3{
+        background:#ffb21c;
+    }
+
+    .tag-4{
+        background:#6cbe42;
+    }
+
+    .tag-5{
+        background:#0163d0;
+    }
+    .tag-6{
+        background:#6cbe42;
+    }
+
+    .tag-7{
+        background:#0163d0;
+    }
+
+
+    #topics .reply-box textarea{
+        width:90%;
+    }
+
+
+}
+

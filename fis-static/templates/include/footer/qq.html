@@ -1,0 +1,31 @@
+<div id="qqzxBox" style="position:fixed;right:0;top:45%;z-index:400;width:40px;height: 104px;">
+    <!-- WPA Button Begin -->
+    <script charset="utf-8" type="text/javascript"
+            src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA3MTA1OF8yMDYzODBfODAwMDcxMDU4Xw"></script>
+    <!-- WPA Button END -->
+    <!-- WPA Button Begin -->
+    <script charset="utf-8" type="text/javascript"
+            src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA3MTA1OF8yMTEwODJfODAwMDcxMDU4Xw"></script>
+    <!-- WPA Button End -->
+</div>
+<script>
+    //修改qq咨询图标样式{#$assets_url#}
+    (function () {
+        var _self = arguments.callee;
+        _self._count = (_self._count || 0) + 1;
+        var cw = 40;
+        var ch = 104;
+        var qqIframe = document.getElementById('qqzxBox').getElementsByTagName('iframe');
+            qqIframe = qqIframe[0];
+
+        if (!qqIframe && _self._count < 5) return setTimeout(_self, 100);
+        if (!qqIframe) return;
+        var iw = qqIframe.contentWindow;
+        if (!iw) return;
+        qqIframe.setAttribute('width', cw);
+        qqIframe.setAttribute('height', ch);
+        var iframe = iw.document;
+        var qqBtn = iframe.getElementById('launchBtn');
+        qqBtn.style.cssText = 'width:40px;height:104px;background:url(?) no-repeat 0 0;'.replace('?', '{#$assets_url#}/img/other/qqzx.png');
+    })();
+</script>

@@ -1,0 +1,91 @@
+﻿body {margin: 0;font-family:'microsoft yahei', 'Simsun', 'sans-serif';background:url('../../images/index.jpg') no-repeat top center;min-height:760px;overflow:hidden;}
+img {margin:0;padding:0;border:0;}
+a {color: #ffffff;}
+#menu {position:fixed;width: 100%;bottom:40px;text-align: center;}
+
+.element {
+	width: 120px;
+	height: 160px;
+	box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.5);
+	border: 1px solid rgba(127, 255, 255, 0.25);
+	text-align: center;
+	cursor: default;
+}
+.element:hover {
+	box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.75);
+	border: 1px solid rgba(127, 255, 255, 0.75);
+}
+.element .number {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 12px;
+	color: rgba(127, 255, 255, 0.75);
+}
+.element .symbol {
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	right: 0px;
+	font-size: 60px;
+	font-weight: bold;
+	color: rgba(255, 255, 255, 0.75);
+	-webkit-filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.95));
+	-moz-filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.95));
+	-o-filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.95));
+	-ms-filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.95));
+	filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 0.95));
+}
+.element .details {
+	position: absolute;
+	bottom: 15px;
+	left: 0px;
+	right: 0px;
+	font-size: 12px;
+	color: rgba(127, 255, 255, 0.75);
+}
+button {
+	font-family: 'Helvetica', 'Arial', 'Tahoma', 'microsoft yahei', 'Simsun', 'sans-serif';
+	background: transparent;
+	border: 0px;
+	cursor: pointer;
+}
+.photo_logo{width:100%;position:absolute;text-align:center;}
+.inlogo{width:44%;margin:0 auto;display:block;margin-top:30px;}
+.bt_ok,.bt_back {
+	width:10%;
+	border:1px solid #aaa;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
+	border:1px solid #2ab2e6;
+	background:rgba(0, 153, 204, 0.65)!important;filter:Alpha(opacity=65); background:#0099cc;
+	line-height:50px;
+	font-size:1.5em;
+	text-align:center;
+	cursor:pointer;
+	display:inline-block;
+	text-decoration:none;
+}
+.bt_back {background:rgba(0, 0, 0, 0.5)!important;filter:Alpha(opacity=50); background:#000;}
+.logined {font-size:1.5em;color:#fff778;text-decoration:none;}
+
+#time{color:#fff;font-size:1.1em;line-height:2em;margin-top:40px;}
+#l_time, #new_time, #add_time {letter-spacing:4px;background:rgba(0, 0, 0, 0.6)!important;filter:Alpha(opacity=60); background:#000;	padding:6px 10px 4px 10px;}
+#new_time, #add_time {color:#fff778}
+.foot {text-align:center;color:#b0bed4;width:100%;font-size:0.9em;margin-top:10px;}
+
+.dimg{cursor:pointer;}
+.wico{width:10%;}
+.wpic{position:absolute;margin:-255px 0 0 -52px;background:url('../../images/weit.jpg') no-repeat;width:17%;display:none;}
+.wii{margin: 0 0 -7px 3px;}
+
+@media screen and (max-width: 740px) {
+	.bt_ok, .bt_back{line-height:2em;font-size:0.7em;width:16%;}
+	.wii{width:28%;margin:0 0 -5px 2px;}
+	#time{font-size:0.7em}
+	#l_time, #new_time, #add_time{letter-spacing:0;padding:3px;}
+	.wico{width:17%;}
+	.wpic{margin:-18% 0 0 -1px}
+	.foot{font-size:0.7em;}
+}

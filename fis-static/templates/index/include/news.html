@@ -1,0 +1,39 @@
+<section>
+
+    <div id="slide-box" class="inline v-top" ic-slider="a" ic-slider-interval="4000">
+        <ul ic-role-slider-view>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="slide.png"/></a></li>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="slide.png"/></a></li>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="slide.png"/></a></li>
+            <li ic-role-slider-item><a href="#" target="_blank"><img src="slide.png"/></a></li>
+        </ul>
+        <span class="btn btn-0" style="left:0;" ic-role-slider-prev>
+            <i class="icon icon-arrows-left"></i>
+        </span>
+        <span class="btn btn-0" style="right:0;" ic-role-slider-next>
+            <i class="icon icon-arrows-right"></i>
+        </span>
+        <ol class="inline-list-1 hc" style="position: absolute; bottom: 10px;width:100%">
+            <li class="" ic-role-slider-pagination="1"></li>
+            <li class="" ic-role-slider-pagination="2"></li>
+            <li class="" ic-role-slider-pagination="3"></li>
+            <li class="" ic-role-slider-pagination="4"></li>
+        </ol>
+    </div>
+
+    <div id="news-box" class="inline v-top">
+        <h2 class="t-1 mb-10">{#text key="newwebsite.top_stories"#}</h2>
+        <ul class="list-1 lg-32">
+        {#foreach from = $hotnews item = hotnew key = index#}
+            <li>
+                <span>[{#$hotnew->tag#}]</span>
+                <a href="{#$hotnew->lnk#}" target="_blank" {#if $index eq 0#}class="t-3"{#/if#} title="{#$hotnew->tit#}">{#$hotnew->tit#}</a>
+                {#if $index eq 0#}
+                <p class="lg-24">{#$hotnew->sum|truncate:53:"...":true#}<a class="fc-2" href="{#$hotnew->lnk#}" target="_blank">[查看详细]</a></p>
+                {#/if#}
+            </li>
+        {#/foreach#}
+        </ul>
+    </div>
+
+</section>

@@ -1,0 +1,12 @@
+﻿body {font-family:'microsoft yahei', 'Simsun', 'sans-serif';	background:url('../../images/rbg.jpg') repeat-y top center;}
+.inlogo{width:44%;margin:0 auto;text-align:center;display:block;margin-top:30px;}
+.foot {text-align:center;color:#b0bed4;width:100%;font-size:0.9em}
+.clear{clear:both;height:12px;line-height:12px;}
+.flow_box{width:100%;}
+.f12{font-size:0.9em;}
+.f30{font-size:2em;line-height:1.2em;}
+.green{color:#679c21}
+.blk{color:#000;}
+.wico{width:17%;}
+.wback:hover{color:#fff778;}
+.wpic{position:absolute;margin:-10% 0 0 12%;width:17%;display:none;}

@@ -1,0 +1,60 @@
+<!--
+====================================================
+-->
+<section>
+
+    <h2 class="title-1"><strong class="inline text t-1">{#text key="newwebsite.today_recommend"#}</strong></h2>
+
+    <div id="recommend-box" class="inline v-top bg-1" ic-slider="b">
+        <ul class="inline-list" ic-tabs="a" ic-tabs-interval="3000" ic-role-slider-view>
+            <li ic-role-slider-item>
+                {#foreach from=$rcmdstocks key=stockindex item=rcmdstock#}
+                    {#if $stockindex eq 4#}
+                    </li>
+                    <li ic-role-slider-item>
+                    {#/if#}
+                <div class="item inline" ic-role-tab="{#$stockindex + 1#}">
+                    <div class="t-9"><i class="icon icon-fire"></i> Top {#$stockindex + 1#}</div>
+                    <div class="t-10">{#$rcmdstock->secu#}</div>
+                    <div class="t-10">{#$rcmdstock->name#}</div>
+                    <div class="h-right fc-up">+{#$rcmdstock->status->chg#}(+{#$rcmdstock->status->ratio#}%)</div>
+                    <div class="h-right t-12">{#$rcmdstock->status->price#}</div>
+                </div>
+                {#/foreach#}
+            </li>
+           
+        </ul>
+
+        <div class="hc wp-100" style="position: absolute; bottom:15px;">
+            <b class="btn btn-1 prev" ic-role-slider-prev> &nbsp;&lt;&nbsp; </b>
+            &nbsp;&nbsp;
+            <b class="btn btn-1 next" ic-role-slider-next> &nbsp;&gt;&nbsp; </b>
+        </div>
+
+
+    </div>
+
+    <div id="recommend-rel-info-box" class="inline v-top" ic-role-tabc="a">
+    {#foreach from=$rcmdinfos key=infoindex item=rcmdinfo#}
+        <div ic-role-con="{#$infoindex+1#}">
+            <h4 class="mb-15">
+                <strong class="t-5">{#$rcmdinfo['name']#}</strong>
+                <span class="mr-15"> ( {#$rcmdinfo['secu']#} )</span>
+                <a href="javascript:void(0)"><i class="icon icon-add"></i>&nbsp;<b class="t-7">添加到我的个人中心</b></a>
+            </h4>
+            <ul class="lg-36 list-1">
+                {#foreach from=$rcmdinfo['news'] key=newsIndex item=rcmdnews#}
+                <li>
+                    <span>[{#$rcmdnews->typ#}]</span>
+                    <a href="{#$rcmdnews->lnk#}" title="{#$rcmdnews->titl#}" target="_blank">{#$rcmdnews->titl|truncate:20:"":true#}</a>
+                    <time>{#$rcmdnews->time#}</time>
+                </li>
+                {#/foreach#}
+            
+            </ul>
+        </div>
+    {#/foreach#}
+    
+    </div>
+
+</section>
